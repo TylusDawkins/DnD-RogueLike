@@ -1,0 +1,45 @@
+* {
+    font-family: 'Princess Sofia', cursive;
+    background-color: rgb(193,154,107,);
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.characterInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    padding:10px;
+    margin-right:5%;
+}
+
+.charImage {
+    width: 50%;
+    height: 50%;
+}
+
+.stats {
+    display:flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#levelButton {
+    width: 100%;
+    height: 50px;
+    background-color: #242424;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}

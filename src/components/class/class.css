@@ -6,13 +6,17 @@
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     background-color: rgb(232, 180, 116);
     text-align: center;
     padding: 1rem;
     cursor: pointer;
+    transition: transform .3s;
+}
+.card:hover{
+  transform: scale(1.2);
 }
 
 .card-image{

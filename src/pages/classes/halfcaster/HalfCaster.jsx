@@ -32,6 +32,7 @@ function HalfCaster() {
             features={features}
             setFeatures={setFeatures}
             />
+            <img className="charImage" src={halfCasterImage}/>
             <div className="characterInfo">
                 <h1>Stats</h1>
                 <div className="stats">
@@ -46,7 +47,6 @@ function HalfCaster() {
                     })}
                 </div>
             </div>
-            <img className="charImage" src={halfCasterImage}/>
         </div>
     )
   }

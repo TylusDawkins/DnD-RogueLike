@@ -32,6 +32,7 @@ function Fighter() {
             features={features}
             setFeatures={setFeatures}
             />
+            <img className="charImage" src={fighterImage}/>
             <div className="characterInfo">
                 <h1>Stats</h1>
                 <div className="stats">
@@ -46,7 +47,6 @@ function Fighter() {
                     })}
                 </div>
             </div>
-            <img className="charImage" src={fighterImage}/>
         </div>
     )
   }
