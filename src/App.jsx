@@ -1,6 +1,7 @@
 import Class from './components/class/Class'
 import classes from './data/classesJson'
 import './App.css'
+import { useNavigate } from 'react-router-dom'
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
                 name={classObj.name}
                 description={classObj.description}
                 key={i}
-                href={classObj.href}
+                href={`/character/${classObj.name}`}
               />)
           })}
         </div>

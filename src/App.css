@@ -8,3 +8,9 @@
   justify-content: space-around;
   padding: 25px;
 }
+
+#header {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}

@@ -9,8 +9,10 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    background-color: rgb(232, 180, 116);
     text-align: center;
     padding: 1rem;
+    cursor: pointer;
 }
 
 .card-image{
