@@ -69,7 +69,7 @@ function ClassModal({isOpen, setIsOpen, features, setFeatures}) {
                         <div className="choice-name">{feature.name}</div>
                         <div className="choice-desc">{feature.description}</div>
                         <div className="choice-tier">{feature.tier}</div>
-                        <button className="choice-btn" onClick={closeModal}>Choose</button>
+                        <button className="choice-btn" onClick={handleClick(feature)}>Choose</button>
                     </div>
                 )
             })}
