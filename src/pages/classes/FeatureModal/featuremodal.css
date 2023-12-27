@@ -1,0 +1,23 @@
+
+#choice-modal {
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(193, 154, 107, .5);
+}
+
+.choice-modal-content {
+    background-color: rgb(193,154,107);
+    margin: auto;
+    padding: 20px;
+    width: 25%;
+    height:60%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
