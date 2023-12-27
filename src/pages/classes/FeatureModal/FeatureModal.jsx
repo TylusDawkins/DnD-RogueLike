@@ -64,12 +64,13 @@ function ClassModal({isOpen, setIsOpen, features, setFeatures}) {
     return isOpen ? (
         <div id="choice-modal">
             {featureChoices.map((feature,i) => {
+                console.log(feature)
                 return (
-                    <div className="choice-modal-content" id={`choice${i+1}`}>
+                    <div className="choice-modal-content">
                         <div className="choice-name">{feature.name}</div>
                         <div className="choice-desc">{feature.description}</div>
                         <div className="choice-tier">{feature.tier}</div>
-                        <button className="choice-btn" onClick={handleClick(feature)}>Choose</button>
+                        <button className="choice-btn" onClick={() => {handleClick(feature)}}>Choose</button>
                     </div>
                 )
             })}

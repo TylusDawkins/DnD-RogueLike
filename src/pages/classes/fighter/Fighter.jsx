@@ -13,7 +13,7 @@ function Fighter() {
     
     const [mental, setMental] = useState(10)
 
-    const [features, setFeatures] = useState(["Nothing yet!"])
+    const [features, setFeatures] = useState([])
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
@@ -42,7 +42,7 @@ function Fighter() {
                 <button id="levelButton" onClick={openFeatureModal}>Level up!</button>
                 <div className="features">
                     {features.map((feature,i) => {
-                        return <p key={i}>{feature}</p>
+                        return <h3 key={i}>Level {i+1}: {feature.name}</h3>
                     })}
                 </div>
             </div>
