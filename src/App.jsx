@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div id="main">
+      <div id="background"></div>
       <div id="header">
         <div>Choose Your Character!</div>
       </div>
