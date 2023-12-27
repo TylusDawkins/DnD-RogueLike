@@ -9,10 +9,15 @@
   background-position: top; 
 }
 
-.background {
-  position: relative;
-  height: 100vh;
+#background {
+  position: absolute;
+  top: 0px;
   width: 100vw;
-  background-color: white;
-  opacity: 0.4
+  height:100vh;
+  
+  backdrop-filter: blur(10px);
+  margin: 0;
+  padding: 0;
+  left: 0;
+  z-index: -1;
 }
