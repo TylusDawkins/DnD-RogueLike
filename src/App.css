@@ -1,0 +1,10 @@
+#main {
+  text-align: center;
+}
+
+#classes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 25px;
+}
