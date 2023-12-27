@@ -1,5 +1,5 @@
 import Class from './components/class/Class'
-import classes from './components/class/classesJson'
+import classes from './data/classesJson'
 import './App.css'
 
 function App() {
