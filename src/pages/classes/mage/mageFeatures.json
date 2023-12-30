@@ -1,304 +1,75 @@
 [
     { 
-        "name": "Rage", 
+        "name": "Meta Magic", 
         "dependancy": null,
         "conflifts": [null], 
         "tier": 1,
         "stackable":false
     },
-    { 
-        "name": "Unarmored Defense", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Reckless Attack", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Danger Sense", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Extra Attack", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":true 
-    },
-    { 
-        "name": "Fast Movement", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Feral Instinct", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Brutal Critical", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Relentless Rage", 
-        "dependancy": "Rage",
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Persistent Rage", 
-        "dependancy": "Rage",
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    { 
-        "name": "Indomitable Might", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    { 
-        "name": "Primal Champion", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    { 
-        "name": "Bardic Inspiration", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Wild Shape", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Archdruid", 
-        "dependancy": "Wild Shape",
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    { 
-        "name": "Fighting Style (Fighter)", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Second Wind", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Action Surge", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Indomitable", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Martial Arts", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Ki", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Unarmored Movement", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Deflect Missiles", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Stunning Strike", 
-        "dependancy": "Ki",
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
     {
-        "name": "Ki-Empowered Strikes",
-        "dependancy": "Ki",
-        "conflifts": [null],
-        "tier": 2,
-        "stackable":false
-
-    },
-    { 
-        "name": "Evasion", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Diamond Soul", 
-        "dependancy": "Ki",
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    {
-        "name": "Empty Body",
-        "dependancy": "Ki",
-        "conflifts": [null],
-        "tier": 3,
-        "stackable":false
-    },
-    { 
-        "name": "Lay on Hands", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    {
-        "name": "Divine Smite",
+        "name":"Chronal Shift",
         "dependancy": null,
         "conflifts": [null],
         "tier": 1,
         "stackable":false
     },
-    { 
-        "name": "Fighting Style (Paladin)", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Aura of Protection", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Improved Divine Smite", 
-        "dependancy": "Divine Smite",
-        "conflifts": [null], 
+    {
+        "name":"Convergant Future",
+        "dependancy": "Chronal Shift",
+        "conflifts": [null],
         "tier": 2,
-        "stackable":false 
+        "stackable":false
     },
-    { 
-        "name": "Fighting Style (Ranger)", 
+    {
+        "name:":"Potent Cantrip",
         "dependancy": null,
-        "conflifts": [null], 
+        "conflifts": [null],
         "tier": 1,
-        "stackable":false 
+        "stackable":false
     },
-    { 
-        "name": "Foe Slayer", 
+    {
+        "name":"Potent Cantrip",
         "dependancy": null,
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    { 
-        "name": "Sneak Attack", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Cunning Action", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Uncanny Dodge", 
-        "dependancy": null,
-        "conflifts": [null], 
+        "conflifts": [null],
         "tier": 2,
-        "stackable":false 
+        "stackable":false
     },
-    { 
-        "name": "Reliable Talent", 
+    {
+        "name":"Durable Magic",
         "dependancy": null,
-        "conflifts": [null], 
+        "conflifts": [null],
         "tier": 2,
-        "stackable":false 
+        "stackable":false
     },
-    { 
-        "name": "Blindsense", 
+    {
+        "name":"Spell Secrets",
         "dependancy": null,
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
+        "conflifts": [null],
+        "tier": 1,
+        "stackable":false
     },
-    { 
-        "name": "Elusive", 
+    {
+        "name":"Velocity Shift",
         "dependancy": null,
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
+        "conflifts": [null],
+        "tier": 2,
+        "stackable":false
     },
-    { 
-        "name": "Stroke of Luck", 
+    {
+        "name":"Null Equation",
         "dependancy": null,
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
+        "conflifts": [null],
+        "tier": 2,
+        "stackable":false
     },
-    { 
-        "name": "ASI", 
+    {
+        "name":"Quantum Tunneling",
         "dependancy": null,
-        "conflifts": [null], 
-        "tier": null,
-        "stackable":true 
+        "conflifts": [null],
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        
     }
 ]

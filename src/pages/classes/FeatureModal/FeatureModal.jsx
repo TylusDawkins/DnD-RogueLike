@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import "./featuremodal.css"
-import classFeatures from "../fighter/fighterFeatures.json"
 
 
-function ClassModal({isOpen, setIsOpen, features, setFeatures}) {
+
+function ClassModal({isOpen, setIsOpen, features, setFeatures, classFeatures}) {
 
     const tier1Features = classFeatures.filter(x => x.tier === 1)
     const tier2Features = classFeatures.filter(x => x.tier === 2)
