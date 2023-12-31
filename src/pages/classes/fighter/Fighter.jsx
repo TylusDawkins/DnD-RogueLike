@@ -27,6 +27,7 @@ function Fighter() {
     return (
         <div className="main">
             <FeatureModal 
+            classFeatures={classFeatures}
             isOpen={isFeatureModalOpen}
             setIsOpen={setIsFeatureModalOpen}
             features={features}
