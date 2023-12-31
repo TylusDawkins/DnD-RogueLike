@@ -2,7 +2,7 @@ import fighterImage from "/public/assets/fighter.png"
 import classFeatures from "./fighterFeatures.json"
 import "./fighter.css"
 import { useState } from "react"
-import FeatureModal from "../FeatureModal/FeatureModal"
+import FeatureModal from "../../../components/featuremodal/FeatureModal"
 
 
 function Fighter() {
@@ -16,6 +16,8 @@ function Fighter() {
     const [features, setFeatures] = useState([])
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
+
+    const [playerLevel, setPlayerLevel] = useState(1)
 
     // const [choices, setChoices] = useState([])
 

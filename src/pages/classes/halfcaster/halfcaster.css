@@ -20,11 +20,6 @@
     margin-right:5%;
 }
 
-.charImage {
-    width: 50%;
-    height: 50%;
-}
-
 .stats {
     display:flex;
     justify-content: space-around;

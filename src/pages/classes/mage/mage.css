@@ -10,27 +10,6 @@
     /* justify-content: center; */
 }
 
-.characterInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    padding:10px;
-    margin-right:5%;
-}
-
-.charImage {
-    width: 50%;
-    height: 50%;
-}
-
-.stats {
-    display:flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
 #levelButton {
     width: 100%;
     height: 50px;

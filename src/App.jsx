@@ -1,13 +1,14 @@
 import Class from './components/class/Class'
 import classes from './data/classesJson'
 import './App.css'
+import './globals.css'
 
 function App() {
 
   return (
     <div id="main">
       
-      <div id="header">
+      <div id="header" className='text'>
         <div>Choose Your Character!</div>
       </div>
       <div id="classes">
