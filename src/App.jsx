@@ -11,7 +11,7 @@ function App() {
       <div id="header" className='text'>
         <div>Choose Your Character!</div>
       </div>
-      <div id="classes">
+      <div id="classes" className='text'>
           {classes.map((classObj,i) => {
             return(
               <Class 
