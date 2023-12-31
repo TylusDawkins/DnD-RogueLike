@@ -1,16 +1,15 @@
-  ::-webkit-scrollbar {
-    width: 5px;
-    margin:50px;
+::-webkit-scrollbar {
+  width: 5px;
+  margin:50px;
   }
   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #000000;
-    border-radius: 15%;
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 15%;
   }
 
-  .charImage {
-    width: 33%;
+.charImage {
+  width: 33%;
 }
 
 .characterInfo {

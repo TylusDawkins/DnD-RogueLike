@@ -43,7 +43,7 @@ function Fighter() {
                     <h2 className="text">Fortitude: {fortitude}</h2>
                     <h2 className="text">Mental: {mental}</h2>
                 </div>
-                <button className="text" id="levelButton" onClick={openFeatureModal}>Level up!</button>
+                <button id="levelButton" onClick={openFeatureModal}>Level up!</button>
                 <div className="features">
                     {features.map((feature,i) => {
                         return <h3 className="text" key={i}>Level {i+1}: {feature.name}</h3>
