@@ -31,6 +31,7 @@ function HalfCaster() {
             setIsOpen={setIsFeatureModalOpen}
             features={features}
             setFeatures={setFeatures}
+            classFeatures={classFeatures}
             />
             <img className="charImage" src={halfCasterImage}/>
             <div className="characterInfo">
