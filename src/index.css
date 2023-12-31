@@ -1,6 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* font-family: 'Princess Sofia', cursive; */
+  color: rgb(34, 34, 34);
+  background-color: rgb(232, 180, 116);
+  background-image: url("https://static.vecteezy.com/system/resources/previews/015/369/796/large_2x/mountain-landscape-with-castle-and-dragon-free-vector.jpg"); 
+  background-repeat: no-repeat;
+  background-position: top; 
 }
 
+#background {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height:100vh;
+  
+  backdrop-filter: blur(10px);
+  margin: 0;
+  padding: 0;
+  left: 0;
+  z-index: -1;
+}
