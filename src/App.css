@@ -30,7 +30,9 @@
 }
 
 .text {
-  background: -webkit-linear-gradient(0deg, #DBE7FC 10%, #1D2951 100%);
+  background: -webkit-linear-gradient(0deg, #000000 5%, #494949 65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/*#9b9b9b 5%, #ffffff

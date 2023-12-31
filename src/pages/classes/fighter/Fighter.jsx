@@ -35,16 +35,16 @@ function Fighter() {
             />
             <img className="charImage" src={fighterImage}/>
             <div className="characterInfo">
-                <h1>Stats</h1>
+                <h1 className="text">Stats</h1>
                 <div className="stats">
-                    <h2>Physical: {physical}</h2>
-                    <h2>Fortitude: {fortitude}</h2>
-                    <h2>Mental: {mental}</h2>
+                    <h2 className="text">Physical: {physical}</h2>
+                    <h2 className="text">Fortitude: {fortitude}</h2>
+                    <h2 className="text">Mental: {mental}</h2>
                 </div>
-                <button id="levelButton" onClick={openFeatureModal}>Level up!</button>
+                <button className="text" id="levelButton" onClick={openFeatureModal}>Level up!</button>
                 <div className="features">
                     {features.map((feature,i) => {
-                        return <h3 key={i}>Level {i+1}: {feature.name}</h3>
+                        return <h3 className="text" key={i}>Level {i+1}: {feature.name}</h3>
                     })}
                 </div>
             </div>
