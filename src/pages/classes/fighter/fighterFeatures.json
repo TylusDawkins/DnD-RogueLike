@@ -197,41 +197,6 @@
         "stackable":false
     },
     { 
-        "name": "Lay on Hands", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    {
-        "name": "Divine Smite",
-        "dependancy": null,
-        "conflifts": [null],
-        "tier": 1,
-        "stackable":false
-    },
-    { 
-        "name": "Fighting Style (Paladin)", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Aura of Protection", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Improved Divine Smite", 
-        "dependancy": "Divine Smite",
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
         "name": "Fighting Style (Ranger)", 
         "dependancy": null,
         "conflifts": [null], 
@@ -295,10 +260,74 @@
         "stackable":false 
     },
     { 
-        "name": "ASI", 
+        "name": "Ability Score Improvement", 
         "dependancy": null,
         "conflifts": [null], 
         "tier": null,
         "stackable":true 
+    },
+    {
+        "name":"Shield Master",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:shield-master"
+    },
+    {
+        "name":"Sentinel",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:sentinel"
+    },
+    {
+        "name":"Savage Attacker",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:savage-attacker"
+    },
+    {
+        "name":"Polearm Master",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:polearm-master"
+    },
+    {
+        "name":"Heavy Armor Master",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:heavy-armor-master"
+    },
+    {
+        "name":"Great Weapon Master",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:great-weapon-master"
+    },
+    {
+        "name":"Dual Wielder",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:dual-wielder"
+    },
+    {
+        "name":"Defensive Duelist",
+        "dependancy":null,
+        "conflifts":[null],
+        "tier":null,
+        "stackable":false,
+        "link":"http://dnd5e.wikidot.com/feat:defensive-duelist"
     }
 ]
