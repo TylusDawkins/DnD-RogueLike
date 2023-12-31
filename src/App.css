@@ -27,3 +27,9 @@
   left: 0;
   z-index: -1;
 }
+
+.text {
+  background: -webkit-linear-gradient(0deg, #DBE7FC 10%, #1D2951 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
