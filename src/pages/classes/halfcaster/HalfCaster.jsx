@@ -84,7 +84,7 @@ function HalfCaster() {
             <img className="charImage" src={halfCasterImage}/>
             <div className="characterInfo">
                 <h1>Stats</h1>
-                <h1>LeveL: {playerLevel}</h1>
+                <h1>Level: {playerLevel}</h1>
                 <div className="stats">
                     <h2>Physical: {physical}</h2>
                     <h2>Fortitude: {fortitude}</h2>

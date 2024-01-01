@@ -1,6 +1,5 @@
 import fighterImage from "/public/assets/fighter.png"
 import classFeatures from "./fighterFeatures.json"
-import "./fighter.css"
 import { useState } from "react"
 import FeatureModal from "../../../components/featuremodal/FeatureModal"
 
@@ -44,7 +43,7 @@ function Fighter() {
             <img className="charImage" src={fighterImage}/>
             <div className="characterInfo">
                 <h1>Stats</h1>
-                <h1>LeveL: {playerLevel}</h1>
+                <h1>Level: {playerLevel}</h1>
                 <div className="stats">
                     <h2>Physical: {physical}</h2>
                     <h2>Fortitude: {fortitude}</h2>
