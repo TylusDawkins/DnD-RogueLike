@@ -3,11 +3,11 @@ import "./featuremodal.css"
 
 
 
-function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, setFeatures, classFeatures}) {
+function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, setFeatures, classFeatures, playerLevel}) {
 
-    const tier1Features = classFeatures.filter(x => x.tier === 1)
-    const tier2Features = classFeatures.filter(x => x.tier === 2)
-    const tier3Features = classFeatures.filter(x => x.tier === 3)
+    const tier1Features = classFeatures.filter(x => x.tier <= 1)
+    const tier2Features = classFeatures.filter(x => x.tier <= 2)
+    const tier3Features = classFeatures.filter(x => x.tier <= 3)
 
     const [featureChoices, setFeatureChoices] = useState([])
 
@@ -19,7 +19,10 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
         setIsOpen(!isOpen)
         if(shouldOpenSpellModal){
             setSpellModalOpen(!spellModalOpen)
-            setShouldOpenSpellModal(!shouldOpenSpellModal)
+            if(setShouldOpenSpellModal){
+              console.log("should open spell modal")
+              setShouldOpenSpellModal(!shouldOpenSpellModal)
+            }
         }
     }
 
@@ -29,11 +32,12 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
         let availableFeatures
         let choices = []
         // setChoices([])
+        console.log(playerLevel)
         while(i < 3){
-          if(i >= 12){
-            availableFeatures = tier3Features + tier2Features + tier1Features
-          } else if(i >= 6){
-            availableFeatures = tier2Features + tier1Features
+          if(playerLevel >= 12){
+            availableFeatures = tier3Features
+          } else if(playerLevel >= 6){
+            availableFeatures = tier2Features
           } else{
             availableFeatures = tier1Features
           }
@@ -67,9 +71,9 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
             {featureChoices.map((feature,i) => {
                 return (
                     <div className="choice-modal-content">
-                        <div className="choice-name">{feature.name}</div>
+                        <div className="choice-name" style={{fontWeight:'700'}}>{feature.name}</div>
                         <div className="choice-desc" style={{fontSize:".75em", overflow:"auto"}}>{feature.description}</div>
-                        <div className="choice-tier">{feature.tier}</div>
+                        <div className="choice-tier" style={{marginTop:'5px'}}> Tier: {feature.tier}</div>
                         <button className="choice-btn" onClick={() => {handleClick(feature)}}>Choose</button>
                     </div>
                 )

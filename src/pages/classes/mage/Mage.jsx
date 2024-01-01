@@ -1,9 +1,11 @@
 import mageImage from "/public/assets/mage.png"
+import bookImage from '/assets/book_icon.png'
 import classFeatures from "./mageFeatures.json"
 import "./mage.css"
 import { useState } from "react"
 import FeatureModal from "../../../components/featuremodal/FeatureModal"
 import SpellModal from "../../../components/spellmodal/SpellModal"
+import SpellBook from "../../../components/spellbook/SpellBook"
 
 
 function Mage() {
@@ -20,6 +22,8 @@ function Mage() {
 
     const [isSpellModalOpen, setIsSpellModalOpen] = useState(false)
 
+    const [isSpellBookOpen, setIsSpellBookOpen] = useState(false)
+
     const [playerLevel, setPlayerLevel] = useState(0)
 
     const [playerSpells, setPlayerSpells] = useState([])
@@ -30,6 +34,10 @@ function Mage() {
 
     const openSpellModal = () => {
         setIsSpellModalOpen(!isSpellModalOpen)
+    }
+
+    const openSpellBook = () => {
+        setIsSpellBookOpen(!isSpellBookOpen)
     }
 
     const levelUp = () => {
@@ -44,25 +52,39 @@ function Mage() {
 
     return (
         <div className="main">
+            <SpellBook
+                spells={playerSpells}
+                isOpen={isSpellBookOpen}
+                setIsOpen={setIsSpellBookOpen}
+            />
+
+
             <SpellModal
-            playerLevel={playerLevel}
-            setPlayerLevel={setPlayerLevel}
-            type="mage"
-            isOpen={isSpellModalOpen}
-            setIsOpen={setIsSpellModalOpen}
-            playerSpells={playerSpells}
-            setPlayerSpells={setPlayerSpells}
+                playerLevel={playerLevel}
+                setPlayerLevel={setPlayerLevel}
+                type="mage"
+                isOpen={isSpellModalOpen}
+                setIsOpen={setIsSpellModalOpen}
+                playerSpells={playerSpells}
+                setPlayerSpells={setPlayerSpells}
             />
 
             <FeatureModal 
-            classFeatures={classFeatures}
-            isOpen={isFeatureModalOpen}
-            setIsOpen={setIsFeatureModalOpen}
-            features={features}
-            setFeatures={setFeatures}
-            spellModalOpen={isSpellModalOpen}
-            setSpellModalOpen={setIsSpellModalOpen}
+                classFeatures={classFeatures}
+                isOpen={isFeatureModalOpen}
+                setIsOpen={setIsFeatureModalOpen}
+                features={features}
+                setFeatures={setFeatures}
+                spellModalOpen={isSpellModalOpen}
+                setSpellModalOpen={setIsSpellModalOpen}
+                shouldOpenSpellModal={true}
+                playerLevel={playerLevel}
             />
+
+            <div onClick={openSpellBook}>
+             <img src={bookImage} className="bookImage" onClick={openSpellBook}></img>
+            </div>
+            
             <img className="charImage" src={mageImage}/>
             <div className="characterInfo">
                 <h1>Stats</h1>

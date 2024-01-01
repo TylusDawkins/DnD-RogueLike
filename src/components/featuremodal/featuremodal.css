@@ -1,6 +1,5 @@
 
 #choice-modal {
-    justify-content: space-between;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -10,6 +9,7 @@
     overflow: auto;
     background-color: rgba(193, 154, 107, .5);
     display: flex;
+    /* justify-content: space-between; */
 }
 
 .choice-modal-content {
@@ -20,6 +20,6 @@
     height:60%;
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     font-size:2em;
 }

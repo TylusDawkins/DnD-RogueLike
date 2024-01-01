@@ -1,9 +1,11 @@
 import halfCasterImage from "/public/assets/half-caster.png"
+import bookImage from '/assets/book_icon.png'
 import classFeatures from "./halfCasterFeatures.json"
 import "./halfcaster.css"
 import { useState } from "react"
 import FeatureModal from "../../../components/featuremodal/FeatureModal"
 import SpellModal from "../../../components/spellmodal/SpellModal"
+import SpellBook from "../../../components/spellbook/SpellBook"
 
 
 function HalfCaster() {
@@ -22,6 +24,8 @@ function HalfCaster() {
 
     const [isSpellModalOpen, setIsSpellModalOpen] = useState(false)
 
+    const [isSpellBookOpen, setIsSpellBookOpen] = useState(false)
+
     const [shouldOpenSpellModal, setShouldOpenSpellModal] = useState(true)
 
     const [playerSpells, setPlayerSpells] = useState([])
@@ -32,18 +36,24 @@ function HalfCaster() {
         setIsFeatureModalOpen(!isFeatureModalOpen)
     }
 
+    const openSpellBook = () => {
+        setIsSpellBookOpen(!isSpellBookOpen)
+    }
+
     const levelUp = () => {
-        if(playerLevel % 2 === 0){
             openFeatureModal()
             setPlayerLevel(playerLevel + 1)
-            return
-        }
-        setPlayerLevel(playerLevel + 1)
     }
 
 
     return (
         <div className="main">
+            <SpellBook
+                spells={playerSpells}
+                isOpen={isSpellBookOpen}
+                setIsOpen={setIsSpellBookOpen}
+            />
+            
             <SpellModal
                 playerLevel={playerLevel}
                 setPlayerLevel={setPlayerLevel}
@@ -64,12 +74,17 @@ function HalfCaster() {
                 setSpellModalOpen={setIsSpellModalOpen}
                 shouldOpenSpellModal={shouldOpenSpellModal}
                 setShouldOpenSpellModal={setShouldOpenSpellModal}
+                playerLevel={playerLevel}
             />
 
+            <div onClick={openSpellBook}>
+                <img src={bookImage} className="bookImage" onClick={openSpellBook}></img>
+            </div>
 
             <img className="charImage" src={halfCasterImage}/>
             <div className="characterInfo">
                 <h1>Stats</h1>
+                <h1>LeveL: {playerLevel}</h1>
                 <div className="stats">
                     <h2>Physical: {physical}</h2>
                     <h2>Fortitude: {fortitude}</h2>

@@ -6,12 +6,12 @@ const classes = [
     {
         image: fighterImage,
         name: 'Fighter',
-        description: 'A melee focused class that excels in close range combat.'
+        description: `A melee fighter focused on overwhelming enemies with stats`
     },
     {
         image: halfCasterImage,
         name: 'Half-Caster',
-        description: 'A half-caster focused on magic and stealth.'
+        description: 'A half-caster specializing in both magic and melee combat.'
     },
     {
         image: mageImage,
