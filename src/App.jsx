@@ -1,7 +1,7 @@
 import Class from './components/class/Class'
 import classes from './data/classesJson'
 import './App.css'
-import '/src/globals.css'
+import './globals.css'
 
 function App() {
 
