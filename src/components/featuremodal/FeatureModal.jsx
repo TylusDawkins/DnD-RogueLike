@@ -9,6 +9,8 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
     const tier2Features = classFeatures.filter(x => x.tier <= 2)
     const tier3Features = classFeatures.filter(x => x.tier <= 3)
 
+    console.log(shouldOpenSpellModal)
+
     const [featureChoices, setFeatureChoices] = useState([])
 
     useEffect(() => {
@@ -22,8 +24,10 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
             if(setShouldOpenSpellModal){
               console.log("should open spell modal")
               setShouldOpenSpellModal(!shouldOpenSpellModal)
+              return
             }
         }
+        setShouldOpenSpellModal(!shouldOpenSpellModal)
     }
 
     const getRandomChoices = () => {
