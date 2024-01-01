@@ -254,14 +254,14 @@
         "name": "Ability Score Improvement", 
         "dependancy": null,
         "conflifts": [null], 
-        "tier": null,
+        "tier": 1,
         "stackable":true 
     },
     {
         "name":"Shield Master",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:shield-master"
     },
@@ -269,7 +269,7 @@
         "name":"Sentinel",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:sentinel"
     },
@@ -277,7 +277,7 @@
         "name":"Savage Attacker",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:savage-attacker"
     },
@@ -285,7 +285,7 @@
         "name":"Polearm Master",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:polearm-master"
     },
@@ -293,7 +293,7 @@
         "name":"Heavy Armor Master",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:heavy-armor-master"
     },
@@ -301,7 +301,7 @@
         "name":"Great Weapon Master",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:great-weapon-master"
     },
@@ -309,7 +309,7 @@
         "name":"Dual Wielder",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:dual-wielder"
     },
@@ -317,7 +317,7 @@
         "name":"Defensive Duelist",
         "dependancy":null,
         "conflifts":[null],
-        "tier":null,
+        "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:defensive-duelist"
     }
