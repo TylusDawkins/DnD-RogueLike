@@ -12,7 +12,8 @@ export default defineConfig({
     },
   },
   build:{
-    cssCodeSplit:false
+    cssCodeSplit:false,
+    cssMinify:false,
   }
   
 
