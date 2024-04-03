@@ -66,11 +66,11 @@ function SpellModal({isOpen, setIsOpen, playerSpells, setPlayerSpells, playerLev
         <div id="spell-choice-modal">
             {spellChoices.map((spell,i) => {
                 return (
-                    <div className="spell-choice-modal-content">
+                    <div className="spell-choice-modal-content" key={i}>
                         <div className="spell-choice-name" style={{fontWeight:'700'}}>{spell.name}</div>
                         <div className="spell-choice-desc" style={{fontSize:".9em", overflow:"auto"}}>{spell.description} {spell.higherLevel}</div>
                         {/* <div className="spell-choice-higher-level" style={{fontSize:".75em", overflow:"auto"}}> </div> */}
-                        <div className="spell-choice-tier">{spell.level}</div>
+                        <div className="spell-choice-tier">Tier: {spell.level}</div>
                         <button className="spell-choice-btn" onClick={() => {handleClick(spell)}}>Choose</button>
                     </div>
                 )

@@ -410,7 +410,7 @@
     {
         "name":"Fiery Soul",
         "dependancy": "Heart of fire",
-        "description":"you gain immunity to fire damage. In addition, any spell or effect you create ignores resistance to fire damage and treats immunity to fire damage as resistance to fire damage.",
+        "description":"you gain immunity to fire damage. In addigfbvc , any spell or effect you create ignores resistance to fire damage and treats immunity to fire damage as resistance to fire damage.",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
