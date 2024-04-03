@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div id="main">
-      
       <div id="header" className='text'>
         <div>Choose Your Character!</div>
       </div>
