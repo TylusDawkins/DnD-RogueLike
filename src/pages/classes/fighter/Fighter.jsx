@@ -1,4 +1,5 @@
 import fighterImage from "/public/assets/fighter.png"
+import backImage from "/public/assets/back_scroll.png"
 import classFeatures from "./fighterFeatures.json"
 import "./fighter.css"
 import { useState } from "react"
@@ -33,6 +34,10 @@ function Fighter() {
 
     return (
         <div className="main">
+            <a href="/">
+                <img src={backImage} className="backImage"/>
+            </a>
+
             <FeatureModal 
             classFeatures={classFeatures}
             isOpen={isFeatureModalOpen}

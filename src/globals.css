@@ -60,6 +60,13 @@
   top: 0;
 }
 
+.backImage{
+  width: 5%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .features {
   width:100%;
   height:60%;

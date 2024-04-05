@@ -1,5 +1,6 @@
 import halfCasterImage from "/public/assets/half-caster.png"
 import bookImage from '/assets/book_icon.png'
+import backImage from "/public/assets/back_scroll.png"
 import classFeatures from "./halfCasterFeatures.json"
 import "./halfcaster.css"
 import { useState } from "react"
@@ -48,6 +49,11 @@ function HalfCaster() {
 
     return (
         <div className="main">
+
+            <a href="/">
+                <img src={backImage} className="backImage"/>
+            </a>
+            
             <SpellBook
                 spells={playerSpells}
                 isOpen={isSpellBookOpen}
