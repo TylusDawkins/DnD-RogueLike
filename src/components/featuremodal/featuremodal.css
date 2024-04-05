@@ -13,7 +13,8 @@
 }
 
 .choice-modal-content {
-    background-color: rgb(193,154,107);
+    /* background-color: rgb(193,154,107); */
+    background-image: url("/assets/parchment_texture.jpg");
     margin: auto;
     padding: 20px;
     width: 25%;

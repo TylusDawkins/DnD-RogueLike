@@ -15,7 +15,7 @@
 }
 
 .spell-choice-modal-content {
-    background-color: rgb(193,154,107);
+    background-image: url("/assets/parchment_texture.jpg");
     margin: auto;
     width: 30%;
     height: 48%;
