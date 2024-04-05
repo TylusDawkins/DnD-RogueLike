@@ -74,7 +74,7 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
         <div id="choice-modal">
             {featureChoices.map((feature,i) => {
                 return (
-                    <div className="choice-modal-content">
+                    <div className="choice-modal-content" key={i}>
                         <div className="choice-name" style={{fontWeight:'700'}}>{feature.name}</div>
                         <div className="choice-desc" style={{fontSize:".75em", overflow:"auto"}}>{feature.description}</div>
                         <div className="choice-tier" style={{marginTop:'5px'}}> Tier: {feature.tier}</div>
@@ -86,4 +86,4 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
     ) : null
 }
   
-  export default ClassModal
+export default ClassModal

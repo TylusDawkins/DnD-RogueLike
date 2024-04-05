@@ -11,27 +11,33 @@
 .main {
   background-color: rgb(193,154,107,.75);
   width:100vw;
+  height:100vh
 }
 
 .characterCard{
   width:33em;
+  height:100%
 }
-
-
-.cardText{
-  font-size: 1.5em;
-  overflow-y: auto;
-  max-height: 35vh;
-  font-weight: bold;
-  background-color: #bc9f7d;
-}
-
-
 
 .charImage {
   width: 33em;
   height: 33em;
+  margin-bottom: -10px;
 }
+
+.cardText{
+  font-size: 1.5em;
+  overflow-y: auto;
+  max-height: 35%;
+  background-color: rgb(186,148,105);
+  margin-top: auto;
+}
+
+.charName{
+  font-weight: bold;
+}
+
+
 
 .characterInfo {
   display: flex;

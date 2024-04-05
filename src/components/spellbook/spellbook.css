@@ -6,7 +6,7 @@
     width: 85vw;
     height: 100vh;
     overflow: auto;
-    background-color: rgba(193, 154, 107, 1);
+    background-image: url("/assets/parchment_texture.jpg");
     display: flex;
     justify-content: center; 
     text-align: center;

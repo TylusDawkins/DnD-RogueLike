@@ -23,3 +23,22 @@
     /* justify-content: space-around; */
     font-size:2em;
 }
+
+.choice-btn, .choice-tier{
+    margin-top: auto;
+}
+
+@media (max-width:1200px){
+
+    #choice-modal {
+        overflow:auto;
+        flex-direction: column;
+    }
+
+    .choice-modal-content{
+        margin-top:1%;
+        height:100%;
+        width:65%;
+    }
+    
+}
