@@ -3,13 +3,12 @@ import "./featuremodal.css"
 
 
 
-function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, setFeatures, classFeatures, playerLevel}) {
+function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal=(()=>{}), spellModalOpen, setSpellModalOpen, features, setFeatures, classFeatures, playerLevel}) {
 
     const tier1Features = classFeatures.filter(x => x.tier <= 1)
     const tier2Features = classFeatures.filter(x => x.tier <= 2)
     const tier3Features = classFeatures.filter(x => x.tier <= 3)
 
-    console.log(shouldOpenSpellModal)
 
     const [featureChoices, setFeatureChoices] = useState([])
 
@@ -22,7 +21,6 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
         if(shouldOpenSpellModal){
             setSpellModalOpen(!spellModalOpen)
             if(setShouldOpenSpellModal){
-              console.log("should open spell modal")
               setShouldOpenSpellModal(!shouldOpenSpellModal)
               return
             }
@@ -36,7 +34,6 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
         let availableFeatures
         let choices = []
         // setChoices([])
-        console.log(playerLevel)
         while(i < 3){
           if(playerLevel >= 12){
             availableFeatures = tier3Features

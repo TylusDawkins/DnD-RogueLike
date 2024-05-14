@@ -53,6 +53,24 @@
   width: 100%;
 }
 
+#stat{
+  display:flex;
+  flex-direction: row;
+}
+
+.statButtons{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.statButton{
+  border-radius: 5px;
+  width:1.1em;
+  height:1.5em;
+}
+
 .bookImage {
   width: 5%;
   position: absolute;
