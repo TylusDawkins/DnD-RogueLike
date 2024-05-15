@@ -18,7 +18,7 @@ function Class({spells, isOpen, setIsOpen}) {
             <div className="close-modal" onClick={closeModal}>X</div>
             <div className='spell-book'>
                 {spells.map(spell => (
-                    <div>
+                    <div className='spell'>
                         <div className="spell-name"  style={{fontSize:'2em', marginBottom:'5px', marginTop:'10px'}}>{spell.name}</div>
                         <div>level:{spell.level}</div>
                         <div className="spell-description" style={{color:'black', WebkitTextFillColor:''}}>

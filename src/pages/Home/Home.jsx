@@ -1,5 +1,5 @@
 import Class from '@components/class/Class'
-import classes from '@utils/classesJson'
+import classes from '@utils/classes'
 import './Home.css'
 import '/src/globals.css'
 import charSelectorIcon from "@assets/char_selector_icon.png"

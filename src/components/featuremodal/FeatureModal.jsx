@@ -3,13 +3,11 @@ import "./featuremodal.css"
 
 
 
-function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal=(()=>{}), spellModalOpen, setSpellModalOpen, features, addFeature, classFeatures, playerLevel}) {
+function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, addFeature, classFeatures, playerLevel, character, setCharacter}) {
 
     const tier1Features = classFeatures.filter(x => x.tier <= 1)
     const tier2Features = classFeatures.filter(x => x.tier <= 2)
     const tier3Features = classFeatures.filter(x => x.tier <= 3)
-
-
     const [featureChoices, setFeatureChoices] = useState([])
 
     useEffect(() => {
@@ -60,6 +58,9 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
 
       const handleClick = (feature) => {
         addFeature(feature)
+        if(feature.cb){
+          feature.cb(character, setCharacter)
+        }
         closeModal()
       }
 
