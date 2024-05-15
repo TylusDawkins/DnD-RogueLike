@@ -6,24 +6,11 @@ import FeatureModal from "@components/featuremodal/FeatureModal"
 import SpellModal from "@components/spellmodal/SpellModal"
 import SpellBook from "@components/spellbook/SpellBook"
 import types from "@utils/types"
+import { useParams } from 'react-router-dom'
 
-export default function Character() {
+export default function Character({character, setCharacter}) {
 
-    const charObj = {
-        name: "",
-        description:"",
-        type:"",
-        level: 0,
-        stats: {
-            physical: 10,
-            fortitude: 10,
-            mental: 10,
-        },
-        features: [],
-        spells: []
-    }
-
-    const [character, setCharacter] = useState(charObj)
+    const {type} = useParams()
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
@@ -35,8 +22,10 @@ export default function Character() {
 
     const [totalPoints, setTotalPoints] = useState(0)
 
-    const classFeatures = types[character.type]
+    const classImage = types[character.type || type].image
 
+    const classFeatures = types[character.type || type].features
+    
     const openFeatureModal = () => {
         setIsFeatureModalOpen(!isFeatureModalOpen)
     }
@@ -129,7 +118,7 @@ export default function Character() {
             </div>
 
             <div className="characterCard">
-                <img className="charImage" src={types[character.type]} />
+                <img className="charImage" src={classImage} />
                 <div className="cardText">
                     <div className="charName">Name: Lorem ipsum</div>
                     <div className="charDescription">In the realm of Aetherglen, a land shrouded in both beauty and peril, there walks a figure both enigmatic and formidable—Thorn Nightbreeze, an elven ranger who commands the shadows of the forest with a silent grace. Born under the Veil of Shadows, a mystical alignment of stars that blessed him with a profound connection to the darkened woods, Thorn has eyes that shimmer with the luminance of the stars themselves, capable of piercing through the deepest darkness. With a quiver of arrows, each fletched with feathers from the rare nightwing raven, and a bow carved from the heartwood of an ancient, whispering oak, Thorn seeks to uphold the delicate balance of nature against those who would seek to corrupt it. Silent as the night breeze for which he is named, he moves unseen, guided by the whispers of the forest and a steadfast resolve to protect his ancestral lands. Thorns journey is one of relentless pursuit, driven by a quest to unearth an ancient evil that threatens not only the sanctity of his home but the very fabric of the realm itself.</div>

@@ -10,7 +10,7 @@ const classes = [
     },
     {
         image: halfCasterImage,
-        name: 'Half-Caster',
+        name: 'Hybrid',
         description: 'A half-caster specializing in both magic and melee combat.'
     },
     {

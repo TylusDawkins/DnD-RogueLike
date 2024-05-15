@@ -8,9 +8,23 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 function App() {
 
+  const charObj = {
+    name: "",
+    description:"",
+    type:"",
+    level: 0,
+    stats: {
+        physical: 10,
+        fortitude: 10,
+        mental: 10,
+    },
+    features: [],
+    spells: []
+}
+
   const [characters, setCharacters] = useState([])
 
-  const [character, setCharacter] = useState(null)
+  const [character, setCharacter] = useState(charObj)
 
   const checkCharacters = () => {
     const characters = JSON.parse(localStorage.getItem("characters"))
@@ -36,7 +50,7 @@ function App() {
     },
     {
       path:"/character/:type",
-      element:<Character character={character}/>
+      element:<Character character={character} setCharacter={setCharacter}/>
     }
   ]);
 
