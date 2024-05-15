@@ -1,27 +1,48 @@
-import Class from './components/class/Class'
-import classes from './data/classesJson'
+import Home from "@pages/home/home"
+import Character from "@pages/Character/Character"
 import './App.css'
 import './globals.css'
+import { useState, useEffect } from 'react'
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 
 function App() {
 
+  const [characters, setCharacters] = useState([])
+
+  const [character, setCharacter] = useState(null)
+
+  const checkCharacters = () => {
+    const characters = JSON.parse(localStorage.getItem("characters"))
+    console.log(characters)
+    if(!characters){
+      localStorage.setItem("characters",JSON.stringify([]))
+    }
+  }
+
+  const getCharacters = () => {
+    setCharacters(JSON.parse(localStorage.getItem("characters")))
+  }
+
+  useEffect(()=>{
+    checkCharacters()
+    getCharacters()
+  },[])
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element:<Home characters={characters} setCharacters={setCharacters} setCharacter={setCharacter}/>,
+    },
+    {
+      path:"/character/:type",
+      element:<Character character={character}/>
+    }
+  ]);
+
   return (
     <div id="main">
-      <div id="header" className='text'>
-        <div>Choose Your Character!</div>
-      </div>
-      <div id="classes">
-          {classes.map((classObj,i) => {
-            return(
-              <Class 
-                image={classObj.image}
-                name={classObj.name}
-                description={classObj.description}
-                key={i}
-                href={classObj.href}
-              />)
-          })}
-        </div>
+      <RouterProvider router={router}/>
     </div>
   )
 }

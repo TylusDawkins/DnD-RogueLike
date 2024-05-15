@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
 import "./spellmodal.css"
 import '../../../src/globals.css'
-import spells from "../../data/spells.json"
+import spells from "@utils/spells.json"
 
 
 
-function SpellModal({isOpen, setIsOpen, playerSpells, setPlayerSpells, playerLevel, type}) {
+function SpellModal({isOpen, setIsOpen, playerSpells, addSpell, playerLevel, type}) {
 
     const [spellChoices, setSpellChoices] = useState([])
 
@@ -53,12 +53,8 @@ function SpellModal({isOpen, setIsOpen, playerSpells, setPlayerSpells, playerLev
         setSpellChoices(choices)
       }
 
-      const chooseSpell = (spell) => {
-        setPlayerSpells([...playerSpells, spell])
-      }
-
       const handleClick = (spell) => {
-        chooseSpell(spell)
+        addSpell(spell)
         closeModal()
       }
 

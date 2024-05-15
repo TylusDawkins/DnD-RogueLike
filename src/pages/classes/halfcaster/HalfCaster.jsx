@@ -1,7 +1,7 @@
 import halfCasterImage from "/public/assets/half-caster.png"
 import bookImage from '/assets/book_icon.png'
 import backImage from "/public/assets/back_scroll.png"
-import classFeatures from "./halfCasterFeatures.json"
+import classFeatures from "@utils/halfCasterFeatures.json"
 import "./halfcaster.css"
 import { useState } from "react"
 import FeatureModal from "../../../components/featuremodal/FeatureModal"

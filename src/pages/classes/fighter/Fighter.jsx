@@ -1,6 +1,6 @@
 import fighterImage from "/public/assets/fighter.png"
 import backImage from "/public/assets/back_scroll.png"
-import classFeatures from "./fighterFeatures.json"
+import classFeatures from "@utils/fighterFeatures.json"
 import "./fighter.css"
 import { useState } from "react"
 import FeatureModal from "../../../components/featuremodal/FeatureModal"
