@@ -13,8 +13,6 @@
     display: flex;
     align-items: center; /* Aligns items vertically centered */
     justify-content: center; /* Aligns items horizontally centered */
-    /* height: 100vh; Adjust height as needed */
-    /* gap: 10px;  */
 }
 
 .hpInfo{
