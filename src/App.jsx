@@ -1,4 +1,4 @@
-import Home from "@pages/home/home"
+import Home from "@pages/Home/Home"
 import Character from "@pages/Character/Character"
 import './App.css'
 import './globals.css'
