@@ -33,8 +33,6 @@ export default function Character({ character, setCharacter }) {
         return c.name == type
     })
 
-    console.log(charClass)
-
     const openFeatureModal = () => {
         setIsFeatureModalOpen(!isFeatureModalOpen)
     }
@@ -61,9 +59,15 @@ export default function Character({ character, setCharacter }) {
 
     const initCharacter = () => {
         let characterCopy = { ...character }
-        characterCopy.stats.hpMod = classes[type.stats.hpMod]
+        characterCopy.stats.hpMod = charClass.baseStats.hpMod
         characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
-        console.log(characterCopy)
+        characterCopy.stats.currentHp = characterCopy.stats.maxHp
+    }
+
+    const changeHp = (e) => {
+        let characterCopy = { ...character }
+        characterCopy.stats.currentHp = e.target.value
+        setCharacter(characterCopy)
     }
 
     const changeStats = (stat, change) => {
@@ -76,24 +80,30 @@ export default function Character({ character, setCharacter }) {
             alert("No points available");
             return
         }
-        let shallowcharacterCopy = { ...character }
-        shallowcharacterCopy.stats[stat] += change
-        shallowcharacterCopy.pointsLeft -= change
-        setCharacter({ ...shallowcharacterCopy })
+        let shallowCharacterCopy = { ...character }
+        shallowCharacterCopy.stats[stat] += change
+        shallowCharacterCopy.pointsLeft -= change
+        setCharacter({ ...shallowCharacterCopy })
         setPointsLeft(pointsLeft - change)
     }
 
     const levelUp = () => {
-        let shallowcharacterCopy = { ...character }
-        shallowcharacterCopy.level += 1
+        if(character.pointsLeft){
+            alert("Please spend all points before leveling")
+            return
+        }
+        let shallowCharacterCopy = { ...character }
+        shallowCharacterCopy.level += 1
+        console.log(charClass.hpMod, shallowCharacterCopy.stats.fortitude)
+        shallowCharacterCopy.stats.maxHp += charClass.baseStats.hpMod * (shallowCharacterCopy.stats.fortitude / 2)
         if (type == "Fighter") {
-            shallowcharacterCopy.pointsLeft += 2
-            shallowcharacterCopy.totalPoints += 2
-            setCharacter(shallowcharacterCopy)
+            shallowCharacterCopy.pointsLeft += 2
+            shallowCharacterCopy.totalPoints += 2
+            setCharacter(shallowCharacterCopy)
         } else {
-            shallowcharacterCopy.pointsLeft += 1
-            shallowcharacterCopy.totalPoints += 1
-            setCharacter(shallowcharacterCopy)
+            shallowCharacterCopy.pointsLeft += 1
+            shallowCharacterCopy.totalPoints += 1
+            setCharacter(shallowCharacterCopy)
         }
         if (type == "Mage") {
             if (character.level % 2 === 0) {
@@ -107,7 +117,7 @@ export default function Character({ character, setCharacter }) {
     }
 
     useEffect(() => {
-        // initCharacter()
+        initCharacter()
     }, [])
 
     return (
@@ -154,16 +164,22 @@ export default function Character({ character, setCharacter }) {
             <div className="characterCard">
                 <img className="charImage" src={charClass.image} />
                 <div className="cardText">
-                    <div className="charName">Name: Lorem ipsum</div>
+                    <div className="charName">Name: <input style={{backgroundColor:""}}></input></div>
                     <div className="charDescription">In the realm of Aetherglen, a land shrouded in both beauty and peril, there walks a figure both enigmatic and formidable—Thorn Nightbreeze, an elven ranger who commands the shadows of the forest with a silent grace. Born under the Veil of Shadows, a mystical alignment of stars that blessed him with a profound connection to the darkened woods, Thorn has eyes that shimmer with the luminance of the stars themselves, capable of piercing through the deepest darkness. With a quiver of arrows, each fletched with feathers from the rare nightwing raven, and a bow carved from the heartwood of an ancient, whispering oak, Thorn seeks to uphold the delicate balance of nature against those who would seek to corrupt it. Silent as the night breeze for which he is named, he moves unseen, guided by the whispers of the forest and a steadfast resolve to protect his ancestral lands. Thorns journey is one of relentless pursuit, driven by a quest to unearth an ancient evil that threatens not only the sanctity of his home but the very fabric of the realm itself.</div>
                 </div>
             </div>
 
             <div className="characterInfo">
                 <h1>Stats</h1>
-                <div className="levelInfo">
-                    <h1>Leve: {character.level}</h1>
-                    <h1>Points Left: {character.pointsLeft}</h1>
+                <div className="topInfo">
+                    <div className='levelInfo'>
+                        <h1>Level: {character.level}</h1>
+                        <h1>Points Left: {character.pointsLeft}</h1> 
+                    </div>
+                    <div className='hpInfo'>
+                        <h1> Max HP: {character.stats.maxHp}</h1>
+                        <h1>Current HP: <input type="number" min={0} max={character.stats.maxHp} value={character.stats.currentHp} className='hpInput' onChange={(e)=>{changeHp(e)}} style={{}}></input></h1>
+                    </div>
                 </div>
                 <div className="stats">
                     <div id="stat">

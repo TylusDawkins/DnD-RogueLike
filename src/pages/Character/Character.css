@@ -1,3 +1,36 @@
 .levelInfo {
     text-align: center;
 }
+
+.hpInput {
+    height:2em;
+    width:3em;
+    border-radius: 5px;
+    vertical-align: middle
+}
+
+.hpInfo{
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    justify-content: center; /* Aligns items horizontally centered */
+    /* height: 100vh; Adjust height as needed */
+    /* gap: 10px;  */
+}
+
+.hpInfo{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}

@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   margin:50px;
@@ -105,3 +109,9 @@
   cursor: pointer;
 }
 
+input{
+  background-color: #242424;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

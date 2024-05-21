@@ -19,6 +19,7 @@ function App() {
         physical: 10,
         fortitude: 10,
         mental: 10,
+        speed:30
     },
     features: [],
     spells: [],
