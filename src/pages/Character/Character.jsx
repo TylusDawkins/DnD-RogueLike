@@ -11,7 +11,9 @@ import { useParams } from 'react-router-dom'
 
 export default function Character({ character, setCharacter }) {
 
-    const { type } = useParams()
+    const type = character.type || useParams().type 
+
+    console.log(type)
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
@@ -22,12 +24,6 @@ export default function Character({ character, setCharacter }) {
     const [shouldOpenSpellModal, setShouldOpenSpellModal] = useState(true)
 
     const [pointsLeft, setPointsLeft] = useState(0)
-
-    // const classImage = classes[character.type || type].image
-
-    // const classFeatures = classes[character.type || type].features
-
-    // const canCast = classes[character.type || type].canCast
 
     const charClass = classes.find((c) => {
         return c.name == type
@@ -62,11 +58,38 @@ export default function Character({ character, setCharacter }) {
         characterCopy.stats.hpMod = charClass.baseStats.hpMod
         characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
         characterCopy.stats.currentHp = characterCopy.stats.maxHp
+        characterCopy.type = type
+        setCharacter({...characterCopy})
+    }
+
+    localStorage.setItem("characters",JSON.stringify({}))
+
+    const saveCharacter = () => {
+        const characters = JSON.parse(localStorage.getItem("characters"))
+        if(character.name){
+            characters[character.name] = character
+            localStorage.setItem("characters",JSON.stringify(characters))
+            console.log(characters)
+        }
+        console.log(characters)
+        console.log(character)
     }
 
     const changeHp = (e) => {
         let characterCopy = { ...character }
         characterCopy.stats.currentHp = e.target.value
+        setCharacter(characterCopy)
+    }
+
+    const changeName = (e) => {
+        let characterCopy = { ...character }
+        characterCopy.name = e.target.value
+        setCharacter(characterCopy)
+    }
+
+    const changeDescription = (e) => {
+        let characterCopy = { ...character }
+        characterCopy.description = e.target.value
         setCharacter(characterCopy)
     }
 
@@ -122,7 +145,6 @@ export default function Character({ character, setCharacter }) {
 
     return (
         <div className="main">
-
             <a href="/">
                 <img src={backImage} className="backImage" />
             </a>
@@ -157,6 +179,8 @@ export default function Character({ character, setCharacter }) {
                 setCharacter={setCharacter}
             />
 
+            <button style={{position:"fixed", width:"5%", top:"5.5em",right:"0"}} onClick={saveCharacter}>Save</button>
+
             <div onClick={openSpellBook}>
                 <img src={bookImage} className="bookImage" onClick={openSpellBook}></img>
             </div>
@@ -164,8 +188,8 @@ export default function Character({ character, setCharacter }) {
             <div className="characterCard">
                 <img className="charImage" src={charClass.image} />
                 <div className="cardText">
-                    <div className="charName">Name: <input style={{backgroundColor:""}}></input></div>
-                    <div className="charDescription">In the realm of Aetherglen, a land shrouded in both beauty and peril, there walks a figure both enigmatic and formidable—Thorn Nightbreeze, an elven ranger who commands the shadows of the forest with a silent grace. Born under the Veil of Shadows, a mystical alignment of stars that blessed him with a profound connection to the darkened woods, Thorn has eyes that shimmer with the luminance of the stars themselves, capable of piercing through the deepest darkness. With a quiver of arrows, each fletched with feathers from the rare nightwing raven, and a bow carved from the heartwood of an ancient, whispering oak, Thorn seeks to uphold the delicate balance of nature against those who would seek to corrupt it. Silent as the night breeze for which he is named, he moves unseen, guided by the whispers of the forest and a steadfast resolve to protect his ancestral lands. Thorns journey is one of relentless pursuit, driven by a quest to unearth an ancient evil that threatens not only the sanctity of his home but the very fabric of the realm itself.</div>
+                    <div className="charName">Name: <input style={{backgroundColor:""}} onChange={(e)=>{changeName(e)}}></input></div>
+                    <div className="charDescription charText"> Description: <br></br> <textarea className='dark charTextArea' onChange={(e)=>{changeDescription(e)}}></textarea></div>
                 </div>
             </div>
 

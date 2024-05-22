@@ -31,19 +31,20 @@ function App() {
 
   const [character, setCharacter] = useState(charObj)
 
-  const checkCharacters = () => {
+  const getCharacters = () => {
+    console.log(localStorage)
+    console.log(localStorage.getItem("characters"))
     const characters = JSON.parse(localStorage.getItem("characters"))
-    if(!characters){
-      localStorage.setItem("characters",JSON.stringify([]))
+    console.log(characters)
+    console.log()
+    if(Object.keys(character).length != 0){
+      setCharacters(characters)
+    }else {
+      localStorage.setItem("characters",JSON.stringify(({})))
     }
   }
 
-  const getCharacters = () => {
-    setCharacters(JSON.parse(localStorage.getItem("characters")))
-  }
-
   useEffect(()=>{
-    checkCharacters()
     getCharacters()
   },[])
 

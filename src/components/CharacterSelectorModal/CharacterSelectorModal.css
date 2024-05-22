@@ -21,3 +21,29 @@
     padding: 20px;
     transform: translate(-50%, 0);
 }
+
+.characterSelectorCard{
+    background-image: url("/assets/parchment_texture.jpg");
+    margin: auto;
+    width: 30%;
+    height: 48%;
+    display:flex;
+    flex-direction: column;
+    font-size:1.75em;
+    padding: 5px;
+}
+
+@media (max-width:1200px){
+
+    #char-selector-modal {
+        flex-wrap: nowrap;
+        overflow:auto;
+    }
+
+    .spell-choice-modal-content{
+        margin-top:1%;
+        height:100%;
+        width:65%;
+    }
+    
+}

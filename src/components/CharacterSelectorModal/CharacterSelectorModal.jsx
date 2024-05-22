@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import "./CharacterSelectorModal.css"
 import '../../../src/globals.css'
 
@@ -8,9 +8,14 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
         setIsOpen(!isOpen)
     }
 
+    useEffect(()=>{
+        console.log(characters)
+    },[])
+
+
     if (!isOpen) return
 
-    if (!characters.length) {
+    if (!Object.keys(characters).length) {
         return (
             <div id="char-selector-modal">
                 <div style={{ position: "fixed", top: ".5em", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
@@ -23,10 +28,12 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
     return isOpen ? (
         <div id="char-selector-modal">
             <div style={{ position: "fixed", top: ".5em", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
-            {characters?.map((character, i) => {
+            {Object.keys(characters).map((character, i) => {
+                console.log(characters[character])
                 return (
-                    <div className="" key={i}>
-
+                    <div className="characterSelectorCard" key={i}>
+                        <div className="charSelectorName">{characters[character].name}</div>
+                        <div className="charSelectorType">{characters[character].type}</div>
                     </div>
                 )
             })}
