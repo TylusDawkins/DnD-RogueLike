@@ -35,10 +35,11 @@ function App() {
   const getCharacters = () => {
     const characters = JSON.parse(localStorage.getItem("characters"))
     console.log(characters)
+    if(!characters) {
+      localStorage.setItem("characters",JSON.stringify(({})))
+    }
     if(Object.keys(character).length != 0){
       setCharacters(characters)
-    }else {
-      localStorage.setItem("characters",JSON.stringify(({})))
     }
   }
 

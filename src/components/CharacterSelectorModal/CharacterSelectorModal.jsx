@@ -16,14 +16,20 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
         navigate(`character/${character.type}`)
     }
 
+    const deleteCharacter = (character) => {
+        const charactersCopy = {...characters}
+        delete charactersCopy[character]
+        setCharacters(charactersCopy)
+    }
+
     if (!isOpen) return
 
     if (!Object.keys(characters).length) {
         return (
             <div id="char-selector-modal">
-                <div style={{ position: "fixed", top: ".5em", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
+                <div style={{ position: "fixed", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
 
-                <div className="centered" style={{ position: "fixed", textAlign: "center", fontWeight: "bold", fontSize: "10em" }}>Nothing here</div>
+                <div className="centered" style={{ position: "fixed", textAlign: "center", fontWeight: "bold", fontSize: "10em" }}>Please select a class and save a character</div>
             </div>
         )
     }
@@ -38,6 +44,7 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
                             <div className="charSelectorName">Name: {characters[character].name}</div>
                             <div className="charSelectorType">Class: {characters[character].type}</div>
                             <button style={{height:"2em", width:"4em"}} onClick={()=>{chooseCharacter(characters[character])}}>Select</button>
+                            <button style={{height:"2em", width:"4em"}} onClick={()=>{deleteCharacter(character)}}>Delete</button>
                         </div>
                     )
                 })}
