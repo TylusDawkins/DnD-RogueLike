@@ -1,17 +1,25 @@
 import { useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
 import "./CharacterSelectorModal.css"
 import '../../../src/globals.css'
 
-export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCharacters }) {
+export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCharacters, setCharacter }) {
+
+    const navigate = useNavigate();
+
 
     const closeModal = () => {
         setIsOpen(!isOpen)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log(characters)
-    },[])
+    }, [])
 
+    const chooseCharacter = (character) => {
+        setCharacter(character)
+        navigate(`character/${character.type}`)
+    }
 
     if (!isOpen) return
 
@@ -28,15 +36,18 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
     return isOpen ? (
         <div id="char-selector-modal">
             <div style={{ position: "fixed", top: ".5em", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
-            {Object.keys(characters).map((character, i) => {
-                console.log(characters[character])
-                return (
-                    <div className="characterSelectorCard" key={i}>
-                        <div className="charSelectorName">{characters[character].name}</div>
-                        <div className="charSelectorType">{characters[character].type}</div>
-                    </div>
-                )
-            })}
+            <div className="characters">
+                {Object.keys(characters).map((character, i) => {
+                    console.log(characters[character])
+                    return (
+                        <div className="characterSelectorCard" key={i}>
+                            <div className="charSelectorName">Name: {characters[character].name}</div>
+                            <div className="charSelectorType">Class: {characters[character].type}</div>
+                            <button style={{height:"2em", width:"4em"}} onClick={()=>{chooseCharacter(characters[character])}}>Select</button>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     ) : null
 }

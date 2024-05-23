@@ -1,20 +1,17 @@
 #char-selector-modal {
-    display: flex;
-    justify-content: space-between;
     position: fixed;
-    flex-direction: column;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    /* overflow: auto; */
+    overflow: auto;
     background-color: rgba(193, 154, 107, .5);
     flex-wrap: wrap;
 }
 
 .centered {
-    position: fixed;
+    position: absolute;
     text-align: center;
     top: 25%;
     left: 50%;
@@ -22,13 +19,23 @@
     transform: translate(-50%, 0);
 }
 
+.characters{
+    display: flex;
+    flex-direction: column;
+
+    padding-top:5em;
+    padding-left:5em;
+
+    height: 100%;
+    width: 100%;
+}
+
 .characterSelectorCard{
-    background-image: url("/assets/parchment_texture.jpg");
-    margin: auto;
-    width: 30%;
-    height: 48%;
+    width: calc(100% - 5em);
+    height: calc(100% - 18em);
     display:flex;
     flex-direction: column;
+    background-image: url("/assets/parchment_texture.jpg");
     font-size:1.75em;
     padding: 5px;
 }

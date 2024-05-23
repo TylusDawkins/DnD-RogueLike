@@ -62,14 +62,13 @@ export default function Character({ character, setCharacter }) {
         setCharacter({...characterCopy})
     }
 
-    localStorage.setItem("characters",JSON.stringify({}))
-
     const saveCharacter = () => {
         const characters = JSON.parse(localStorage.getItem("characters"))
         if(character.name){
-            characters[character.name] = character
-            localStorage.setItem("characters",JSON.stringify(characters))
             console.log(characters)
+            characters[character.name] = character
+            console.log(characters)
+            localStorage.setItem("characters",JSON.stringify(characters))
         }
         console.log(characters)
         console.log(character)
@@ -188,8 +187,8 @@ export default function Character({ character, setCharacter }) {
             <div className="characterCard">
                 <img className="charImage" src={charClass.image} />
                 <div className="cardText">
-                    <div className="charName">Name: <input style={{backgroundColor:""}} onChange={(e)=>{changeName(e)}}></input></div>
-                    <div className="charDescription charText"> Description: <br></br> <textarea className='dark charTextArea' onChange={(e)=>{changeDescription(e)}}></textarea></div>
+                    <div className="charName">Name: <input style={{backgroundColor:""}} onChange={(e)=>{changeName(e)}} value={character.name}></input></div>
+                    <div className="charDescription charText"> Description: <br></br> <textarea className='dark charTextArea' onChange={(e)=>{changeDescription(e)}} value={character.description}></textarea></div>
                 </div>
             </div>
 

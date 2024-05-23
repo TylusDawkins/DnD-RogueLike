@@ -136,3 +136,12 @@ input{
   border: none;
   border-radius: 5px;
 }
+
+button{
+  background-color: #242424;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}

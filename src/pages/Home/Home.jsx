@@ -7,7 +7,7 @@ import CharSelectorModal from "@components/CharacterSelectorModal/CharacterSelec
 import { useState } from 'react'
 
 
-function Home({characters, setCharacters}) {
+function Home({characters, setCharacters, setCharacter}) {
 
 
   const [isCharSelectorModalOpen, setIsCharSelectorModalOpen] = useState(false)
@@ -19,6 +19,7 @@ function Home({characters, setCharacters}) {
         setIsOpen={setIsCharSelectorModalOpen}
         characters={characters}
         setCharacters={setCharacters}
+        setCharacter={setCharacter}
       />
       <img
         src={charSelectorIcon}
