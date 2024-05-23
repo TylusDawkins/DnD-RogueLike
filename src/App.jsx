@@ -9,6 +9,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 function App() {
 
   const charObj = {
+    id: crypto.randomUUID(),
     name: "",
     description:"",
     type:"",
@@ -33,6 +34,7 @@ function App() {
 
   const getCharacters = () => {
     const characters = JSON.parse(localStorage.getItem("characters"))
+    console.log(characters)
     if(Object.keys(character).length != 0){
       setCharacters(characters)
     }else {

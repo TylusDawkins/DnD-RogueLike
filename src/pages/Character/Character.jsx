@@ -13,7 +13,6 @@ export default function Character({ character, setCharacter }) {
 
     const type = character.type || useParams().type 
 
-
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
     const [isSpellModalOpen, setIsSpellModalOpen] = useState(false)
@@ -64,7 +63,8 @@ export default function Character({ character, setCharacter }) {
     const saveCharacter = () => {
         const characters = JSON.parse(localStorage.getItem("characters"))
         if(character.name){
-            characters[character.name] = character
+            console.log(character)
+            characters[character.id] = character
             localStorage.setItem("characters",JSON.stringify(characters))
         }
     }
