@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import "./CharacterSelectorModal.css"
 import '../../../src/globals.css'
@@ -11,10 +10,6 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
     const closeModal = () => {
         setIsOpen(!isOpen)
     }
-
-    useEffect(() => {
-        console.log(characters)
-    }, [])
 
     const chooseCharacter = (character) => {
         setCharacter(character)
@@ -38,7 +33,6 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
             <div style={{ position: "fixed", top: ".5em", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
             <div className="characters">
                 {Object.keys(characters).map((character, i) => {
-                    console.log(characters[character])
                     return (
                         <div className="characterSelectorCard" key={i}>
                             <div className="charSelectorName">Name: {characters[character].name}</div>

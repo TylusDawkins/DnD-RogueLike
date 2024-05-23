@@ -13,7 +13,6 @@ export default function Character({ character, setCharacter }) {
 
     const type = character.type || useParams().type 
 
-    console.log(type)
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
@@ -65,13 +64,9 @@ export default function Character({ character, setCharacter }) {
     const saveCharacter = () => {
         const characters = JSON.parse(localStorage.getItem("characters"))
         if(character.name){
-            console.log(characters)
             characters[character.name] = character
-            console.log(characters)
             localStorage.setItem("characters",JSON.stringify(characters))
         }
-        console.log(characters)
-        console.log(character)
     }
 
     const changeHp = (e) => {
@@ -98,7 +93,6 @@ export default function Character({ character, setCharacter }) {
             return
         }
         if (change > 0 && !character.pointsLeft) {
-            console.log(change)
             alert("No points available");
             return
         }
@@ -116,7 +110,6 @@ export default function Character({ character, setCharacter }) {
         }
         let shallowCharacterCopy = { ...character }
         shallowCharacterCopy.level += 1
-        console.log(charClass.hpMod, shallowCharacterCopy.stats.fortitude)
         shallowCharacterCopy.stats.maxHp += charClass.baseStats.hpMod * (shallowCharacterCopy.stats.fortitude / 2)
         if (type == "Fighter") {
             shallowCharacterCopy.pointsLeft += 2

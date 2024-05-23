@@ -52,7 +52,6 @@ function Mage() {
             return
         }
         if (change > 0 && !pointsLeft) {
-            console.log(change)
             alert("No points available");
             return
         }

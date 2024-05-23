@@ -32,10 +32,7 @@ function App() {
   const [character, setCharacter] = useState(charObj)
 
   const getCharacters = () => {
-    console.log(localStorage)
-    console.log(localStorage.getItem("characters"))
     const characters = JSON.parse(localStorage.getItem("characters"))
-    console.log(characters)
     if(Object.keys(character).length != 0){
       setCharacters(characters)
     }else {
