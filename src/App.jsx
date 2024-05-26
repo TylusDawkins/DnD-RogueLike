@@ -51,7 +51,7 @@ function App() {
     pointsLeft:0,
     totalPoints:0,
     spellPointsMax:0,
-    currentSpellPoints:100
+    currentSpellPoints:0
 }
 
   const [characters, setCharacters] = useState([])
