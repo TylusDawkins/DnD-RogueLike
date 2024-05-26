@@ -1,8 +1,6 @@
 import './spellbook.css'
 import { useNavigate } from 'react-router-dom'
-
-
-
+import spellLimits from '../../utilities/spellLimits'
 
 function Class({spells, isOpen, setIsOpen}) {
 

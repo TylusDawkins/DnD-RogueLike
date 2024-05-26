@@ -25,7 +25,9 @@ function App() {
     features: [],
     spells: [],
     pointsLeft:0,
-    totalPoints:0
+    totalPoints:0,
+    spellPointsMax:0,
+    currentSpellPoints:0
 }
 
   const [characters, setCharacters] = useState([])
@@ -44,6 +46,7 @@ function App() {
   }
 
   useEffect(()=>{
+    console.log('effect spam')
     getCharacters()
   },[])
 

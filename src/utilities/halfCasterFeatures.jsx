@@ -1,4 +1,4 @@
-[
+export default [
     { 
         "name": "Bardic Inspiration", 
         "dependancy": null,
@@ -179,7 +179,12 @@
         "dependancy": null,
         "conflifts": [null],
         "tier": 1,
-        "stackable": true
+        "stackable": true,
+        cb:((char,setChar)=>{
+            const charCopy = {...char}
+            charCopy.pointsLeft+=2
+            setChar(charCopy)
+        })
     },
     {
         "name":"Martial Adept",

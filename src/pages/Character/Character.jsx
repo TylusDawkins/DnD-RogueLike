@@ -11,8 +11,6 @@ import { useParams } from 'react-router-dom'
 
 export default function Character({ character, setCharacter }) {
 
-    const type = character.type || useParams().type 
-
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
     const [isSpellModalOpen, setIsSpellModalOpen] = useState(false)
@@ -22,6 +20,8 @@ export default function Character({ character, setCharacter }) {
     const [shouldOpenSpellModal, setShouldOpenSpellModal] = useState(true)
 
     const [pointsLeft, setPointsLeft] = useState(0)
+
+    const type = useParams().type 
 
     const charClass = classes.find((c) => {
         return c.name == type
@@ -54,19 +54,22 @@ export default function Character({ character, setCharacter }) {
     const initCharacter = () => {
         let characterCopy = { ...character }
         characterCopy.stats.hpMod = charClass.baseStats.hpMod
-        characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
-        characterCopy.stats.currentHp = characterCopy.stats.maxHp
+        characterCopy.stats.maxHp = character.stats.maxHp ||characterCopy.stats.hpMod * characterCopy.stats.fortitude
+        characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
         characterCopy.type = type
+        characterCopy.maxSpellPoints = charClass.spellPoints[character.level]
+        characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
+        characterCopy.type = character.type || type
         setCharacter({...characterCopy})
     }
 
     const saveCharacter = () => {
         const characters = JSON.parse(localStorage.getItem("characters"))
         if(character.name){
-            console.log(character)
             characters[character.id] = character
             localStorage.setItem("characters",JSON.stringify(characters))
         }
+
     }
 
     const changeHp = (e) => {
@@ -96,10 +99,10 @@ export default function Character({ character, setCharacter }) {
             alert("No points available");
             return
         }
-        let shallowCharacterCopy = { ...character }
-        shallowCharacterCopy.stats[stat] += change
-        shallowCharacterCopy.pointsLeft -= change
-        setCharacter({ ...shallowCharacterCopy })
+        let characterCopy = { ...character }
+        characterCopy.stats[stat] += change
+        characterCopy.pointsLeft -= change
+        setCharacter({ ...characterCopy })
         setPointsLeft(pointsLeft - change)
     }
 
@@ -108,17 +111,22 @@ export default function Character({ character, setCharacter }) {
             alert("Please spend all points before leveling")
             return
         }
-        let shallowCharacterCopy = { ...character }
-        shallowCharacterCopy.level += 1
-        shallowCharacterCopy.stats.maxHp += charClass.baseStats.hpMod * (shallowCharacterCopy.stats.fortitude / 2)
+        if(character.level >=20){
+            alert("You are at your maximum level")
+            return
+        }
+        let characterCopy = { ...character }
+        characterCopy.level += 1
+        characterCopy.stats.maxHp += charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2)
+        characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
         if (type == "Fighter") {
-            shallowCharacterCopy.pointsLeft += 2
-            shallowCharacterCopy.totalPoints += 2
-            setCharacter(shallowCharacterCopy)
+            characterCopy.pointsLeft += 2
+            characterCopy.totalPoints += 2
+            setCharacter(characterCopy)
         } else {
-            shallowCharacterCopy.pointsLeft += 1
-            shallowCharacterCopy.totalPoints += 1
-            setCharacter(shallowCharacterCopy)
+            characterCopy.pointsLeft += 1
+            characterCopy.totalPoints += 1
+            setCharacter(characterCopy)
         }
         if (type == "Mage") {
             if (character.level % 2 === 0) {
@@ -135,17 +143,33 @@ export default function Character({ character, setCharacter }) {
         initCharacter()
     }, [])
 
+    useEffect(() => {
+        console.log(character)
+    }, [character])
+
     return (
         <div className="main">
             <a href="/">
                 <img src={backImage} className="backImage" />
             </a>
 
-            <SpellBook
-                spells={character.spells}
-                isOpen={isSpellBookOpen}
-                setIsOpen={setIsSpellBookOpen}
-            />
+            <div className='topRight'> 
+             {charClass.canCast?
+             <>
+                <SpellBook
+                    spells={character.spells}
+                    isOpen={isSpellBookOpen}
+                    setIsOpen={setIsSpellBookOpen}
+                /> 
+                
+                <div onClick={openSpellBook}>
+                    <img src={bookImage} className="bookImage" onClick={openSpellBook}></img>
+                </div></>:null}
+            
+                <button onClick={saveCharacter}>Save</button>
+            </div>
+            
+            
 
             <SpellModal
                 playerLevel={character.level}
@@ -154,6 +178,7 @@ export default function Character({ character, setCharacter }) {
                 setIsOpen={setIsSpellModalOpen}
                 playerSpells={character.spells}
                 addSpell={addSpell}
+                currentSpellPoints={character.currentSpellPoints}
             />
 
             <FeatureModal
@@ -171,12 +196,6 @@ export default function Character({ character, setCharacter }) {
                 setCharacter={setCharacter}
             />
 
-            <button style={{position:"fixed", width:"5%", top:"5.5em",right:"0"}} onClick={saveCharacter}>Save</button>
-
-            <div onClick={openSpellBook}>
-                <img src={bookImage} className="bookImage" onClick={openSpellBook}></img>
-            </div>
-
             <div className="characterCard">
                 <img className="charImage" src={charClass.image} />
                 <div className="cardText">
@@ -190,12 +209,16 @@ export default function Character({ character, setCharacter }) {
                 <div className="topInfo">
                     <div className='levelInfo'>
                         <h1>Level: {character.level}</h1>
-                        <h1>Points Left: {character.pointsLeft}</h1> 
+                        <h1>Stat Points Left: {character.pointsLeft}</h1> 
                     </div>
                     <div className='hpInfo'>
                         <h1> Max HP: {character.stats.maxHp}</h1>
                         <h1>Current HP: <input type="number" min={0} max={character.stats.maxHp} value={character.stats.currentHp} className='hpInput' onChange={(e)=>{changeHp(e)}} style={{}}></input></h1>
                     </div>
+                    {charClass.canCast ? <div className='spellPointsInfo'>
+                        <h1>Max Spell Points: {character.maxSpellPoints}</h1>
+                        <h1>Current Spell Points: {character.currentSpellPoints}</h1>
+                    </div>:null}
                 </div>
                 <div className="stats">
                     <div id="stat">

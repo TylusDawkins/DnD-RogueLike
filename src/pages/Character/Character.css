@@ -1,5 +1,8 @@
 .levelInfo {
+    display:flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 .hpInput {
@@ -9,13 +12,15 @@
     vertical-align: middle
 }
 
-.hpInfo{
-    display: flex;
-    align-items: center; /* Aligns items vertically centered */
-    justify-content: center; /* Aligns items horizontally centered */
-}
 
 .hpInfo{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.spellPointsInfo{
     display:flex;
     flex-direction: column;
     text-align: center;
@@ -32,3 +37,25 @@
     font-weight: bold;
     unicode-bidi: isolate;
 }
+
+.topInfo{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width:100%;
+    margin-bottom:3em
+}
+
+.topRight{
+    position:fixed;
+    width:5%;
+    top:1em;
+    right:0;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.bookImage {
+    width: 100%;
+  }

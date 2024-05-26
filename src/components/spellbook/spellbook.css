@@ -1,5 +1,5 @@
 .spell-book-modal{
-    position: absolute;
+    position: fixed;
     z-index: 1;
     left: 10%;
     top: 0%;
@@ -29,6 +29,7 @@
     position:absolute;
     top: 1%;
     right: 2%;
+    font-size:2em;
 }
 
 .spell{
