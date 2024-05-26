@@ -148,10 +148,6 @@ export default function Character({ character, setCharacter }) {
         initCharacter()
     }, [])
 
-    useEffect(() => {
-        console.log(character)
-    }, [character])
-
     return (
         <div className="main">
             <a href="/">
