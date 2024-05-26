@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-function Class({image, description, name, href}) {
+function Class({image, description, name, character}) {
 
     const navigate = useNavigate();
 
     return (
-        <div className="card" onClick={()=>{navigate(`character/${name}`)}} style={{overflow:"clip"}}>
+        <div className="card" onClick={()=>{navigate(`character/${name}/${character.id}`)}} style={{overflow:"clip"}}>
             <div className="card-name">{name}</div>
             <img src={image} className="card-image" alt={name+"image"} />
             <div className="card-description" style={{color:'black', WebkitTextFillColor:''}}>

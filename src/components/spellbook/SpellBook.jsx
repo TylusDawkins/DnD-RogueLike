@@ -11,20 +11,11 @@ function Class({spells, isOpen, setIsOpen, character, setCharacter}) {
     const castSpell = (spell) =>{
         const characterCopy = {...character}
         if((character.currentSpellPoints - spellCosts[spell.level] >= 0)){
-            // console.log("points available")
             if(spellLimits[spell.level]){
-                // console.log("High level spell")
-                console.log(typeof character.spellSlotsUsed[spell.level], character.spellSlotsUsed[spell.level])
-                console.log(typeof spellLimits[spell.level], spellLimits[spell.level])
-                console.log(character.spellSlotsUsed[spell.level], spellLimits[spell.level])
-                console.log(character.spellSlotsUsed[spell.level] == spellLimits[spell.level])
-                // console.log(spellLimits)
-                // console.log(spell.level)
                 if(character.spellSlotsUsed[spell.level] >= spellLimits[spell.level]){
                     alert(`You can only use ${spellLimits[spell.level]} spells at that level before resting, please rest.`)
                     return
                 }
-                // console.log("High Level spell cast!")
                 characterCopy.spellSlotsUsed[spell.level] += 1
             }
             characterCopy.currentSpellPoints -= spellCosts[spell.level]

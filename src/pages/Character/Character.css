@@ -49,13 +49,44 @@
 .topRight{
     position:fixed;
     width:5%;
-    top:1em;
-    right:0;
+    height:7.5em;
+    right:1em;
     display:flex;
-    text-align: center;
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
-.bookImage {
+.gameplayButtons{
+    display:flex;
+}
+
+.spellBookIcon{
+    width:5em;
+}
+
+.restIcon{
+    width:5em;
+}
+
+.deathIcon{
+    width:5em;
+}
+
+.icon{
+    width:5vw;
+    cursor: pointer;
+}
+
+.saveButton{
+    margin-top: 2vh;
+    width:5vw;
+    font-size: 1.5vw;
+}
+
+.levelButton {
     width: 100%;
+    height: 2em;
+    margin-top: 10px;
+    font-size: 1.5vw
   }

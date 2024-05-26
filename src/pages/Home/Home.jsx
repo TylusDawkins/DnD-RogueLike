@@ -7,7 +7,7 @@ import CharSelectorModal from "@components/CharacterSelectorModal/CharacterSelec
 import { useState } from 'react'
 
 
-function Home({characters, setCharacters, setCharacter}) {
+function Home({characters, setCharacters, setCharacter, character}) {
 
 
   const [isCharSelectorModalOpen, setIsCharSelectorModalOpen] = useState(false)
@@ -39,6 +39,7 @@ function Home({characters, setCharacters, setCharacter}) {
               description={classObj.description}
               key={i}
               href={classObj.href}
+              character={character}
             />)
         })}
       </div>

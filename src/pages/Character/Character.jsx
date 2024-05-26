@@ -1,5 +1,7 @@
 import bookImage from '/assets/book_icon.png'
-import backImage from "/public/assets/back_scroll.png"
+import backButtonImage from "/public/assets/back_scroll.png"
+import restIcon from '@assets/rest_icon.png'
+import deathIcon from '@assets/death_icon.png'
 import "./Character.css"
 import "/src/globals.css"
 import { useEffect, useState } from "react"
@@ -9,7 +11,7 @@ import SpellBook from "@components/spellbook/SpellBook"
 import classes from "@utils/classes"
 import { useParams } from 'react-router-dom'
 
-export default function Character({ character, setCharacter }) {
+export default function Character({ character, setCharacter, characters, getCharacters }) {
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
 
@@ -21,7 +23,7 @@ export default function Character({ character, setCharacter }) {
 
     const [pointsLeft, setPointsLeft] = useState(0)
 
-    const type = useParams().type
+    const {type, id} = useParams()
 
     const charClass = classes.find((c) => {
         return c.name == type
@@ -51,18 +53,32 @@ export default function Character({ character, setCharacter }) {
         setCharacter({ ...characterCopy })
     }
 
-    const initCharacter = () => {
-        let characterCopy = { ...character }
-        characterCopy.stats.hpMod = charClass.baseStats.hpMod
-        characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
-        characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
-        characterCopy.type = type
-        if (charClass.canCast) {
-            characterCopy.maxSpellPoints = charClass.spellPoints[character.level]
-            characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
+    const rest = () => {
+        const characterCopy = { ...character }
+        characterCopy.stats.currentHp = character.stats.maxHp
+        characterCopy.currentSpellPoints = character.maxSpellPoints
+        for (const spellslot in character.spellSlotsUsed) {
+            character.spellSlotsUsed[spellslot] = 0
         }
-        characterCopy.type = character.type || type
         setCharacter({ ...characterCopy })
+    }
+
+    const initCharacter = () => {
+        getCharacters()
+        console.log(characters)
+        if (character.level === 0) {
+            let characterCopy = { ...character }
+            characterCopy.stats.hpMod = charClass.baseStats.hpMod
+            characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
+            characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
+            characterCopy.type = type
+            if (charClass.canCast) {
+                characterCopy.maxSpellPoints = charClass.spellPoints[character.level]
+                characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
+            }
+            characterCopy.type = character.type || type
+            setCharacter({ ...characterCopy })
+        }
     }
 
     const saveCharacter = () => {
@@ -71,12 +87,14 @@ export default function Character({ character, setCharacter }) {
             characters[character.id] = character
             localStorage.setItem("characters", JSON.stringify(characters))
         }
+        console.log("Character saved!")
     }
 
     const changeHp = (e) => {
         let characterCopy = { ...character }
         characterCopy.stats.currentHp = e.target.value
         setCharacter(characterCopy)
+        saveCharacter()
     }
 
     const changeName = (e) => {
@@ -105,6 +123,7 @@ export default function Character({ character, setCharacter }) {
         characterCopy.pointsLeft -= change
         setCharacter({ ...characterCopy })
         setPointsLeft(pointsLeft - change)
+        saveCharacter() 
     }
 
     const levelUp = () => {
@@ -120,9 +139,9 @@ export default function Character({ character, setCharacter }) {
         characterCopy.level += 1
         characterCopy.stats.maxHp += charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2)
         characterCopy.stats.currentHp += charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2)
-        if(charClass.canCast){
+        if (charClass.canCast) {
             characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
-            characterCopy.currentSpellPoints += (charClass.spellPoints[characterCopy.level] - charClass.spellPoints[characterCopy.level-1])
+            characterCopy.currentSpellPoints += (charClass.spellPoints[characterCopy.level] - charClass.spellPoints[characterCopy.level - 1])
         }
         if (type == "Fighter") {
             characterCopy.pointsLeft += 2
@@ -148,26 +167,51 @@ export default function Character({ character, setCharacter }) {
         initCharacter()
     }, [])
 
+    useEffect(() => {
+        console.log(character)
+    }, [character])
+
+    useEffect(()=>{
+        let someCharacter
+        for(const char in characters){
+            console.log(characters[char])
+            console.log(characters[char].id)
+            console.log(id)
+            if(characters[char].id === id){
+                console.log(true)
+                someCharacter = characters[char]
+                setCharacter(someCharacter)
+            }
+        }
+        console.log(someCharacter)
+        console.log(characters)
+    },[characters])
+
     return (
         <div className="main">
             <a href="/">
-                <img src={backImage} className="backImage" />
+                <img src={backButtonImage} className="backImage icon" />
             </a>
 
             <div className='topRight'>
-                {charClass.canCast ?
-                    <>
-                        <SpellBook
-                            spells={character.spells}
-                            isOpen={isSpellBookOpen}
-                            setIsOpen={setIsSpellBookOpen}
-                            character={character}
-                            setCharacter={setCharacter}
-                        />
-                        <div onClick={openSpellBook}>
-                            <img src={bookImage} className="bookImage" onClick={openSpellBook}></img>
-                        </div></> : null}
-                <button onClick={saveCharacter}>Save</button>
+                <div className='gameplayButtons'>
+                    {charClass.canCast ?
+                        <>
+                            <SpellBook
+                                spells={character.spells}
+                                isOpen={isSpellBookOpen}
+                                setIsOpen={setIsSpellBookOpen}
+                                character={character}
+                                setCharacter={setCharacter}
+                            />
+                            <img src={bookImage} className="spellBookIcon icon" onClick={openSpellBook} />
+                        </> :
+                        null
+                    }
+                    <img src={restIcon} onClick={rest} className='restIcon icon' />
+                    <img src={deathIcon} className='deathIconb icon' />
+                </div>
+                <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
 
 
@@ -214,7 +258,7 @@ export default function Character({ character, setCharacter }) {
                     </div>
                     <div className='hpInfo'>
                         <h1> Max HP: {character.stats.maxHp}</h1>
-                        <h1>Current HP: <input type="number" min={0} max={character.stats.maxHp} value={character.stats.currentHp} className='hpInput' onChange={(e) => { changeHp(e) }} style={{}}></input></h1>
+                        <h1>Current HP: <input type="number" min={0} max={character.stats.maxHp} value={character.stats.currentHp} className='hpInput' onChange={(e) => { changeHp(e) }}></input></h1>
                     </div>
                     {charClass.canCast ? <div className='spellPointsInfo'>
                         <h1>Max Spell Points: {character.maxSpellPoints}</h1>
@@ -244,7 +288,7 @@ export default function Character({ character, setCharacter }) {
                         </div>
                     </div>
                 </div>
-                <button id="levelButton" onClick={levelUp}>Level up!</button>
+                <button className="levelButton" onClick={levelUp}>Level up!</button>
                 <div className="features">
                     {character.features.map((feature, i) => {
                         return <h3 key={i}>Level {i + 1}: {feature.name}</h3>

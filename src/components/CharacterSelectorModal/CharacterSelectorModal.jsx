@@ -13,7 +13,7 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
 
     const chooseCharacter = (character) => {
         setCharacter(character)
-        navigate(`character/${character.type}`)
+        navigate(`character/${character.type}/${character.id}`)
     }
 
     const deleteCharacter = (character) => {
