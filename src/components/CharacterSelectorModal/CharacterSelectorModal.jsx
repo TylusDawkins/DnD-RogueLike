@@ -27,9 +27,9 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
     if (!Object.keys(characters).length) {
         return (
             <div id="char-selector-modal">
-                <div style={{ position: "fixed", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
+                <div style={{ position: "fixed", right: "1em", fontSize: "2em", cursor:"pointer"}} onClick={closeModal}>X</div>
 
-                <div className="centered" style={{ position: "fixed", textAlign: "center", fontWeight: "bold", fontSize: "10em" }}>Please select a class and save a character</div>
+                <div className="" style={{ position: "fixed", textAlign: "center", fontWeight: "bold", fontSize: "10em", margin:"10% auto" }}>Please select a class and save a character</div>
             </div>
         )
     }
