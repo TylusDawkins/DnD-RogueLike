@@ -23,7 +23,7 @@ export default function Character({ character, setCharacter, characters, getChar
 
     const [pointsLeft, setPointsLeft] = useState(0)
 
-    const {type, id} = useParams()
+    const { type, id } = useParams()
 
     const charClass = classes.find((c) => {
         return c.name == type
@@ -67,29 +67,26 @@ export default function Character({ character, setCharacter, characters, getChar
 
     const reset = () => {
         const resetConfirmation = confirm("Are you sure that you want to reset your character's progress?")
-        if(resetConfirmation){
-        console.log(resetConfirmation)
-        const characterCopy = { ...character }
-        console.log(characterCopy)
-        characterCopy.stats.physical = 10
-        characterCopy.stats.fortitude = 10
-        characterCopy.stats.mental = 10
-        characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
-        characterCopy.stats.currentHp = characterCopy.stats.maxHp
-        characterCopy.features = []
-        characterCopy.spells = []
-        characterCopy.level = 0
-        characterCopy.pointsLeft = 0
-        characterCopy.totalPoints = 0
-        characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
-        characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
-        setCharacter(characterCopy)
+        if (resetConfirmation) {
+            const characterCopy = { ...character }
+            characterCopy.stats.physical = 10
+            characterCopy.stats.fortitude = 10
+            characterCopy.stats.mental = 10
+            characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
+            characterCopy.stats.currentHp = characterCopy.stats.maxHp
+            characterCopy.features = []
+            characterCopy.spells = []
+            characterCopy.level = 0
+            characterCopy.pointsLeft = 0
+            characterCopy.totalPoints = 0
+            characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
+            characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+            setCharacter(characterCopy)
         }
     }
 
     const initCharacter = () => {
         getCharacters()
-        console.log(characters)
         if (character.level === 0) {
             let characterCopy = { ...character }
             characterCopy.stats.hpMod = charClass.baseStats.hpMod
@@ -147,7 +144,7 @@ export default function Character({ character, setCharacter, characters, getChar
         characterCopy.pointsLeft -= change
         setCharacter({ ...characterCopy })
         setPointsLeft(pointsLeft - change)
-        saveCharacter() 
+        saveCharacter()
     }
 
     const levelUp = () => {
@@ -192,24 +189,14 @@ export default function Character({ character, setCharacter, characters, getChar
     }, [])
 
     useEffect(() => {
-        console.log(character)
-    }, [character])
-
-    useEffect(()=>{
         let someCharacter
-        for(const char in characters){
-            console.log(characters[char])
-            console.log(characters[char].id)
-            console.log(id)
-            if(characters[char].id === id){
-                console.log(true)
+        for (const char in characters) {
+            if (characters[char].id === id) {
                 someCharacter = characters[char]
                 setCharacter(someCharacter)
             }
         }
-        console.log(someCharacter)
-        console.log(characters)
-    },[characters])
+    }, [characters])
 
     return (
         <div className="main">

@@ -60,10 +60,6 @@ function App() {
     getCharacters()
   },[])
 
-  useEffect(()=>{
-    console.log(characters)
-  },[characters])
-
   const router = createBrowserRouter([
     {
       path: "/",
