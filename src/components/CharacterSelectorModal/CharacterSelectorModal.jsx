@@ -20,6 +20,7 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
         const charactersCopy = {...characters}
         delete charactersCopy[character]
         setCharacters(charactersCopy)
+        localStorage.setItem("characters", JSON.stringify(charactersCopy))
     }
 
     if (!isOpen) return
