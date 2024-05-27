@@ -36,15 +36,17 @@ export default function CharSelectorModal({ isOpen, setIsOpen, characters, setCh
 
     return isOpen ? (
         <div id="char-selector-modal">
-            <div style={{ position: "fixed", top: ".5em", right: "1em", fontSize: "2em" }} onClick={closeModal}>X</div>
-            <div className="characters">
+            <div style={{ position: "absolute", top: "1.5em", right: "3.5em", fontSize: "3em", cursor:"pointer", zIndex:"2"}} onClick={closeModal}>X</div>
+            <div className="characters centered">
                 {Object.keys(characters).map((character, i) => {
                     return (
                         <div className="characterSelectorCard" key={i}>
                             <div className="charSelectorName">Name: {characters[character].name}</div>
                             <div className="charSelectorType">Class: {characters[character].type}</div>
-                            <button style={{height:"2em", width:"4em"}} onClick={()=>{chooseCharacter(characters[character])}}>Select</button>
-                            <button style={{height:"2em", width:"4em"}} onClick={()=>{deleteCharacter(character)}}>Delete</button>
+                            <div className='selectDeleteDiv'>
+                                <button style={{height:"2em", width:"4em"}} onClick={()=>{chooseCharacter(characters[character])}}>Select</button>
+                                <button style={{height:"2em", width:"4em"}} onClick={()=>{deleteCharacter(character)}}>Delete</button>
+                            </div>
                         </div>
                     )
                 })}
