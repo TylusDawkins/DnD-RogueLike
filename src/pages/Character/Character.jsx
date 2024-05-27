@@ -45,12 +45,14 @@ export default function Character({ character, setCharacter, characters, getChar
         const characterCopy = { ...character }
         characterCopy.spells.push(spell)
         setCharacter({ ...characterCopy })
+        saveCharacter()
     }
 
     const addFeature = (feature) => {
         const characterCopy = { ...character }
         characterCopy.features.push(feature)
         setCharacter({ ...characterCopy })
+        saveCharacter()
     }
 
     const rest = () => {
@@ -61,6 +63,28 @@ export default function Character({ character, setCharacter, characters, getChar
             character.spellSlotsUsed[spellslot] = 0
         }
         setCharacter({ ...characterCopy })
+    }
+
+    const reset = () => {
+        const resetConfirmation = confirm("Are you sure that you want to reset your character's progress?")
+        if(resetConfirmation){
+        console.log(resetConfirmation)
+        const characterCopy = { ...character }
+        console.log(characterCopy)
+        characterCopy.stats.physical = 10
+        characterCopy.stats.fortitude = 10
+        characterCopy.stats.mental = 10
+        characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
+        characterCopy.stats.currentHp = characterCopy.stats.maxHp
+        characterCopy.features = []
+        characterCopy.spells = []
+        characterCopy.level = 0
+        characterCopy.pointsLeft = 0
+        characterCopy.totalPoints = 0
+        characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
+        characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+        setCharacter(characterCopy)
+        }
     }
 
     const initCharacter = () => {
@@ -203,13 +227,14 @@ export default function Character({ character, setCharacter, characters, getChar
                                 setIsOpen={setIsSpellBookOpen}
                                 character={character}
                                 setCharacter={setCharacter}
+                                saveCharacter={saveCharacter}
                             />
                             <img src={bookImage} className="spellBookIcon icon" onClick={openSpellBook} />
                         </> :
                         null
                     }
                     <img src={restIcon} onClick={rest} className='restIcon icon' />
-                    <img src={deathIcon} className='deathIconb icon' />
+                    <img src={deathIcon} onClick={reset} className='deathIconb icon' />
                 </div>
                 <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
