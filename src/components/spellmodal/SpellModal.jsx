@@ -5,7 +5,7 @@ import spells from "@utils/spells.json"
 
 
 
-function SpellModal({isOpen, setIsOpen, playerSpells, addSpell, playerLevel, type}) {
+function SpellModal({isOpen, setIsOpen, playerSpells, addSpell, playerLevel, type, saveCharacter}) {
 
     const [spellChoices, setSpellChoices] = useState([])
 
@@ -55,6 +55,7 @@ function SpellModal({isOpen, setIsOpen, playerSpells, addSpell, playerLevel, typ
 
       const handleClick = (spell) => {
         addSpell(spell)
+        saveCharacter()
         closeModal()
       }
 

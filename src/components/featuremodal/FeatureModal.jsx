@@ -3,7 +3,7 @@ import "./featuremodal.css"
 
 
 
-function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, addFeature, classFeatures, playerLevel, character, setCharacter}) {
+function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, addFeature, classFeatures, playerLevel, character, setCharacter, saveCharacter}) {
 
     const tier1Features = classFeatures.filter(x => x.tier <= 1)
     const tier2Features = classFeatures.filter(x => x.tier <= 2)
@@ -61,6 +61,7 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
         if(feature.cb){
           feature.cb(character, setCharacter)
         }
+        saveCharacter()
         closeModal()
       }
 

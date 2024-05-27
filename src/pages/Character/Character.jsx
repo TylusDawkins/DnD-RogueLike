@@ -239,8 +239,6 @@ export default function Character({ character, setCharacter, characters, getChar
                 <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
 
-
-
             <SpellModal
                 playerLevel={character.level}
                 type="mage"
@@ -249,6 +247,7 @@ export default function Character({ character, setCharacter, characters, getChar
                 playerSpells={character.spells}
                 addSpell={addSpell}
                 currentSpellPoints={character.currentSpellPoints}
+                saveCharacter={saveCharacter}
             />
 
             <FeatureModal
@@ -264,6 +263,7 @@ export default function Character({ character, setCharacter, characters, getChar
                 playerLevel={character.level}
                 character={character}
                 setCharacter={setCharacter}
+                saveCharacter={saveCharacter}
             />
 
             <div className="characterCard">

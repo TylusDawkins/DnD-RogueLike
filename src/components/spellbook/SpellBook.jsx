@@ -2,7 +2,7 @@ import './spellbook.css'
 import spellLimits from '@utils/spellLimits'
 import spellCosts from '@utils/spellCosts'
 
-function Class({spells, isOpen, setIsOpen, character, setCharacter}) {
+function Class({spells, isOpen, setIsOpen, character, setCharacter, saveCharacter}) {
 
     const closeModal = () => {
         setIsOpen(!isOpen)
@@ -19,6 +19,7 @@ function Class({spells, isOpen, setIsOpen, character, setCharacter}) {
                 characterCopy.spellSlotsUsed[spell.level] += 1
             }
             characterCopy.currentSpellPoints -= spellCosts[spell.level]
+            saveCharacter()
             setCharacter(characterCopy)
         } else{
             alert("Not enough points")
