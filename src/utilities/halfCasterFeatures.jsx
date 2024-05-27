@@ -28,13 +28,6 @@ export default [
         "stackable": false
     },
     {
-        "name": "Divine Intervention",
-        "dependancy": null,
-        "conflifts": [null],
-        "tier": 2,
-        "stackable": false
-    },
-    {
         "name": "Wild Shape",
         "dependancy": null,
         "conflifts": [null],
@@ -118,6 +111,14 @@ export default [
         "tier": 2,
         "stackable": false
     },
+    { 
+        "name": "Fighting Style", 
+        "dependancy": null,
+        "description":"Look up dnd 5e fighting styles",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":true 
+    },
     {
         "name":"Supernatural Resistance",
         "dependancy": null,
@@ -151,13 +152,6 @@ export default [
         "dependancy": null,
         "conflifts": [null],
         "tier": 3,
-        "stackable": false
-    },
-    {
-        "name":"Vigilant Rebuke",
-        "dependancy": null,
-        "conflifts": [null],
-        "tier": 2,
         "stackable": false
     },
     {

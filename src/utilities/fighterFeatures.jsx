@@ -96,22 +96,17 @@ export default [
         "stackable":false 
     },
     { 
-        "name": "Fighting Style (Fighter)", 
+        "name": "Fighting Style", 
         "dependancy": null,
+        "description":"Look up dnd 5e fighting styles",
         "conflifts": [null], 
         "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Second Wind", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
+        "stackable":true 
     },
     { 
         "name": "Action Surge", 
         "dependancy": null,
+        "description":"You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action. Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.",
         "conflifts": [null], 
         "tier": 2,
         "stackable":false 
@@ -119,13 +114,15 @@ export default [
     { 
         "name": "Indomitable", 
         "dependancy": null,
+        "description":"You can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest. You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.",
         "conflifts": [null], 
         "tier": 2,
-        "stackable":false 
+        "stackable":false
     },
     { 
         "name": "Martial Arts", 
         "dependancy": null,
+        "description":"Look it up in the monk table in 5e",
         "conflifts": [null], 
         "tier": 1,
         "stackable":false 
@@ -133,6 +130,7 @@ export default [
     { 
         "name": "Ki", 
         "dependancy": null,
+        "description":"Look it up in the monk table in 5e",
         "conflifts": [null], 
         "tier": 1,
         "stackable":false 
@@ -140,13 +138,15 @@ export default [
     { 
         "name": "Unarmored Movement", 
         "dependancy": null,
+        "description":"Your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table. At 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move.",
         "conflifts": [null], 
         "tier": 2,
         "stackable":false 
     },
     { 
         "name": "Deflect Missiles", 
-        "dependancy": null,
+        "dependancy": "Ki",
+        "description":"You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d 10 + your Dexterity modifier + your level.",
         "conflifts": [null], 
         "tier": 2,
         "stackable":false 
@@ -154,6 +154,7 @@ export default [
     { 
         "name": "Stunning Strike", 
         "dependancy": "Ki",
+        "description":"You can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.",
         "conflifts": [null], 
         "tier": 2,
         "stackable":false 
@@ -161,14 +162,15 @@ export default [
     {
         "name": "Ki-Empowered Strikes",
         "dependancy": "Ki",
+        "description": "Your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage.",
         "conflifts": [null],
         "tier": 2,
         "stackable":false
-
     },
     { 
         "name": "Evasion", 
         "dependancy": null,
+        "description":"Your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
         "conflifts": [null], 
         "tier": 2,
         "stackable":false 
@@ -176,27 +178,7 @@ export default [
     { 
         "name": "Diamond Soul", 
         "dependancy": "Ki",
-        "conflifts": [null], 
-        "tier": 3,
-        "stackable":false 
-    },
-    {
-        "name": "Empty Body",
-        "dependancy": "Ki",
-        "conflifts": [null],
-        "tier": 3,
-        "stackable":false
-    },
-    { 
-        "name": "Fighting Style (Ranger)", 
-        "dependancy": null,
-        "conflifts": [null], 
-        "tier": 1,
-        "stackable":false 
-    },
-    { 
-        "name": "Foe Slayer", 
-        "dependancy": null,
+        "description":"Your mastery of ki grants you proficiency in all saving throws. Additionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result.",
         "conflifts": [null], 
         "tier": 3,
         "stackable":false 
@@ -204,6 +186,7 @@ export default [
     { 
         "name": "Sneak Attack", 
         "dependancy": null,
+        "description":"You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon. You don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll. The amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table.",
         "conflifts": [null], 
         "tier": 1,
         "stackable":false 
@@ -211,6 +194,7 @@ export default [
     { 
         "name": "Cunning Action", 
         "dependancy": null,
+        "description":"Your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action.",
         "conflifts": [null], 
         "tier": 1,
         "stackable":false 
@@ -218,13 +202,7 @@ export default [
     { 
         "name": "Uncanny Dodge", 
         "dependancy": null,
-        "conflifts": [null], 
-        "tier": 2,
-        "stackable":false 
-    },
-    { 
-        "name": "Reliable Talent", 
-        "dependancy": null,
+        "description":"when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.",
         "conflifts": [null], 
         "tier": 2,
         "stackable":false 
@@ -232,6 +210,7 @@ export default [
     { 
         "name": "Blindsense", 
         "dependancy": null,
+        "description":"If you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you.",
         "conflifts": [null], 
         "tier": 3,
         "stackable":false 
@@ -239,6 +218,7 @@ export default [
     { 
         "name": "Elusive", 
         "dependancy": null,
+        "description":"you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated.",
         "conflifts": [null], 
         "tier": 3,
         "stackable":false 
@@ -246,6 +226,7 @@ export default [
     { 
         "name": "Stroke of Luck", 
         "dependancy": null,
+        "description":"you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20. Once you use this feature, you can't use it again until you finish a short or long rest.",
         "conflifts": [null], 
         "tier": 3,
         "stackable":false 
