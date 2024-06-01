@@ -306,5 +306,229 @@ export default [
         "tier":1,
         "stackable":false,
         "link":"http://dnd5e.wikidot.com/feat:defensive-duelist"
+    },
+    { 
+        "name": "Ancestral Protectors", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:ancestral-guardian",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false 
+    },
+    { 
+        "name": "Spirit Shield", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:ancestral-guardian",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false 
+    },
+    { 
+        "name": "Vengeful Ancestors", 
+        "dependancy": "Spirit Shield",
+        "description": "http://dnd5e.wikidot.com/barbarian:ancestral-guardian",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false 
+    },
+    {
+        "name": "Form of the Beast", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:beast",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Bestial Soul", 
+        "dependancy": "Form of the Beast",
+        "description": "http://dnd5e.wikidot.com/barbarian:beast",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Infectious Fury", 
+        "dependancy": "Bestial Soul",
+        "description": "http://dnd5e.wikidot.com/barbarian:beast",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
+    },
+    {
+        "name": "Frenzy", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:berserker",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Mindless Rage", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:berserker",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Intimidating Presence", 
+        "dependancy": null,
+        "description": "http://dnd5e.wikidot.com/barbarian:berserker",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+        {
+        "name": "Retaliation", 
+        "dependancy": null,
+        "description": "http://dnd5e.wikidot.com/barbarian:berserker",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
+    },
+    {
+        "name": "Giant's Havoc", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:giant",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Elemental Cleaver", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:giant",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Mighty Impel", 
+        "dependancy": "Giant's Havoc",
+        "description": "http://dnd5e.wikidot.com/barbarian:giant",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Demiurgic Colossus", 
+        "dependancy": "Mighty Impel",
+        "description": "http://dnd5e.wikidot.com/barbarian:giant",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
+    },
+    {
+        "name": "Storm Aura", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:storm-herald",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Storm Soul", 
+        "dependancy": "Storm Aura",
+        "description": "http://dnd5e.wikidot.com/barbarian:storm-herald",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Shielding Storm", 
+        "dependancy": "Storm Soul",
+        "description": "http://dnd5e.wikidot.com/barbarian:storm-herald",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Raging Storm", 
+        "dependancy": "Shielding Storm",
+        "description": "http://dnd5e.wikidot.com/barbarian:storm-herald",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
+    },
+    {
+        "name": "Totem Spirit", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:totem-warrior",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Aspect of the Beast", 
+        "dependancy": "Totem Spirit",
+        "description": "http://dnd5e.wikidot.com/barbarian:totem-warrior",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Totemic Attunement", 
+        "dependancy": "Aspect of the Beast",
+        "description": "http://dnd5e.wikidot.com/barbarian:totem-warrior",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
+    },
+    {
+        "name": "Wild Surge", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:wild-magic",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Unstable Backlash", 
+        "dependancy": "Wild Surge",
+        "description": "http://dnd5e.wikidot.com/barbarian:wild-magic",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Controlled Surge", 
+        "dependancy": "Unstable Backlash",
+        "description": "http://dnd5e.wikidot.com/barbarian:wild-magic",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
+    },
+    {
+        "name": "Divine Fury", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:zealot",
+        "conflifts": [null], 
+        "tier": 1,
+        "stackable":false
+    },
+    {
+        "name": "Fanatical Focus", 
+        "dependancy": "Rage",
+        "description": "http://dnd5e.wikidot.com/barbarian:zealot",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Zealous Presence", 
+        "dependancy": "Divine Fury",
+        "description": "http://dnd5e.wikidot.com/barbarian:zealot",
+        "conflifts": [null], 
+        "tier": 2,
+        "stackable":false
+    },
+    {
+        "name": "Rage Beyond Death", 
+        "dependancy": "Zealous Presence",
+        "description": "http://dnd5e.wikidot.com/barbarian:zealot",
+        "conflifts": [null], 
+        "tier": 3,
+        "stackable":false
     }
 ]
