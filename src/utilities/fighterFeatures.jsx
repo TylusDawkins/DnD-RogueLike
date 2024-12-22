@@ -234,6 +234,7 @@ export default [
     { 
         "name": "Ability Score Improvement", 
         "dependancy": null,
+        "descripton":"gain two stat points",
         "conflifts": [null], 
         "tier": 1,
         "stackable":true,
