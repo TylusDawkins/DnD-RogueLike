@@ -79,9 +79,12 @@ export default function Character({ character, setCharacter, characters, getChar
             characterCopy.level = 0
             characterCopy.pointsLeft = 0
             characterCopy.totalPoints = 0
-            characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
-            characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+            if (charClass.canCast) {
+                characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
+                characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+            }
             setCharacter(characterCopy)
+            alert("This does not save your character automatically in case of a mistake. You can also just make a new character if you don't want to lose this one.")
         }
     }
 
@@ -107,8 +110,10 @@ export default function Character({ character, setCharacter, characters, getChar
         if (character.name) {
             characters[character.id] = character
             localStorage.setItem("characters", JSON.stringify(characters))
+            console.log("Character saved!")
+        } else {
+            alert("Please give your character a name before saving")
         }
-        console.log("Character saved!")
     }
 
     const changeHp = (e) => {

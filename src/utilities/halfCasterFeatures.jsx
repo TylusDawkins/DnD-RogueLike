@@ -201,8 +201,8 @@ export default [
     },
     {
         "name": "Psychic Blades",
-        "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:valor",
+        "dependancy": null,
+        "description":"https://dnd5e.wikidot.com/rogue:soulknife",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -451,6 +451,7 @@ export default [
     {
         "name": "Ability Score Improvement",
         "dependancy": null,
+        "descripton":"gain two stat points",
         "conflifts": [null],
         "tier": 1,
         "stackable": true,
@@ -498,13 +499,5 @@ export default [
         "tier": 1,
         "stackable": false,
         "link": "http://dnd5e.wikidot.com/feat:ember-of-the-fire-giant"
-    },
-    {
-        "name": "Infusion",
-        "dependancy": null,
-        "conflifts": [null],
-        "tier": 1,
-        "stackable": false,
-        "link": "http://dnd5e.wikidot.com/artificer"
     }
 ]
