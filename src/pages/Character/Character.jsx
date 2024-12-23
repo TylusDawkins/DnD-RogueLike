@@ -111,6 +111,13 @@ export default function Character({ character, setCharacter, characters, getChar
         console.log("Character saved!")
     }
 
+    const changeCurrentSpellPoints = (e) => {
+        let characterCopy = { ...character }
+        characterCopy.stats.currentSpellPoints = e.target.value
+        setCharacter(characterCopy)
+        saveCharacter()
+    }
+
     const changeHp = (e) => {
         let characterCopy = { ...character }
         characterCopy.stats.currentHp = e.target.value
@@ -275,7 +282,7 @@ export default function Character({ character, setCharacter, characters, getChar
                     </div>
                     {charClass.canCast ? <div className='spellPointsInfo'>
                         <h1>Max Spell Points: {character.maxSpellPoints}</h1>
-                        <h1>Current Spell Points: <input type="number" className='hpInput' max={character.stats.maxSpellPoints} value={character.currentSpellPoints} ></input></h1>
+                        <h1>Current Spell Points: <input type="number" className='hpInput' max={character.stats.maxSpellPoints} value={character.currentSpellPoints} onChange={(e) => changeCurrentSpellPoints(e)} ></input></h1>
                     </div> : null}
                 </div>
                 <div className="stats">
