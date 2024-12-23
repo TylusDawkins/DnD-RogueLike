@@ -159,7 +159,8 @@ export default function Character({ character, setCharacter, characters, getChar
         let characterCopy = { ...character }
         characterCopy.level += 1
         characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
-        characterCopy.stats.currentHp = Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+        characterCopy.stats.currentHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+        console.log(character)
         if (charClass.canCast) {
             characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
             characterCopy.currentSpellPoints += (charClass.spellPoints[characterCopy.level] - charClass.spellPoints[characterCopy.level - 1])
