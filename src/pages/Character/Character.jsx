@@ -158,8 +158,8 @@ export default function Character({ character, setCharacter, characters, getChar
         }
         let characterCopy = { ...character }
         characterCopy.level += 1
-        characterCopy.stats.maxHp += charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2)
-        characterCopy.stats.currentHp += charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2)
+        characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+        characterCopy.stats.currentHp = Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
         if (charClass.canCast) {
             characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
             characterCopy.currentSpellPoints += (charClass.spellPoints[characterCopy.level] - charClass.spellPoints[characterCopy.level - 1])
@@ -274,7 +274,7 @@ export default function Character({ character, setCharacter, characters, getChar
                     </div>
                     {charClass.canCast ? <div className='spellPointsInfo'>
                         <h1>Max Spell Points: {character.maxSpellPoints}</h1>
-                        <h1>Current Spell Points: {character.currentSpellPoints}</h1>
+                        <h1>Current Spell Points: <input type="number" className='hpInput' max={character.stats.maxSpellPoints} value={character.currentSpellPoints} ></input></h1>
                     </div> : null}
                 </div>
                 <div className="stats">

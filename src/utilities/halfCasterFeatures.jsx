@@ -435,6 +435,7 @@ export default [
     },
     {
         "name": "Meta Magic",
+        "description":"https://dnd5e.wikidot.com/sorcerer",
         "dependancy": null,
         "conflifts": [null],
         "tier": 1,
