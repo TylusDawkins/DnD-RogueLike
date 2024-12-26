@@ -3,7 +3,7 @@ import "./featuremodal.css"
 
 
 
-function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, features, addFeature, classFeatures, playerLevel, character, setCharacter, saveCharacter }) {
+function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpellModal, spellModalOpen, setSpellModalOpen, addFeature, classFeatures, playerLevel, character, setCharacter, saveCharacter }) {
 
   const tier1Features = classFeatures.filter(x => x.tier <= 1)
   const tier2Features = classFeatures.filter(x => x.tier <= 2)
@@ -41,15 +41,15 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
         availableFeatures = tier1Features
       }
       randoFeature = availableFeatures[Math.floor(Math.random() * availableFeatures.length)];
-      const hasDependency = features.some(feat => feat?.name?.toLowerCase() === randoFeature?.dependency?.toLowerCase());
-      if (choices.includes(randoFeature) || features.includes(randoFeature)) {
+      const hasDependency = character.features.some(feat => feat?.name?.toLowerCase() === randoFeature?.dependency?.toLowerCase());
+      if (choices.includes(randoFeature) || character.features.includes(randoFeature)) {
         if (randoFeature.stackable) {
           choices.push(randoFeature)
           i++
           return
         }
-        if (hasDependency) {
-          return
+        if (!hasDependency) {
+          continue
         }
         else {
           continue

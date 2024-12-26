@@ -72,7 +72,7 @@
     {
         "name": "Studded Leather Armor",
         "type": "Armor",
-        "AC": "12",
+        "AC": "+2",
         "special": "None",
         "tier": 1
     },
@@ -86,26 +86,33 @@
     {
         "name": "Chain Shirt",
         "type": "Armor",
-        "AC": "13",
+        "AC": "+3",
         "special": "None",
-        "tier": 1
-    },
-    {
-        "name": "Scale Mail",
-        "type": "Armor",
-        "AC": "14",
-        "special": "Dis+2 on Stealth checks",
         "tier": 1
     },
     {
         "name": "Breastplate",
         "type": "Armor",
-        "AC": "14",
+        "AC": "+4",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Plate",
+        "type": "Armor",
+        "AC": "+6",
         "special": "None",
         "tier": 1
     },
     {
         "name": "Wooden Shield",
+        "type": "Armor",
+        "AC": "+1",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Metal Shield",
         "type": "Armor",
         "AC": "+2",
         "special": "None",

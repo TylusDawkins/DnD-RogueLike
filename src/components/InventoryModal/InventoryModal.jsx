@@ -3,9 +3,9 @@ import './inventorymodal.css'
 function InventoryModal({ isOpen, setIsOpen, character, setCharacter, saveCharacter }) {
 
     const removeItem = (item) => {
+        console.log(item)
         const characterCopy = { ...character }
-        const itemToRemove = characterCopy.inventory.find((el) => { el['id'] = item['id'] })
-        characterCopy.inventory.splice(itemToRemove, 1)
+        characterCopy.inventory.splice(characterCopy.inventory.indexOf(item), 1)
         setCharacter(characterCopy)
         saveCharacter()
     }
