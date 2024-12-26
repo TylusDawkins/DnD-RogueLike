@@ -79,8 +79,8 @@
     {
         "name": "Hide Armor",
         "type": "Armor",
-        "AC": "12",
-        "special": "",
+        "AC": "+2",
+        "special": "Adds 2 to your AC",
         "tier": 1
     },
     {

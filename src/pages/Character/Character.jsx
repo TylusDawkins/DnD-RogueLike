@@ -198,14 +198,16 @@ export default function Character({ character, setCharacter, characters, getChar
             alert("Please spend all points before leveling")
             return
         }
-        if (character.level >= 20) {
-            alert("You are at your maximum level")
-            return
-        }
+        // if (character.level >= 20) {
+        //     alert("You are at your maximum level")
+        //     return
+        // }
         let characterCopy = { ...character }
         characterCopy.level += 1
-        characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
-        characterCopy.stats.currentHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+        if (character.level > 0) {
+            characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+            characterCopy.stats.currentHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+        }
         getReward()
         if (charClass.canCast) {
             characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
@@ -269,7 +271,7 @@ export default function Character({ character, setCharacter, characters, getChar
                     }
                     <img src={restIcon} onClick={rest} className='restIcon icon' alt='Rest Button' />
                     <img src={deathIcon} onClick={reset} className='deathIconb icon' alt="Death Icon" />
-                    <img src={inventoryIcon} onClick={openInventory} className="icon" alt="Inventory Icon"/>
+                    <img src={inventoryIcon} onClick={openInventory} className="icon" alt="Inventory Icon" />
                 </div>
                 <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
