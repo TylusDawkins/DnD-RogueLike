@@ -165,7 +165,7 @@ export default function Character({ character, setCharacter, characters, getChar
             alert("Stats cannot go below 10")
             return
         }
-        if (change > 0 && !character.pointsLeft) {
+        if (change > 0 && character.pointsLeft < 1) {
             alert("No points available");
             return
         }
@@ -267,9 +267,9 @@ export default function Character({ character, setCharacter, characters, getChar
                         </> :
                         null
                     }
-                    <img src={restIcon} onClick={rest} className='restIcon icon' />
-                    <img src={deathIcon} onClick={reset} className='deathIconb icon' />
-                    <img src={inventoryIcon} onClick={openInventory} className="icon" />
+                    <img src={restIcon} onClick={rest} className='restIcon icon' alt='Rest Button' />
+                    <img src={deathIcon} onClick={reset} className='deathIconb icon' alt="Death Icon" />
+                    <img src={inventoryIcon} onClick={openInventory} className="icon" alt="Inventory Icon"/>
                 </div>
                 <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
