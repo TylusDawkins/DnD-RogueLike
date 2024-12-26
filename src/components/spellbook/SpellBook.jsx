@@ -2,7 +2,7 @@ import './spellbook.css'
 import spellLimits from '@utils/spellLimits'
 import spellCosts from '@utils/spellCosts'
 
-function Class({spells, isOpen, setIsOpen, character, setCharacter, saveCharacter}) {
+function SpellBook({spells, isOpen, setIsOpen, character, setCharacter, saveCharacter}) {
 
     const closeModal = () => {
         setIsOpen(!isOpen)
@@ -47,5 +47,5 @@ function Class({spells, isOpen, setIsOpen, character, setCharacter, saveCharacte
     ) : null
   }
   
-  export default Class
+  export default SpellBook
   

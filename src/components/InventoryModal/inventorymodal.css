@@ -1,0 +1,46 @@
+.inventory-modal {
+    position: fixed;
+    z-index: 1;
+    left: 10%;
+    top: 0%;
+    width: 85vw;
+    height: 100vh;
+    overflow: auto;
+    background-image: url("/assets/parchment_texture.jpg");
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.inventory {
+    display: grid; /* Use grid for better column control */
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); /* Key change */
+    
+    gap: 10px; /* Adds spacing between items */
+    width: 100%;
+    height: 85%;
+    overflow: auto;
+    font-size: 1.5em;
+    padding: 10px; /* Add padding for visual spacing */
+}
+
+.close-modal {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    font-size: 2em;
+}
+
+.item {
+    background-color: rgb(250, 220, 183, 0.33);
+    height: auto;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column; /* This is the crucial line! */
+    justify-content: center;
+    align-items: center;
+    /* padding: 1px; */
+    box-sizing: border-box;
+    border: 1px solid black;
+    overflow: auto; /* Hide overflow content if any */
+}

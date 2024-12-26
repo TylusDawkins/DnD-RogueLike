@@ -14,6 +14,7 @@ function App() {
     description:"",
     type:"",
     level: 0,
+    inventory:[],
     stats: {
         maxHp:0,
         currentHp:0,

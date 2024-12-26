@@ -3,8 +3,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  margin:50px;
+  width: 1px;
+  /* margin:50px; */
   }
   
 ::-webkit-scrollbar-thumb {

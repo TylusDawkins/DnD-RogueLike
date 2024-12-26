@@ -1,0 +1,748 @@
+[
+    {
+        "name": "Rusty Dagger",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Iron Shortsword",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "+1 to hit against goblins",
+        "tier": 1
+    },
+    {
+        "name": "Steel Longsword",
+        "type": "Weapon",
+        "damage": "1d8",
+        "special": "+1 to damage against orcs",
+        "tier": 1
+    },
+    {
+        "name": "Battle Axe",
+        "type": "Weapon",
+        "damage": "1d12",
+        "special": "On a critical hit, knock prone",
+        "tier": 1
+    },
+    {
+        "name": "Warhammer",
+        "type": "Weapon",
+        "damage": "1d10",
+        "special": "Ignore enemy shield bonus",
+        "tier": 1
+    },
+    {
+        "name": "Wooden Club",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Stone Maul",
+        "type": "Weapon",
+        "damage": "2d6",
+        "special": "-1 to attack rolls",
+        "tier": 1
+    },
+    {
+        "name": "Throwing Dagger",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "Range 20/60",
+        "tier": 1
+    },
+    {
+        "name": "Handaxe",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "Can be thrown (range 20/60)",
+        "tier": 1
+    },
+    {
+        "name": "Light Crossbow",
+        "type": "Weapon",
+        "damage": "1d8",
+        "special": "Loading",
+        "tier": 1
+    },
+    {
+        "name": "Studded Leather Armor",
+        "type": "Armor",
+        "AC": "12",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Hide Armor",
+        "type": "Armor",
+        "AC": "12",
+        "special": "",
+        "tier": 1
+    },
+    {
+        "name": "Chain Shirt",
+        "type": "Armor",
+        "AC": "13",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Scale Mail",
+        "type": "Armor",
+        "AC": "14",
+        "special": "Dis+2 on Stealth checks",
+        "tier": 1
+    },
+    {
+        "name": "Breastplate",
+        "type": "Armor",
+        "AC": "14",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Wooden Shield",
+        "type": "Armor",
+        "AC": "+2",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Swiftness",
+        "type": "Blessing",
+        "special": "+1 to Physical stat",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Fortitude",
+        "type": "Blessing",
+        "special": "+1 to Fortitude stat",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Insight",
+        "type": "Blessing",
+        "special": "+1 to Mental stat",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Accuracy",
+        "type": "Blessing",
+        "special": "+1 to attack rolls",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Protection",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Healing",
+        "type": "Blessing",
+        "special": "Heal 1d6 HP",
+        "tier": 1
+    },
+    {
+        "name": "Spiked Club",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "+1 damage against plants",
+        "tier": 1
+    },
+    {
+        "name": "Scimitar",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "Finesse",
+        "tier": 1
+    },
+    {
+        "name": "Rapier",
+        "type": "Weapon",
+        "damage": "1d8",
+        "special": "Finesse",
+        "tier": 1
+    },
+    {
+        "name": "Shortbow",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "Range 80/320",
+        "tier": 1
+    },
+    {
+        "name": "Longbow",
+        "type": "Weapon",
+        "damage": "1d8",
+        "special": "Range 150/600, Heavy",
+        "tier": 1
+    },
+    {
+        "name": "Light Hammer",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "Thrown (20/60)",
+        "tier": 1
+    },
+    {
+        "name": "Sickle",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "Light",
+        "tier": 1
+    },
+    {
+        "name": "Mace",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "None",
+        "tier": 1
+    },
+    {
+        "name": "Quarterstaff",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "Versatile (1d8)",
+        "tier": 1
+    },
+    {
+        "name": "Lance",
+        "type": "Weapon",
+        "damage": "1d12",
+        "special": "Reach, requires two hands",
+        "tier": 1
+    },
+    {
+        "name": "Ring Mail",
+        "type": "Armor",
+        "AC": "14",
+        "special": "Dis+2 on Stealth checks",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Strength",
+        "type": "Blessing",
+        "special": "+1 to damage rolls",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Cunning",
+        "type": "Blessing",
+        "special": "+2 on initiative rolls",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Resistance",
+        "type": "Blessing",
+        "special": "+2 on saving throws against poison",
+        "tier": 1
+    },
+    {
+        "name": "Blessing of Magic Resistance",
+        "type": "Blessing",
+        "special": "+2 on saves against spells",
+        "tier": 1
+    },
+    {
+        "name": "Dagger of Venom",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "On a hit, DC 13 Con save or take 1d4 poison damage",
+        "tier": 2
+    },
+    {
+        "name": "Flaming Shortsword",
+        "type": "Weapon",
+        "damage": "1d6 + 1d4 Fire",
+        "special": "Lights flammable objects",
+        "tier": 2
+    },
+    {
+        "name": "Ice Longsword",
+        "type": "Weapon",
+        "damage": "1d8 + 1d4 Cold",
+        "special": "Reduces enemy movement by 5ft on hit",
+        "tier": 2
+    },
+    {
+        "name": "Shocking Warhammer",
+        "type": "Weapon",
+        "damage": "1d10 + 1d4 Lightning",
+        "special": "+2 on attack rolls against metal armor",
+        "tier": 2
+    },
+    {
+        "name": "Mace of Disruption",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "Extra damage to undead",
+        "tier": 2
+    },
+    {
+        "name": "+1 Dagger",
+        "type": "Weapon",
+        "damage": "1d4+1",
+        "special": "+1 to attack and damage rolls",
+        "tier": 2
+    },
+    {
+        "name": "+1 Shortsword",
+        "type": "Weapon",
+        "damage": "1d6+1",
+        "special": "+1 to attack and damage rolls",
+        "tier": 2
+    },
+    {
+        "name": "+1 Longsword",
+        "type": "Weapon",
+        "damage": "1d8+1",
+        "special": "+1 to attack and damage rolls",
+        "tier": 2
+    },
+    {
+        "name": "+1 Battle Axe",
+        "type": "Weapon",
+        "damage": "1d12+1",
+        "special": "+1 to attack and damage rolls",
+        "tier": 2
+    },
+    {
+        "name": "+1 Warhammer",
+        "type": "Weapon",
+        "damage": "1d10+1",
+        "special": "+1 to attack and damage rolls",
+        "tier": 2
+    },
+    {
+        "name": "+1 Studded Leather",
+        "type": "Armor",
+        "AC": "13",
+        "special": "+1 AC",
+        "tier": 2
+    },
+    {
+        "name": "+1 Chain Shirt",
+        "type": "Armor",
+        "AC": "14",
+        "special": "+1 AC",
+        "tier": 2
+    },
+    {
+        "name": "+1 Breastplate",
+        "type": "Armor",
+        "AC": "15",
+        "special": "+1 AC",
+        "tier": 2
+    },
+    {
+        "name": "+1 Shield",
+        "type": "Armor",
+        "AC": "+3",
+        "special": "+1 AC",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Eagle",
+        "type": "Blessing",
+        "special": "+2 on Perception checks",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Cat",
+        "type": "Blessing",
+        "special": "+2 on Stealth checks",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Bear",
+        "type": "Blessing",
+        "special": "+2 on Strength checks and saves",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Fox",
+        "type": "Blessing",
+        "special": "+2 on agility based checks and saves",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Owl",
+        "type": "Blessing",
+        "special": "+2 on Mental checks and saves",
+        "tier": 2
+    },
+    {
+        "name": "+1 Full Plate",
+        "type": "Armor",
+        "AC": "19",
+        "special": "+1 AC",
+        "tier": 2
+    },
+    {
+        "name": "Ring of Protection +1",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 2
+    },
+    {
+        "name": "Amulet of Natural Armor +1",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 2
+    },
+    {
+        "name": "+1 Full Plate",
+        "type": "Armor",
+        "AC": "19",
+        "special": "+1 AC",
+        "tier": 2
+    },
+    {
+        "name": "Ring of Protection +1",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 2
+    },
+    {
+        "name": "Amulet of Natural Armor +1",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 2
+    },
+    {
+        "name": "Cloak of Protection +1",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Berserker",
+        "type": "Blessing",
+        "special": "+2 on attack rolls but dis+2 on saving throws until next turn.",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Trickster",
+        "type": "Blessing",
+        "special": "+2 on Deception and Sleight of Hand checks.",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Sage",
+        "type": "Blessing",
+        "special": "+2 on History, Arcana, Nature, and Religion checks.",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Performer",
+        "type": "Blessing",
+        "special": "+2 on Performance and Persuasion checks.",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Athlete",
+        "type": "Blessing",
+        "special": "+2 on Athletics and Acrobatics checks.",
+        "tier": 2
+    },
+    {
+        "name": "Blessing of the Survivor",
+        "type": "Blessing",
+        "special": "+2 on Survival and Medicine checks.",
+        "tier": 2
+    },
+    {
+        "name": "Dagger of Speed",
+        "type": "Weapon",
+        "damage": "1d4",
+        "special": "+1 to initiative",
+        "tier": 2
+    },
+    {
+        "name": "Shortsword of Warning",
+        "type": "Weapon",
+        "damage": "1d6",
+        "special": "Cannot be surprised while wielding this weapon",
+        "tier": 2
+    },
+    {
+        "name": "Longsword of Life Stealing",
+        "type": "Weapon",
+        "damage": "1d8",
+        "special": "On a critical hit, regain HP equal to the damage dealt",
+        "tier": 3
+    },
+    {
+        "name": "Battle Axe of the Berserker",
+        "type": "Weapon",
+        "damage": "1d12",
+        "special": "On a critical hit, gain +2 on next attack roll",
+        "tier": 3
+    },
+    {
+        "name": "Warhammer of Thunder",
+        "type": "Weapon",
+        "damage": "1d10",
+        "special": "On a hit, create a loud boom that can be heard within 30 feet",
+        "tier": 3
+    },
+    {
+        "name": "Shield of Missile Attraction",
+        "type": "Armor",
+        "AC": "+2",
+        "special": "Enemies within 10ft have dis+2 on ranged attack rolls against creatures other than the wielder",
+        "tier": 3
+    },
+    {
+        "name": "Armor of Resistance (Fire)",
+        "type": "Armor",
+        "AC": "Based on base armor",
+        "special": "Resistance to fire damage",
+        "tier": 3
+    },
+    {
+        "name": "Armor of Resistance (Cold)",
+        "type": "Armor",
+        "AC": "Based on base armor",
+        "special": "Resistance to cold damage",
+        "tier": 3
+    },
+    {
+        "name": "Potion of Healing (Greater)",
+        "type": "Blessing",
+        "special": "Heal 4d4+4 HP",
+        "tier": 2
+    },
+    {
+        "name": "Potion of Invisibility",
+        "type": "Blessing",
+        "special": "Become invisible for 1 hour or until you attack or cast a spell",
+        "tier": 3
+    },
+    {
+        "name": "Potion of Speed",
+        "type": "Blessing",
+        "special": "Double movement speed for 1 minute",
+        "tier": 3
+    },
+    {
+        "name": "Scroll of Fireball",
+        "type": "Blessing",
+        "special": "Cast Fireball (8d6 fire damage, DC 15 Dex save for half)",
+        "tier": 2
+    },
+    {
+        "name": "Scroll of Lightning Bolt",
+        "type": "Blessing",
+        "special": "Cast Lightning Bolt (8d6 lightning damage, DC 15 Dex save for half)",
+        "tier": 2
+    },
+    {
+        "name": "Wand of Magic Missiles",
+        "type": "Weapon",
+        "special": "Cast Magic Missile (3 darts that each deal 1d4+1 force damage)",
+        "tier": 2
+    },
+    {
+        "name": "+2 Dagger",
+        "type": "Weapon",
+        "damage": "1d4+2",
+        "special": "+2 to attack and damage rolls",
+        "tier": 3
+    },
+    {
+        "name": "+2 Shortsword",
+        "type": "Weapon",
+        "damage": "1d6+2",
+        "special": "+2 to attack and damage rolls",
+        "tier": 3
+    },
+    {
+        "name": "+2 Longsword",
+        "type": "Weapon",
+        "damage": "1d8+2",
+        "special": "+2 to attack and damage rolls",
+        "tier": 3
+    },
+    {
+        "name": "+2 Battle Axe",
+        "type": "Weapon",
+        "damage": "1d12+2",
+        "special": "+2 to attack and damage rolls",
+        "tier": 3
+    },
+    {
+        "name": "+2 Warhammer",
+        "type": "Weapon",
+        "damage": "1d10+2",
+        "special": "+2 to attack and damage rolls",
+        "tier": 3
+    },
+    {
+        "name": "+2 Studded Leather",
+        "type": "Armor",
+        "AC": "14",
+        "special": "+2 AC",
+        "tier": 3
+    },
+    {
+        "name": "+2 Chain Shirt",
+        "type": "Armor",
+        "AC": "15",
+        "special": "+2 AC",
+        "tier": 3
+    },
+    {
+        "name": "+2 Breastplate",
+        "type": "Armor",
+        "AC": "16",
+        "special": "+2 AC",
+        "tier": 3
+    },
+    {
+        "name": "+2 Shield",
+        "type": "Armor",
+        "AC": "+4",
+        "special": "+2 AC",
+        "tier": 3
+    },
+    {
+        "name": "Boots of Elvenkind",
+        "type": "Blessing",
+        "special": "+2 on Stealth checks related to movement",
+        "tier": 2
+    },
+    {
+        "name": "Gauntlets of Ogre Power",
+        "type": "Blessing",
+        "special": "Sets Physical score to 19",
+        "tier": 3
+    },
+    {
+        "name": "Headband of Intellect",
+        "type": "Blessing",
+        "special": "Sets Mental score to 19",
+        "tier": 3
+    },
+    {
+        "name": "Belt of Giant Strength",
+        "type": "Blessing",
+        "special": "Sets Physical score to 21",
+        "tier": 4
+    },
+    {
+        "name": "Ioun Stone of Awareness",
+        "type": "Blessing",
+        "special": "Cannot be surprised",
+        "tier": 3
+    },
+    {
+        "name": "Ioun Stone of Protection",
+        "type": "Blessing",
+        "special": "+1 to AC",
+        "tier": 2
+    },
+    {
+        "name": "Amulet of Proof against Detection and Location",
+        "type": "Blessing",
+        "special": "Cannot be targeted by divination magic or perceived through magical scrying",
+        "tier": 4
+    },
+    {
+        "name": "Bracers of Archery",
+        "type": "Blessing",
+        "special": "Proficiency with longbows and shortbows",
+        "tier": 2
+    },
+    {
+        "name": "Cloak of Displacement",
+        "type": "Blessing",
+        "special": "Projects an illusion that makes you appear to be slightly away from your actual location",
+        "tier": 3
+    },
+    {
+        "name": "Eyes of the Eagle",
+        "type": "Blessing",
+        "special": "+2 on Wisdom (Perception) checks that rely on sight",
+        "tier": 2
+    },
+    {
+        "name": "Gloves of Thievery",
+        "type": "Blessing",
+        "special": "+5 bonus to Dexterity (Sleight of Hand) checks",
+        "tier": 2
+    },
+    {
+        "name": "Helm of Telepathy",
+        "type": "Blessing",
+        "special": "Can read the thoughts of creatures within 30 feet",
+        "tier": 3
+    },
+    {
+        "name": "Ring of Invisibility",
+        "type": "Blessing",
+        "special": "Become invisible at will",
+        "tier": 4
+    },
+    {
+        "name": "Ring of Water Walking",
+        "type": "Blessing",
+        "special": "Can walk on water as if it were solid ground",
+        "tier": 2
+    },
+    {
+        "name": "Robe of Useful Items",
+        "type": "Blessing",
+        "special": "Patches on the robe can be detached to become real objects",
+        "tier": 3
+    },
+    {
+        "name": "Scarab of Protection",
+        "type": "Blessing",
+        "special": "+2 on saving throws against spells",
+        "tier": 3
+    },
+    {
+        "name": "Staff of the Magi",
+        "type": "Weapon",
+        "special": "A powerful staff that can cast a variety of spells",
+        "tier": 4
+    },
+    {
+        "name": "Sword of Sharpness",
+        "type": "Weapon",
+        "damage": "Based on base sword",
+        "special": "On a natural 20, the target takes an extra 14 slashing damage",
+        "tier": 4
+    },
+    {
+        "name": "Tome of Understanding",
+        "type": "Blessing",
+        "special": "Increases Mental score by 2, to a maximum of 20",
+        "tier": 3
+    },
+    {
+        "name": "Wings of Flying",
+        "type": "Blessing",
+        "special": "Grants a flying speed of 60 feet",
+        "tier": 3
+    },
+    {
+        "name": "+2 Full Plate",
+        "type": "Armor",
+        "AC": "20",
+        "special": "+2 AC",
+        "tier": 4
+    },
+    {
+        "name": "Ring of Spell Storing",
+        "type": "Blessing",
+        "special": "Store up to 5 levels worth of spells",
+        "tier": 3
+    }
+]

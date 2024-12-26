@@ -2,6 +2,7 @@ import bookImage from '/assets/book_icon.png'
 import backButtonImage from "/public/assets/back_scroll.png"
 import restIcon from '@assets/rest_icon.png'
 import deathIcon from '@assets/death_icon.png'
+import inventoryIcon from '@assets/inventory_icon.png'
 import "./Character.css"
 import "/src/globals.css"
 import { useEffect, useState } from "react"
@@ -9,7 +10,9 @@ import FeatureModal from "@components/featuremodal/FeatureModal"
 import SpellModal from "@components/spellmodal/SpellModal"
 import SpellBook from "@components/spellbook/SpellBook"
 import classes from "@utils/classes"
+import rewards from "@utils/rewards"
 import { useParams } from 'react-router-dom'
+import InventoryModal from '../../components/InventoryModal/InventoryModal'
 
 export default function Character({ character, setCharacter, characters, getCharacters }) {
 
@@ -20,6 +23,8 @@ export default function Character({ character, setCharacter, characters, getChar
     const [isSpellBookOpen, setIsSpellBookOpen] = useState(false)
 
     const [shouldOpenSpellModal, setShouldOpenSpellModal] = useState(true)
+
+    const [isInventoryOpen, setIsInventoryOpen] = useState(false)
 
     const [pointsLeft, setPointsLeft] = useState(0)
 
@@ -85,9 +90,23 @@ export default function Character({ character, setCharacter, characters, getChar
         }
     }
 
+    const openInventory = () =>{
+        setIsInventoryOpen(!isInventoryOpen)
+    }
+
+    const getReward = () =>{
+        const randomReward = rewards[Math.floor(Math.random() * rewards.length)]
+        const characterCopy = {...character}
+        characterCopy.inventory.push(randomReward)
+        randomReward['id'] = crypto.randomUUID()
+        alert(`You have received ${randomReward.name}, please check your inventory for more info!`)
+        setCharacter(characterCopy)
+        saveCharacter()
+    }
+
     const initCharacter = () => {
         getCharacters()
-        if (character.level === 0) {
+        // if (character.level === 0) {
             let characterCopy = { ...character }
             characterCopy.stats.hpMod = charClass.baseStats.hpMod
             characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
@@ -98,8 +117,9 @@ export default function Character({ character, setCharacter, characters, getChar
                 characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
             }
             characterCopy.type = character.type || type
+            characterCopy.inventory = characterCopy.inventory || []
             setCharacter({ ...characterCopy })
-        }
+        // }
     }
 
     const saveCharacter = () => {
@@ -167,7 +187,7 @@ export default function Character({ character, setCharacter, characters, getChar
         characterCopy.level += 1
         characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
         characterCopy.stats.currentHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
-        console.log(character)
+        getReward()
         if (charClass.canCast) {
             characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
             characterCopy.currentSpellPoints += (charClass.spellPoints[characterCopy.level] - charClass.spellPoints[characterCopy.level - 1])
@@ -230,6 +250,7 @@ export default function Character({ character, setCharacter, characters, getChar
                     }
                     <img src={restIcon} onClick={rest} className='restIcon icon' />
                     <img src={deathIcon} onClick={reset} className='deathIconb icon' />
+                    <img src={inventoryIcon} onClick={openInventory} className="icon"/>
                 </div>
                 <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
@@ -256,6 +277,14 @@ export default function Character({ character, setCharacter, characters, getChar
                 shouldOpenSpellModal={charClass.canCast ? shouldOpenSpellModal : false}
                 setShouldOpenSpellModal={charClass.canCast ? setShouldOpenSpellModal : (() => { })}
                 playerLevel={character.level}
+                character={character}
+                setCharacter={setCharacter}
+                saveCharacter={saveCharacter}
+            />
+
+            <InventoryModal 
+                isOpen={isInventoryOpen}
+                setIsOpen={setIsInventoryOpen}
                 character={character}
                 setCharacter={setCharacter}
                 saveCharacter={saveCharacter}
