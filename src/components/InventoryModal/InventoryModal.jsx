@@ -1,12 +1,10 @@
 import './inventorymodal.css'
 
-function InventoryModal({isOpen, setIsOpen, character, setCharacter, saveCharacter}) {
+function InventoryModal({ isOpen, setIsOpen, character, setCharacter, saveCharacter }) {
 
     const removeItem = (item) => {
-        const characterCopy = {...character}
-        console.log(item)
-        const itemToRemove = characterCopy.inventory.find((el)=>{el['id'] = item['id']})
-        console.log(character)
+        const characterCopy = { ...character }
+        const itemToRemove = characterCopy.inventory.find((el) => { el['id'] = item['id'] })
         characterCopy.inventory.splice(itemToRemove, 1)
         setCharacter(characterCopy)
         saveCharacter()
@@ -18,15 +16,15 @@ function InventoryModal({isOpen, setIsOpen, character, setCharacter, saveCharact
 
     return isOpen ? (
         <div className="inventory-modal">
-            <div style={{fontSize:'4em', marginTop:'20px', marginBottom:'20px'}}>Inventory</div>
+            <div style={{ fontSize: '4em', marginTop: '20px', marginBottom: '20px' }}>Inventory</div>
             <div className="close-modal" onClick={closeModal}>X</div>
             <div className='inventory'>
                 {character.inventory.map((item) => (
                     <div className='item' key={item.name}>
-                        <div onClick={() =>{removeItem(item)}}>
+                        <div onClick={() => { removeItem(item) }}>
                             X
                         </div>
-                        <div style={{fontWeight:"bold"}}>
+                        <div style={{ fontWeight: "bold" }}>
                             {item.name}
                         </div>
                         <div>
@@ -35,15 +33,14 @@ function InventoryModal({isOpen, setIsOpen, character, setCharacter, saveCharact
                         <div>
                             Special: {item.special}
                         </div>
-                        {item.damage ? <div>{item.damage}</div>:null}
-                        {item.ac ? <div>{item.ac}</div>:null}
+                        {item.damage ? <div>{item.damage}</div> : null}
+                        {item.ac ? <div>{item.ac}</div> : null}
                         <div>Tier: {item.tier}</div>
                     </div>
                 ))}
             </div>
         </div>
     ) : null
-  }
-  
-  export default InventoryModal
-  
+}
+
+export default InventoryModal

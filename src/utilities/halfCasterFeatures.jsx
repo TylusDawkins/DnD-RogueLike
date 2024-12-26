@@ -1,7 +1,7 @@
 export default [
     {
         "name": "Infusion",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/artificer",
         "conflifts": [null],
         "tier": 1,
@@ -9,7 +9,7 @@ export default [
     },
     {
         "name": "Magic Item Adept",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/artificer",
         "conflifts": [null],
         "tier": 1,
@@ -41,7 +41,7 @@ export default [
     },
     {
         "name": "Experimental Elixer",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/artificer:alchemist",
         "conflifts": [null],
         "tier": 1,
@@ -65,7 +65,7 @@ export default [
     },
     {
         "name": "Arcane Armor/Armor Model",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/artificer:armorer",
         "conflifts": [null],
         "tier": 1,
@@ -89,7 +89,7 @@ export default [
     },
     {
         "name": "Eldritch Cannon",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/artificer:artillerist",
         "conflifts": [null],
         "tier": 2,
@@ -113,7 +113,7 @@ export default [
     },
     {
         "name": "Steel Defender",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/artificer:battle-smith",
         "conflifts": [null],
         "tier": 2,
@@ -137,7 +137,7 @@ export default [
     },
     {
         "name": "Bardic Inspiration",
-        "dependancy": null,
+        "dependancy": "",
         "description": "http://dnd5e.wikidot.com/bard",
         "conflifts": [null],
         "tier": 1,
@@ -146,7 +146,7 @@ export default [
     {
         "name": "Unfailing Inspiration",
         "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:eloquence",
+        "description": "http://dnd5e.wikidot.com/bard:eloquence",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -154,7 +154,7 @@ export default [
     {
         "name": "Infectious Inspiration",
         "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:eloquence",
+        "description": "http://dnd5e.wikidot.com/bard:eloquence",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -162,7 +162,7 @@ export default [
     {
         "name": "Cutting Words",
         "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:lore",
+        "description": "http://dnd5e.wikidot.com/bard:lore",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -170,7 +170,7 @@ export default [
     {
         "name": "Blade Flourish",
         "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:swords",
+        "description": "http://dnd5e.wikidot.com/bard:swords",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -178,7 +178,7 @@ export default [
     {
         "name": "Master's Flourish",
         "dependancy": "Blade Flourish",
-        "description":"http://dnd5e.wikidot.com/bard:swords",
+        "description": "http://dnd5e.wikidot.com/bard:swords",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -194,7 +194,7 @@ export default [
     {
         "name": "Combat Inspiration",
         "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:valor",
+        "description": "http://dnd5e.wikidot.com/bard:valor",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -202,31 +202,31 @@ export default [
     {
         "name": "Psychic Blades",
         "dependancy": "Bardic Inspiration",
-        "description":"http://dnd5e.wikidot.com/bard:valor",
+        "description": "https://dnd5e.wikidot.com/rogue:soulknife",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "Battle Magic",
-        "dependancy": "null",
-        "description":"http://dnd5e.wikidot.com/bard:valor",
+        "dependancy": "",
+        "description": "http://dnd5e.wikidot.com/bard:valor",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
     },
     {
         "name": "Divine Strike",
-        "dependancy": "null",
-        "description":"Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an a 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
+        "dependancy": "",
+        "description": "Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an a 1d8 necrotic damage to the target. When you reach 14th level, the extra damage increases to 2d8.",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
     },
     {
         "name": "Wild Shape",
-        "dependancy": null,
-        "description":"http://dnd5e.wikidot.com/druid",
+        "dependancy": "",
+        "description": "http://dnd5e.wikidot.com/druid",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -234,7 +234,7 @@ export default [
     {
         "name": "Beast Spells",
         "dependancy": "Wild Shape",
-        "description":"http://dnd5e.wikidot.com/druid",
+        "description": "http://dnd5e.wikidot.com/druid",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -242,7 +242,7 @@ export default [
     {
         "name": "Combat Wild Shape",
         "dependancy": "Wild Shape",
-        "description":"http://dnd5e.wikidot.com/druid:moon",
+        "description": "http://dnd5e.wikidot.com/druid:moon",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -250,7 +250,7 @@ export default [
     {
         "name": "Halo of Spores",
         "dependancy": "Wild Shape",
-        "description":"http://dnd5e.wikidot.com/druid:moon",
+        "description": "http://dnd5e.wikidot.com/druid:moon",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -258,7 +258,7 @@ export default [
     {
         "name": "Symbiotic Entity",
         "dependancy": "Halo of Spores",
-        "description":"http://dnd5e.wikidot.com/druid:moon",
+        "description": "http://dnd5e.wikidot.com/druid:moon",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -266,7 +266,7 @@ export default [
     {
         "name": "Fungal Infestation",
         "dependancy": "Halo of Spores",
-        "description":"http://dnd5e.wikidot.com/druid:moon",
+        "description": "http://dnd5e.wikidot.com/druid:moon",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -274,7 +274,7 @@ export default [
     {
         "name": "Fungal Body",
         "dependancy": "Halo of Spores",
-        "description":"http://dnd5e.wikidot.com/druid:moon",
+        "description": "http://dnd5e.wikidot.com/druid:moon",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -282,7 +282,7 @@ export default [
     {
         "name": "Archdruid",
         "dependancy": "Wild Shape",
-        "description":"http://dnd5e.wikidot.com/druid",
+        "description": "http://dnd5e.wikidot.com/druid",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -290,7 +290,7 @@ export default [
     {
         "name": "Starry Form",
         "dependancy": "Wild Shape",
-        "description":"http://dnd5e.wikidot.com/druid:stars",
+        "description": "http://dnd5e.wikidot.com/druid:stars",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -298,7 +298,7 @@ export default [
     {
         "name": "Twinkling Constelations",
         "dependancy": "Starry Form",
-        "description":"http://dnd5e.wikidot.com/druid:stars",
+        "description": "http://dnd5e.wikidot.com/druid:stars",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -306,7 +306,7 @@ export default [
     {
         "name": "Full of Stars",
         "dependancy": "Starry Form",
-        "description":"http://dnd5e.wikidot.com/druid:stars",
+        "description": "http://dnd5e.wikidot.com/druid:stars",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -320,8 +320,8 @@ export default [
     },
     {
         "name": "War Magic",
-        "dependancy": null,
-        "description":"http://dnd5e.wikidot.com/fighter:eldritch-knight",
+        "dependancy": "",
+        "description": "http://dnd5e.wikidot.com/fighter:eldritch-knight",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -329,7 +329,7 @@ export default [
     {
         "name": "Improved War Magic",
         "dependancy": "War Magic",
-        "description":"http://dnd5e.wikidot.com/fighter:eldritch-knight",
+        "description": "http://dnd5e.wikidot.com/fighter:eldritch-knight",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -343,28 +343,28 @@ export default [
     },
     {
         "name": "Extra Attack",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": true
     },
     {
         "name": "Lay on Hands",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "Divine Smite",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "Aura of Protection",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -378,14 +378,14 @@ export default [
     },
     {
         "name": "Aura of Hate",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
     },
     {
         "name": "Fighting Style",
-        "dependancy": null,
+        "dependancy": "",
         "description": "Look up dnd 5e fighting styles",
         "conflifts": [null],
         "tier": 1,
@@ -393,65 +393,65 @@ export default [
     },
     {
         "name": "Supernatural Resistance",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
     },
     {
         "name": "Vigilant Rebuke",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
     },
     {
         "name": "Emissary of Redemption",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
     },
     {
         "name": "Protective Spirit",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
     },
     {
         "name": "Living Legend",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
     },
     {
         "name": "Eldritch Invocations",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "Meta Magic",
-        "description":"https://dnd5e.wikidot.com/sorcerer",
-        "dependancy": null,
+        "description": "https://dnd5e.wikidot.com/sorcerer",
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "Bolstering Magic",
-        "dependancy": null,
-        "description":"http://dnd5e.wikidot.com/barbarian:wild-magic",
+        "dependancy": "",
+        "description": "http://dnd5e.wikidot.com/barbarian:wild-magic",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "Ability Score Improvement",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": true,
@@ -463,14 +463,14 @@ export default [
     },
     {
         "name": "Martial Adept",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
     },
     {
         "name": "War Caster",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false,
@@ -478,7 +478,7 @@ export default [
     },
     {
         "name": "Shadow Touched",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false,
@@ -486,7 +486,7 @@ export default [
     },
     {
         "name": "Fey Touched",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false,
@@ -494,7 +494,7 @@ export default [
     },
     {
         "name": "Ember of the Fire Giant",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false,
@@ -502,7 +502,7 @@ export default [
     },
     {
         "name": "Infusion",
-        "dependancy": null,
+        "dependancy": "",
         "conflifts": [null],
         "tier": 1,
         "stackable": false,

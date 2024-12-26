@@ -90,13 +90,13 @@ export default function Character({ character, setCharacter, characters, getChar
         }
     }
 
-    const openInventory = () =>{
+    const openInventory = () => {
         setIsInventoryOpen(!isInventoryOpen)
     }
 
-    const getReward = () =>{
+    const getReward = () => {
         const randomReward = rewards[Math.floor(Math.random() * rewards.length)]
-        const characterCopy = {...character}
+        const characterCopy = { ...character }
         characterCopy.inventory.push(randomReward)
         randomReward['id'] = crypto.randomUUID()
         alert(`You have received ${randomReward.name}, please check your inventory for more info!`)
@@ -107,18 +107,18 @@ export default function Character({ character, setCharacter, characters, getChar
     const initCharacter = () => {
         getCharacters()
         // if (character.level === 0) {
-            let characterCopy = { ...character }
-            characterCopy.stats.hpMod = charClass.baseStats.hpMod
-            characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
-            characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
-            characterCopy.type = type
-            if (charClass.canCast) {
-                characterCopy.maxSpellPoints = charClass.spellPoints[character.level]
-                characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
-            }
-            characterCopy.type = character.type || type
-            characterCopy.inventory = characterCopy.inventory || []
-            setCharacter({ ...characterCopy })
+        let characterCopy = { ...character }
+        characterCopy.stats.hpMod = charClass.baseStats.hpMod
+        characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
+        characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
+        characterCopy.type = type
+        if (charClass.canCast) {
+            characterCopy.maxSpellPoints = charClass.spellPoints[character.level]
+            characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
+        }
+        characterCopy.type = character.type || type
+        characterCopy.inventory = characterCopy.inventory || []
+        setCharacter({ ...characterCopy })
         // }
     }
 
@@ -128,11 +128,10 @@ export default function Character({ character, setCharacter, characters, getChar
             characters[character.id] = character
             localStorage.setItem("characters", JSON.stringify(characters))
         }
-        console.log("Character saved!")
     }
 
     const changeCurrentSpellPoints = (e) => {
-        if(!character.name){
+        if (!character.name) {
             alert("Please give your character a name, otherwise it failes to save")
             return
         }
@@ -254,7 +253,7 @@ export default function Character({ character, setCharacter, characters, getChar
                     }
                     <img src={restIcon} onClick={rest} className='restIcon icon' />
                     <img src={deathIcon} onClick={reset} className='deathIconb icon' />
-                    <img src={inventoryIcon} onClick={openInventory} className="icon"/>
+                    <img src={inventoryIcon} onClick={openInventory} className="icon" />
                 </div>
                 <button onClick={saveCharacter} className='saveButton'>Save</button>
             </div>
@@ -286,7 +285,7 @@ export default function Character({ character, setCharacter, characters, getChar
                 saveCharacter={saveCharacter}
             />
 
-            <InventoryModal 
+            <InventoryModal
                 isOpen={isInventoryOpen}
                 setIsOpen={setIsInventoryOpen}
                 character={character}
