@@ -41,11 +41,16 @@ function ClassModal({isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpell
             availableFeatures = tier1Features
           }
           randoFeature = availableFeatures[Math.floor(Math.random() * availableFeatures.length)]
-          if (choices.includes(randoFeature) || features.includes(randoFeature) || features.includes(randoFeature.dependancy)){
+          if (choices.includes(randoFeature) || features.includes(randoFeature)){
             if(randoFeature.stackable){
                 choices.push(randoFeature)
               i++
-            } else{
+              return
+            } 
+            if(!features.includes(randoFeature.dependancy)){
+              return
+            }
+            else{
             continue
             }
           } else{
