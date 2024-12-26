@@ -59,10 +59,8 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
         i++
       }
     }
-    const asi = features.find((e)=>{e.name=="Ability Score Improvement"})
-    // console.log(asi)
-    // console.log(features[asi])
-    // choices.push(features[asi])
+    const asi = classFeatures.find((e)=>e.name==="Ability Score Improvement")
+    choices.push(asi)
     setFeatureChoices(choices)
   }
 
