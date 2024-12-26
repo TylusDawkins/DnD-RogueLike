@@ -177,6 +177,23 @@ export default function Character({ character, setCharacter, characters, getChar
         saveCharacter()
     }
 
+    const addStatPoint = () => {
+        console.log("hello there")
+        let characterCopy = {...character}
+        characterCopy.pointsLeft +=1
+        setPointsLeft(character.pointsLeft)
+        setCharacter({...characterCopy})
+        saveCharacter()
+    }
+
+    const removeStatPoint = () => {
+        let characterCopy = {...character}
+        characterCopy.pointsLeft -=1
+        setPointsLeft(character.pointsLeft)
+        setCharacter({...characterCopy})
+        saveCharacter()
+    }
+
     const levelUp = () => {
         if (character.pointsLeft) {
             alert("Please spend all points before leveling")
@@ -338,6 +355,9 @@ export default function Character({ character, setCharacter, characters, getChar
                             <button className="statButton" onClick={() => { changeStats("mental", 1) }}>↑</button>
                             <button className="statButton" onClick={() => { changeStats("mental", -1) }}>↓</button>
                         </div>
+                        <button className="addStatButton" onClick={addStatPoint}> Add Stat </button>
+                        <button className="addStatButton" onClick={removeStatPoint}> Remove Stat </button>
+
                     </div>
                 </div>
                 <button className="levelButton" onClick={levelUp}>Level up!</button>

@@ -21,7 +21,7 @@
         "tier": 1
     },
     {
-        "name": "Battle Axe",
+        "name": "Great Axe",
         "type": "Weapon",
         "damage": "1d12",
         "special": "On a critical hit, knock prone",
@@ -305,7 +305,7 @@
         "tier": 2
     },
     {
-        "name": "+1 Battle Axe",
+        "name": "+1 Great Axe",
         "type": "Weapon",
         "damage": "1d12+1",
         "special": "+1 to attack and damage rolls",
@@ -478,7 +478,7 @@
         "tier": 3
     },
     {
-        "name": "Battle Axe of the Berserker",
+        "name": "Great Axe of the Berserker",
         "type": "Weapon",
         "damage": "1d12",
         "special": "On a critical hit, gain +2 on next attack roll",
@@ -570,7 +570,7 @@
         "tier": 3
     },
     {
-        "name": "+2 Battle Axe",
+        "name": "+2 Great Axe",
         "type": "Weapon",
         "damage": "1d12+2",
         "special": "+2 to attack and damage rolls",

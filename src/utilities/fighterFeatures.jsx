@@ -281,7 +281,12 @@ export default [
         "conflifts": [null],
         "tier": 1,
         "stackable": false,
-        "link": "http://dnd5e.wikidot.com/feat:heavy-armor-master"
+        "link": "http://dnd5e.wikidot.com/feat:heavy-armor-master",
+        cb: ((char, setChar) => {
+            const charCopy = { ...char }
+            charCopy.physical += 1
+            setChar(charCopy)
+        })
     },
     {
         "name": "Great Weapon Master",
