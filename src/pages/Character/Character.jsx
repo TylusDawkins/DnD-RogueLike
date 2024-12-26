@@ -123,6 +123,10 @@ export default function Character({ character, setCharacter, characters, getChar
     }
 
     const saveCharacter = () => {
+        if (!character.name) {
+            alert("Please give your character a name, otherwise it failes to save")
+            return
+        }
         const characters = JSON.parse(localStorage.getItem("characters"))
         if (character.name) {
             characters[character.id] = character
@@ -131,10 +135,6 @@ export default function Character({ character, setCharacter, characters, getChar
     }
 
     const changeCurrentSpellPoints = (e) => {
-        if (!character.name) {
-            alert("Please give your character a name, otherwise it failes to save")
-            return
-        }
         let characterCopy = { ...character }
         characterCopy.stats.currentSpellPoints = e.target.value
         setCharacter(characterCopy)

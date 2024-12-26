@@ -662,19 +662,13 @@
     {
         "name": "Cloak of Displacement",
         "type": "Blessing",
-        "special": "Projects an illusion that makes you appear to be slightly away from your actual location",
+        "special": "Projects an illusion that makes you appear to be slightly away from your actual location giving enemies -2 on attacking you",
         "tier": 3
     },
     {
         "name": "Eyes of the Eagle",
         "type": "Blessing",
-        "special": "+2 on Wisdom (Perception) checks that rely on sight",
-        "tier": 2
-    },
-    {
-        "name": "Gloves of Thievery",
-        "type": "Blessing",
-        "special": "+5 bonus to Dexterity (Sleight of Hand) checks",
+        "special": "+2 on Perception checks that rely on sight",
         "tier": 2
     },
     {
