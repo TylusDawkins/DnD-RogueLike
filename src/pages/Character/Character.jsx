@@ -178,19 +178,18 @@ export default function Character({ character, setCharacter, characters, getChar
     }
 
     const addStatPoint = () => {
-        console.log("hello there")
-        let characterCopy = {...character}
-        characterCopy.pointsLeft +=1
+        let characterCopy = { ...character }
+        characterCopy.pointsLeft += 1
         setPointsLeft(character.pointsLeft)
-        setCharacter({...characterCopy})
+        setCharacter({ ...characterCopy })
         saveCharacter()
     }
 
     const removeStatPoint = () => {
-        let characterCopy = {...character}
-        characterCopy.pointsLeft -=1
+        let characterCopy = { ...character }
+        characterCopy.pointsLeft -= 1
         setPointsLeft(character.pointsLeft)
-        setCharacter({...characterCopy})
+        setCharacter({ ...characterCopy })
         saveCharacter()
     }
 
