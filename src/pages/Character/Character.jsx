@@ -84,8 +84,10 @@ export default function Character({ character, setCharacter, characters, getChar
             characterCopy.level = 0
             characterCopy.pointsLeft = 0
             characterCopy.totalPoints = 0
-            characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
-            characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+            if (character.canCast) {
+                characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
+                characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+            }
             setCharacter(characterCopy)
         }
     }

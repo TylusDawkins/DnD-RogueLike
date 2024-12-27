@@ -12,6 +12,7 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
 
   useEffect(() => {
     getRandomChoices()
+    window.character = character
   }, [isOpen])
 
   const closeModal = () => {
@@ -27,42 +28,52 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
   }
 
   const getRandomChoices = () => {
-    let i = 0
-    let randoFeature
-    let availableFeatures
-    let choices = []
-    // setChoices([])
+    let i = 0;
+    let randoFeature;
+    let availableFeatures;
+    let choices = [];
+  
+    const asi = classFeatures.find((e) => e.name === "Ability Score Improvement");
+    choices.push(asi);
+  
     while (i < 3) {
       if (playerLevel >= 12) {
-        availableFeatures = tier3Features
+        availableFeatures = tier3Features;
       } else if (playerLevel >= 6) {
-        availableFeatures = tier2Features
+        availableFeatures = tier2Features;
       } else {
-        availableFeatures = tier1Features
+        availableFeatures = tier1Features;
       }
+  
       randoFeature = availableFeatures[Math.floor(Math.random() * availableFeatures.length)];
-      const hasDependency = character.features.some(feat => feat?.name?.toLowerCase() === randoFeature?.dependency?.toLowerCase());
-      if (choices.includes(randoFeature) || character.features.includes(randoFeature)) {
-        if (randoFeature.stackable) {
-          choices.push(randoFeature)
-          i++
-          return
-        }
-        if (!hasDependency) {
-          continue
-        }
-        else {
-          continue
-        }
-      } else {
-        choices.push(randoFeature)
-        i++
+
+      // Check if feature already exists or dependency isn't met
+      const hasChoiceAlready = choices.some((feat) => feat.name === randoFeature.name)
+      const hasFeatureAlready = character.features.some((feat) => feat.name === randoFeature.name);
+      const hasDependencyAlready = !randoFeature.dependency || character.features.some((feat) => feat?.name === randoFeature.dependency);
+              
+      if(hasChoiceAlready){
+        console.log(`Skipping ${randoFeature.name} - Already in choices`)
+        return
+      }
+         
+      if ((hasFeatureAlready || !hasDependencyAlready) && !randoFeature.stackable) {
+        console.log(`Skipping ${randoFeature.name} - Already exists or missing dependency`);
+        continue; // Skip to next iteration
+      }
+  
+      // Feature can be added (not stacked or new feature)
+      choices.push(randoFeature);
+      i++;
+  
+      // Early return if enough features are chosen
+      if (i === 3) {
+        break;
       }
     }
-    const asi = classFeatures.find((e)=>e.name==="Ability Score Improvement")
-    choices.push(asi)
-    setFeatureChoices(choices)
-  }
+  
+    setFeatureChoices(choices);
+  };
 
   const handleClick = (feature) => {
     addFeature(feature)
