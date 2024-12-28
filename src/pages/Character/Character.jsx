@@ -95,7 +95,7 @@ export default function Character({ character, setCharacter, characters, getChar
     const openInventory = () => {
         setIsInventoryOpen(!isInventoryOpen)
     }
-
+    
     const getReward = () => {
         const randomReward = rewards[Math.floor(Math.random() * rewards.length)]
         const characterCopy = { ...character }
