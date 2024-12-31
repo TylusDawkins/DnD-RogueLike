@@ -14,14 +14,14 @@
 
 .inventory {
     display: grid; /* Use grid for better column control */
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); /* Key change */
-    
-    gap: 10px; /* Adds spacing between items */
+    grid-template-columns: repeat(3, minmax(20%, 1fr));
+    grid-template-rows: auto repeat(3, auto);    
+    gap: 200px; /* Adds spacing between items */
     width: 100%;
-    height: 85%;
-    overflow: auto;
+    height: calc(100vh - 5em); /* Subtract the modal header and footer */
+    overflow-y: scroll;
     font-size: 1.5em;
-    padding: 10px; /* Add padding for visual spacing */
+    padding: 2em; /* Increase padding for better readability */
 }
 
 .close-modal {
@@ -39,8 +39,8 @@
     flex-direction: column; /* This is the crucial line! */
     justify-content: center;
     align-items: center;
-    /* padding: 1px; */
-    box-sizing: border-box;
+    overflow-y: scroll;
     border: 1px solid black;
-    overflow: auto; /* Hide overflow content if any */
+    min-width: 100%; /* Make sure each item takes full width of its grid area */
 }
+

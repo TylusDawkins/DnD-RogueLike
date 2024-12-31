@@ -53,15 +53,13 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
       const hasDependencyAlready = !randoFeature.dependency || character.features.some((feat) => feat?.name === randoFeature.dependency);
 
       if (hasChoiceAlready) {
-        console.log(`Skipping ${randoFeature.name} - Already in choices`)
         return
       }
 
       if ((hasFeatureAlready || !hasDependencyAlready) && !randoFeature.stackable) {
-        console.log(`Skipping ${randoFeature.name} - Already exists or missing dependency`);
         continue; // Skip to next iteration
       }
- 
+
       // Feature can be added (not stacked or new feature)
       choices.push(randoFeature);
       i++;

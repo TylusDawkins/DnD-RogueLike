@@ -10,9 +10,11 @@ import FeatureModal from "@components/featuremodal/FeatureModal"
 import SpellModal from "@components/spellmodal/SpellModal"
 import SpellBook from "@components/spellbook/SpellBook"
 import classes from "@utils/classes"
-import rewards from "@utils/rewards"
 import { useParams } from 'react-router-dom'
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
+
+//function imports
+import getRandomReward from '../../utilities/RewardsUtil'
 
 export default function Character({ character, setCharacter, characters, getCharacters }) {
 
@@ -95,9 +97,9 @@ export default function Character({ character, setCharacter, characters, getChar
     const openInventory = () => {
         setIsInventoryOpen(!isInventoryOpen)
     }
-    
+
     const getReward = () => {
-        const randomReward = rewards[Math.floor(Math.random() * rewards.length)]
+        const randomReward = getRandomReward(character)
         const characterCopy = { ...character }
         characterCopy.inventory.push(randomReward)
         randomReward['id'] = crypto.randomUUID()
@@ -133,6 +135,7 @@ export default function Character({ character, setCharacter, characters, getChar
         if (character.name) {
             characters[character.id] = character
             localStorage.setItem("characters", JSON.stringify(characters))
+            window.character = character
         }
     }
 
@@ -237,6 +240,7 @@ export default function Character({ character, setCharacter, characters, getChar
 
     useEffect(() => {
         initCharacter()
+        window.character = character
     }, [])
 
     useEffect(() => {

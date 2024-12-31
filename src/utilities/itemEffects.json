@@ -2,182 +2,260 @@
     {
         "name": "Rusty",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "DC 8 for poison on hit. 1d4 poison damage on a failed save.",
         "tier": 1
     },
     {
         "name": "Goblin Slayer",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "+{modifier} damage to goblins.",
         "tier": 1
     },
     {
         "name": "Burning",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "+{modifier}d4 fire damage on a hit.",
         "tier": 1
     },
     {
         "name": "Swift",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "Once per combat, you can use a bonus action to gain an extra action on your turn.",
         "tier": 2
     },
     {
         "name": "Hardened",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "+{modifier} to AC (Armor Class).",
         "tier": 1
     },
     {
         "name": "Fire Resistant",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "Reduces fire damage taken by {modifier}.",
         "tier": 1
     },
     {
         "name": "Shifty",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "Once per turn, when you are targeted by an attack, you can use your reaction to impose a 2{modifier} penalty on the attacker's roll.",
         "tier": 2
     },
     {
         "name": "Vampiric",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "When you damage a creature with this weapon, you regain hit points equal to {modifier} of the damage dealt (minimum 1).",
         "tier": 2
     },
     {
         "name": "Freezing",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "+{modifier}d6 cold damage on a hit. On a critical hit, the target must succeed on a DC 10 Constitution saving throw or be restrained until the end of its next turn.",
         "tier": 2
     },
     {
         "name": "Thundering",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "When you hit a creature with this weapon, thunder booms. Each creature within 5 feet of the target must succeed on a DC 12 Constitution saving throw or be pushed 5 feet away.",
         "tier": 2
     },
     {
         "name": "Precise",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "You gain +{modifier} to attack rolls with this weapon.",
         "tier": 1
     },
     {
         "name": "Iron Will",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "While wearing this armor, you gain +{modifier} on challenges against being charmed or feared.",
         "tier": 2
     },
     {
         "name": "Nimble",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "While wearing this armor, gain +{modifier} on athletics challenges.",
         "tier": 1
     },
     {
         "name": "Reflecting",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "Once per long rest, when you take damage from a spell attack, you can use your reaction to reflect the spell back at the caster. The caster is targeted by the spell instead of you.",
         "tier": 3
     },
     {
         "name": "Keen",
         "type": "Weapon",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "The weapon's critical hit range is increased by {modifier}.",
         "tier": 2
     },
     {
         "name": "Shield Master",
         "type": "Armor",
-        "class": ["Fighter", "Hybrid"],
+        "class": [
+            "Fighter",
+            "Hybrid"
+        ],
         "special": "While wielding a shield and wearing this armor, you gain +{modifier} to AC.",
         "tier": 1
     },
     {
         "name": "Arcane Focus",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "+{modifier} to spell attack rolls and spell save DC.",
         "tier": 1
     },
     {
         "name": "Empowered Casting",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "Once per long rest, you can cast a spell as if you had expended a spell slot one level higher than the one you actually expended.",
         "tier": 2
     },
     {
         "name": "Spell Shield",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "As a reaction when you take spell damage, you can reduce the damage taken by {modifier}d6.",
         "tier": 2
     },
     {
         "name": "Arcane Recovery",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "Once per rest, you can recover {modifier} x2 expended spell slots. The spell slots can have a combined level that is equal to or less than half your level (rounded up).",
         "tier": 2
     },
     {
         "name": "Mind Sharpener",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "You have +{modifier} on saving throws against being charmed or frightened.",
         "tier": 1
     },
     {
         "name": "Spell Penetration",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "Your spells ignore {modifier} of a creature's resistance to a damage type of your choice.",
         "tier": 2
     },
     {
         "name": "Quickened Casting",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "Once per long rest, you can cast a spell that has a casting time of 1 action as a bonus action.",
         "tier": 3
     },
     {
         "name": "Improved Familiar",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "Anything you summon has its hit point maximum increases by {modifier} x your level.",
         "tier": 2
     },
     {
         "name": "Staff of Power",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "+{modifier} to spell attack rolls, spell save DC, and damage rolls for spells.",
         "tier": 3
     },
-        {
+    {
         "name": "Robe of the Archmagi",
         "type": "Mage Item",
-        "class": ["Mage", "Hybrid"],
+        "class": [
+            "Mage",
+            "Hybrid"
+        ],
         "special": "+{modifier} to AC and saving throws against spell effects",
         "tier": 3
     }

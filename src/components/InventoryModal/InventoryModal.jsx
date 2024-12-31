@@ -3,7 +3,6 @@ import './inventorymodal.css'
 function InventoryModal({ isOpen, setIsOpen, character, setCharacter, saveCharacter }) {
 
     const removeItem = (item) => {
-        console.log(item)
         const characterCopy = { ...character }
         characterCopy.inventory.splice(characterCopy.inventory.indexOf(item), 1)
         setCharacter(characterCopy)
@@ -20,7 +19,7 @@ function InventoryModal({ isOpen, setIsOpen, character, setCharacter, saveCharac
             <div className="close-modal" onClick={closeModal}>X</div>
             <div className='inventory'>
                 {character.inventory.map((item) => (
-                    <div className='item' key={item.name}>
+                    <div className='item' key={crypto.randomUUID()}>
                         <div onClick={() => { removeItem(item) }}>
                             X
                         </div>
@@ -31,7 +30,7 @@ function InventoryModal({ isOpen, setIsOpen, character, setCharacter, saveCharac
                             type: {item.type}
                         </div>
                         <div>
-                            Special: {item.special}
+                            Effects: {JSON.stringify(item.effects)}
                         </div>
                         {item.damage ? <div>{item.damage}</div> : null}
                         {item.ac ? <div>{item.ac}</div> : null}
