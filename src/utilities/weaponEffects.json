@@ -77,17 +77,17 @@
         "tier": 1
     },
     {
-        "name": "Fortified",
+        "name": "Iron Will",
         "type": "Armor",
         "class": ["Fighter", "Hybrid"],
-        "special": "While wearing this armor, you have advantage on saving throws against being charmed.",
+        "special": "While wearing this armor, you gain +{modifier} on challenges against being charmed or feared.",
         "tier": 2
     },
     {
         "name": "Nimble",
         "type": "Armor",
         "class": ["Fighter", "Hybrid"],
-        "special": "While wearing this armor, you have advantage on Dexterity (Stealth) checks.",
+        "special": "While wearing this armor, gain +{modifier} on athletics challenges.",
         "tier": 1
     },
     {
@@ -101,11 +101,11 @@
         "name": "Keen",
         "type": "Weapon",
         "class": ["Fighter", "Hybrid"],
-        "special": "The weapon’s critical hit range is increased by {modifier} (minimum 1).",
+        "special": "The weapon's critical hit range is increased by {modifier}.",
         "tier": 2
     },
     {
-        "name": "Defensive",
+        "name": "Shield Master",
         "type": "Armor",
         "class": ["Fighter", "Hybrid"],
         "special": "While wielding a shield and wearing this armor, you gain +{modifier} to AC.",
@@ -136,14 +136,14 @@
         "name": "Arcane Recovery",
         "type": "Mage Item",
         "class": ["Mage", "Hybrid"],
-        "special": "Once per day when you finish a short rest, you can recover {modifier} expended spell slots. The spell slots can have a combined level that is equal to or less than half your level (rounded up).",
+        "special": "Once per rest, you can recover {modifier} x2 expended spell slots. The spell slots can have a combined level that is equal to or less than half your level (rounded up).",
         "tier": 2
     },
     {
         "name": "Mind Sharpener",
         "type": "Mage Item",
         "class": ["Mage", "Hybrid"],
-        "special": "You have advantage on saving throws against being charmed or frightened.",
+        "special": "You have +{modifier} on saving throws against being charmed or frightened.",
         "tier": 1
     },
     {
@@ -164,7 +164,7 @@
         "name": "Improved Familiar",
         "type": "Mage Item",
         "class": ["Mage", "Hybrid"],
-        "special": "If you have a familiar, its hit point maximum increases by {modifier} per your level.",
+        "special": "Anything you summon has its hit point maximum increases by {modifier} x your level.",
         "tier": 2
     },
     {
@@ -178,7 +178,7 @@
         "name": "Robe of the Archmagi",
         "type": "Mage Item",
         "class": ["Mage", "Hybrid"],
-        "special": "+{modifier} to AC. You have advantage on saving throws against spells.",
+        "special": "+{modifier} to AC and saving throws against spell effects",
         "tier": 3
     }
 ]

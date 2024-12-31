@@ -1,330 +1,378 @@
 [
     {
-        "name":"",
-        "type":"",
-        "damage":"",
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Club",
+        "type": "Weapon",
+        "damage": "1d4 Blunt",
+        "properties": "",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Club",
-        "type":"Weapon",
-        "damage":"1d4 Blunt",
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Dagger",
+        "type": "Weapon",
+        "damage": "1d4 Stabbing",
+        "properties": "Finesse, Light, Thrown(20/60)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Dagger",
-        "type":"Weapon",
-        "damage":"1d4 Stabbing",
-        "properties":"Finesse, Light, Thrown(20/60)",
-        "special":[],
-        "tier":1
+        "name": "Great Club",
+        "type": "Weapon",
+        "damage": "1d8 Blunt",
+        "properties": "Two Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Great Club",
-        "type":"Weapon",
-        "damage":"1d8 Blunt",
-        "properties":"Two Handed",
-        "special":[],
-        "tier":1
+        "name": "Hand Axe",
+        "type": "Weapon",
+        "damage": "1d6 Cutting",
+        "properties": "Light, Thrown(20/60)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Hand Axe",
-        "type":"Weapon",
-        "damage":"1d6 Cutting",
-        "properties":"Light, Thrown(20/60)",
-        "special":[],
-        "tier":1
+        "name": "Javelin",
+        "type": "Weapon",
+        "damage": "1d6 Stabbing",
+        "properties": "Thrown(30/120)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Javelin",
-        "type":"Weapon",
-        "damage":"1d6 Stabbing",
-        "properties":"Thrown(30/120)",
-        "special":[],
-        "tier":1
+        "name": "Light Hammer",
+        "type": "Weapon",
+        "damage": "1d4 Blunt",
+        "properties": "Light, Thrown(20/60)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Light Hammer",
-        "type":"Weapon",
-        "damage":"1d4 Blunt",
-        "properties":"Light, Thrown(20/60)",
-        "special":[],
-        "tier":1
+        "name": "Mace",
+        "type": "Weapon",
+        "damage": "1d6 Blunt",
+        "properties": "",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Mace",
-        "type":"Weapon",
-        "damage":"1d6 Blunt",
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Quarterstaff",
+        "type": "Weapon",
+        "damage": "1d6 Blunt",
+        "properties": "Versatile(1d8)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Quarterstaff",
-        "type":"Weapon",
-        "damage":"1d6 Blunt",
-        "properties":"Versatile(1d8)",
-        "special":[],
-        "tier":1
+        "name": "Sickle",
+        "type": "Weapon",
+        "damage": "1d4 Cutting",
+        "properties": "Light",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Sickle",
-        "type":"Weapon",
-        "damage":"1d4 Cutting",
-        "properties":"Light",
-        "special":[],
-        "tier":1
+        "name": "Spear",
+        "type": "Weapon",
+        "damage": "1d6 Stabbing",
+        "properties": "Thrown(20/60), Versatile(1d8)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Spear",
-        "type":"Weapon",
-        "damage":"1d6 Stabbing",
-        "properties":"Thrown(20/60), Versatile(1d8)",
-        "special":[],
-        "tier":1
+        "name": "Light Crossbow",
+        "type": "Weapon",
+        "damage": "1d8 Piercing",
+        "properties": "Ammunition (range 80/320), Loading, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Light Crossbow",
-        "type":"Weapon",
-        "damage":"1d8 Piercing",
-        "properties":"Ammunition (range 80/320), Loading, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Shortbow",
+        "type": "Weapon",
+        "damage": "1d6 Piercing",
+        "properties": "Ammunition (range 80/320), Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Shortbow",
-        "type":"Weapon",
-        "damage":"1d6 Piercing",
-        "properties":"Ammunition (range 80/320), Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Scimitar",
+        "type": "Weapon",
+        "damage": "1d6 Slashing",
+        "properties": "Finesse, Light",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Scimitar",
-        "type":"Weapon",
-        "damage":"1d6 Slashing",
-        "properties":"Finesse, Light",
-        "special":[],
-        "tier":1
+        "name": "Shortsword",
+        "type": "Weapon",
+        "damage": "1d6 Piercing",
+        "properties": "Finesse, Light",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Shortsword",
-        "type":"Weapon",
-        "damage":"1d6 Piercing",
-        "properties":"Finesse, Light",
-        "special":[],
-        "tier":1
-    },
-        {
-        "name":"Battleaxe",
-        "type":"Weapon",
-        "damage":"1d8 Slashing",
-        "properties":"Versatile (1d10)",
-        "special":[],
-        "tier":1
+        "name": "Battleaxe",
+        "type": "Weapon",
+        "damage": "1d8 Slashing",
+        "properties": "Versatile (1d10)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Flail",
-        "type":"Weapon",
-        "damage":"1d8 Bludgeoning",
-        "properties":"",
-        "special":[],
-        "tier":1
-    },
-        {
-        "name":"Glaive",
-        "type":"Weapon",
-        "damage":"1d10 Slashing",
-        "properties":"Heavy, Reach, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Flail",
+        "type": "Weapon",
+        "damage": "1d8 Bludgeoning",
+        "properties": "",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Greataxe",
-        "type":"Weapon",
-        "damage":"1d12 Slashing",
-        "properties":"Heavy, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Glaive",
+        "type": "Weapon",
+        "damage": "1d10 Slashing",
+        "properties": "Heavy, Reach, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Greatsword",
-        "type":"Weapon",
-        "damage":"2d6 Slashing",
-        "properties":"Heavy, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Greataxe",
+        "type": "Weapon",
+        "damage": "1d12 Slashing",
+        "properties": "Heavy, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Halberd",
-        "type":"Weapon",
-        "damage":"1d10 Slashing",
-        "properties":"Heavy, Reach, Two-Handed",
-        "special":[],
-        "tier":1
-    },
-        {
-        "name":"Longsword",
-        "type":"Weapon",
-        "damage":"1d8 Slashing",
-        "properties":"Versatile (1d10)",
-        "special":[],
-        "tier":1
+        "name": "Greatsword",
+        "type": "Weapon",
+        "damage": "2d6 Slashing",
+        "properties": "Heavy, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Maul",
-        "type":"Weapon",
-        "damage":"2d6 Bludgeoning",
-        "properties":"Heavy, Two-Handed",
-        "special":[],
-        "tier":1
-    },
-        {
-        "name":"Morningstar",
-        "type":"Weapon",
-        "damage":"1d8 Piercing",
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Halberd",
+        "type": "Weapon",
+        "damage": "1d10 Slashing",
+        "properties": "Heavy, Reach, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Pike",
-        "type":"Weapon",
-        "damage":"1d10 Piercing",
-        "properties":"Heavy, Reach, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Longsword",
+        "type": "Weapon",
+        "damage": "1d8 Slashing",
+        "properties": "Versatile (1d10)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Rapier",
-        "type":"Weapon",
-        "damage":"1d8 Piercing",
-        "properties":"Finesse",
-        "special":[],
-        "tier":1
-    },
-        {
-        "name":"Warhammer",
-        "type":"Weapon",
-        "damage":"1d8 Bludgeoning",
-        "properties":"Versatile (1d10)",
-        "special":[],
-        "tier":1
+        "name": "Maul",
+        "type": "Weapon",
+        "damage": "2d6 Bludgeoning",
+        "properties": "Heavy, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Whip",
-        "type":"Weapon",
-        "damage":"1d4 Slashing",
-        "properties":"Finesse, Reach",
-        "special":[],
-        "tier":1
+        "name": "Morningstar",
+        "type": "Weapon",
+        "damage": "1d8 Piercing",
+        "properties": "",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Heavy Crossbow",
-        "type":"Weapon",
-        "damage":"1d10 Piercing",
-        "properties":"Ammunition (range 100/400), Loading, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Pike",
+        "type": "Weapon",
+        "damage": "1d10 Piercing",
+        "properties": "Heavy, Reach, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Longbow",
-        "type":"Weapon",
-        "damage":"1d8 Piercing",
-        "properties":"Ammunition (range 150/600), Heavy, Two-Handed",
-        "special":[],
-        "tier":1
+        "name": "Rapier",
+        "type": "Weapon",
+        "damage": "1d8 Piercing",
+        "properties": "Finesse",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"",
-        "type":"",
-        "AC":"",
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Warhammer",
+        "type": "Weapon",
+        "damage": "1d8 Bludgeoning",
+        "properties": "Versatile (1d10)",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"leather",
-        "type":"Armor",
-        "AC":"+1",
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Whip",
+        "type": "Weapon",
+        "damage": "1d4 Slashing",
+        "properties": "Finesse, Reach",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Hide",
-        "type":"Armor",
-        "AC":2,
-        "properties":"",
-        "special":[],
-        "tier":1
+        "name": "Heavy Crossbow",
+        "type": "Weapon",
+        "damage": "1d10 Piercing",
+        "properties": "Ammunition (range 100/400), Loading, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Chain",
-        "type":"Armor",
-        "AC":3,
-        "properties":"",
-        "special":[],
-        "tier":2
+        "name": "Longbow",
+        "type": "Weapon",
+        "damage": "1d8 Piercing",
+        "properties": "Ammunition (range 150/600), Heavy, Two-Handed",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Scale",
-        "type":"Armor",
-        "AC":4,
-        "properties":"",
-        "special":[],
-        "tier":2
+        "name": "Arcane Staff",
+        "type": "Staff",
+        "damage": "1d8 Arcane",
+        "properities": "Two-Handed, Elemental Affinity",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Chain",
-        "type":"Armor",
-        "AC":5,
-        "properties":"",
-        "special":[],
-        "tier":3
+        "name": "Fire Staff",
+        "type": "Staff",
+        "damage": "1d8 Fire",
+        "properities": "Two-Handed, Elemental Affinity",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Plate",
-        "type":"Armor",
-        "AC":6,
-        "properties":"",
-        "special":[],
-        "tier":4
+        "name": "Ice Staff",
+        "type": "Staff",
+        "damage": "1d8 Ice",
+        "properities": "Two-Handed, Elemental Affinity",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Wooden Shield",
-        "type":"Shield",
-        "AC":1,
-        "properties":"Flamable",
-        "special":[],
-        "tier":1
+        "name": "Lightning Staff",
+        "type": "Staff",
+        "damage": "1d8 Lightning",
+        "properities": "Two-Handed, Elemental Affinity",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Bronze Shield",
-        "type":"Shield",
-        "AC":2,
-        "properties":"",
-        "special":[],
-        "tier":2
+        "name": "Arcane Wand",
+        "type": "Wand",
+        "damage": "1d8 Arcane",
+        "properities": "Elemental Affinity",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Iron Shield",
-        "type":"Shield",
-        "AC":3,
-        "properties":"",
-        "special":[],
-        "tier":3
+        "name": "Fire Wand",
+        "type": "Wand",
+        "damage": "1d8 Fire",
+        "properities": "Elemental Affinity",
+        "special": [],
+        "tier": 1
     },
     {
-        "name":"Steel Shield",
-        "type":"Shield",
-        "AC":4,
-        "properties":"",
-        "special":[],
-        "tier":4
+        "name": "Ice Wand",
+        "type": "Wand",
+        "damage": "1d8 Ice",
+        "properities": "Elemental Affinity",
+        "special": [],
+        "tier": 1
+    },
+    {
+        "name": "Lightning Wand",
+        "type": "Wand",
+        "damage": "1d8 Lightning",
+        "properities": "Elemental Affinity",
+        "special": [],
+        "tier": 1
+    },
+    {
+        "name": "leather",
+        "type": "Armor",
+        "AC": "+1",
+        "properties": "",
+        "special": [],
+        "tier": 1
+    },
+    {
+        "name": "Hide",
+        "type": "Armor",
+        "AC": 2,
+        "properties": "",
+        "special": [],
+        "tier": 1
+    },
+    {
+        "name": "Chain",
+        "type": "Armor",
+        "AC": 3,
+        "properties": "",
+        "special": [],
+        "tier": 2
+    },
+    {
+        "name": "Scale",
+        "type": "Armor",
+        "AC": 4,
+        "properties": "",
+        "special": [],
+        "tier": 2
+    },
+    {
+        "name": "Chain",
+        "type": "Armor",
+        "AC": 5,
+        "properties": "",
+        "special": [],
+        "tier": 3
+    },
+    {
+        "name": "Plate",
+        "type": "Armor",
+        "AC": 6,
+        "properties": "",
+        "special": [],
+        "tier": 4
+    },
+    {
+        "name": "Wooden Shield",
+        "type": "Shield",
+        "AC": 1,
+        "properties": "Flamable",
+        "special": [],
+        "tier": 1
+    },
+    {
+        "name": "Bronze Shield",
+        "type": "Shield",
+        "AC": 2,
+        "properties": "",
+        "special": [],
+        "tier": 2
+    },
+    {
+        "name": "Iron Shield",
+        "type": "Shield",
+        "AC": 3,
+        "properties": "",
+        "special": [],
+        "tier": 3
+    },
+    {
+        "name": "Steel Shield",
+        "type": "Shield",
+        "AC": 4,
+        "properties": "",
+        "special": [],
+        "tier": 4
     }
 ]
