@@ -6,7 +6,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "description": "DC 8 for poison on hit. 1d4 poison damage on a failed save.",
+        "description": "DC 10 fortitude challenge for poison on hit. {modifier}d12 poison damage on a failed save.",
         "tier": 1
     },
     {
@@ -36,7 +36,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "description": "Once per combat, you can use a bonus action to gain an extra action on your turn.",
+        "description": "{modifier} time(s) per combat, you can use a bonus action to gain an extra action on your turn.",
         "tier": 2
     },
     {
@@ -66,7 +66,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "description": "Once per turn, when you are targeted by an attack, you can use your reaction to impose a 2{modifier} penalty on the attacker's roll.",
+        "description": "Once per turn, when you are targeted by an attack, you can use your reaction to impose a 2x{modifier} penalty on the attacker's roll.",
         "tier": 2
     },
     {
@@ -176,8 +176,8 @@
             "Mage",
             "Hybrid"
         ],
-        "description": "Once per long rest, you can cast a spell as if you had expended a spell slot one level higher than the one you actually expended.",
-        "tier": 2
+        "description": "Once per long rest, you can cast a spell as if you had expended a spell slot {modifier} level(s) higher than the one you actually expended.",
+        "tier": 1
     },
     {
         "name": "Spell Shield",
@@ -226,7 +226,7 @@
             "Mage",
             "Hybrid"
         ],
-        "description": "Once per long rest, you can cast a spell that has a casting time of 1 action as a bonus action.",
+        "description": "{modifier} times(s) per long rest, you can cast a spell that has a casting time of 1 action as a bonus action.",
         "tier": 3
     },
     {
@@ -240,7 +240,7 @@
         "tier": 2
     },
     {
-        "name": "Staff of Power",
+        "name": "Ultimate Power",
         "type": "Mage Item",
         "class": [
             "Mage",
@@ -250,7 +250,7 @@
         "tier": 3
     },
     {
-        "name": "Robe of the Archmagi",
+        "name": "Archmagi",
         "type": "Mage Item",
         "class": [
             "Mage",
