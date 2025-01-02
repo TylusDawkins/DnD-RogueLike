@@ -33,14 +33,13 @@
 
 .item {
     background-color: rgb(250, 220, 183, 0.33);
-    height: auto;
-    aspect-ratio: 1/1;
+    height: auto; 
     display: flex;
-    flex-direction: column; /* This is the crucial line! */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     border: 1px solid black;
-    min-width: 100%; /* Make sure each item takes full width of its grid area */
-}
+    min-width: 100%; 
+  }
 

@@ -6,7 +6,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "DC 8 for poison on hit. 1d4 poison damage on a failed save.",
+        "description": "DC 8 for poison on hit. 1d4 poison damage on a failed save.",
         "tier": 1
     },
     {
@@ -16,7 +16,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "+{modifier} damage to goblins.",
+        "description": "+{modifier} damage to goblins.",
         "tier": 1
     },
     {
@@ -26,7 +26,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "+{modifier}d4 fire damage on a hit.",
+        "description": "+{modifier}d4 fire damage on a hit.",
         "tier": 1
     },
     {
@@ -36,7 +36,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "Once per combat, you can use a bonus action to gain an extra action on your turn.",
+        "description": "Once per combat, you can use a bonus action to gain an extra action on your turn.",
         "tier": 2
     },
     {
@@ -46,7 +46,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "+{modifier} to AC (Armor Class).",
+        "description": "+{modifier} to AC (Armor Class).",
         "tier": 1
     },
     {
@@ -56,7 +56,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "Reduces fire damage taken by {modifier}.",
+        "description": "Reduces fire damage taken by {modifier}.",
         "tier": 1
     },
     {
@@ -66,7 +66,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "Once per turn, when you are targeted by an attack, you can use your reaction to impose a 2{modifier} penalty on the attacker's roll.",
+        "description": "Once per turn, when you are targeted by an attack, you can use your reaction to impose a 2{modifier} penalty on the attacker's roll.",
         "tier": 2
     },
     {
@@ -76,7 +76,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "When you damage a creature with this weapon, you regain hit points equal to {modifier} of the damage dealt (minimum 1).",
+        "description": "When you damage a creature with this weapon, you regain hit points equal to {modifier} of the damage dealt (minimum 1).",
         "tier": 2
     },
     {
@@ -86,7 +86,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "+{modifier}d6 cold damage on a hit. On a critical hit, the target must succeed on a DC 10 Constitution saving throw or be restrained until the end of its next turn.",
+        "description": "+{modifier}d6 cold damage on a hit. On a critical hit, the target must succeed on a DC 10 Constitution saving throw or be restrained until the end of its next turn.",
         "tier": 2
     },
     {
@@ -96,7 +96,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "When you hit a creature with this weapon, thunder booms. Each creature within 5 feet of the target must succeed on a DC 12 Constitution saving throw or be pushed 5 feet away.",
+        "description": "When you hit a creature with this weapon, thunder booms. Each creature within 5 feet of the target must succeed on a DC 12 Constitution saving throw or be pushed 5 feet away.",
         "tier": 2
     },
     {
@@ -106,7 +106,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "You gain +{modifier} to attack rolls with this weapon.",
+        "description": "You gain +{modifier} to attack rolls with this weapon.",
         "tier": 1
     },
     {
@@ -116,7 +116,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "While wearing this armor, you gain +{modifier} on challenges against being charmed or feared.",
+        "description": "While wearing this armor, you gain +{modifier} on challenges against being charmed or feared.",
         "tier": 2
     },
     {
@@ -126,7 +126,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "While wearing this armor, gain +{modifier} on athletics challenges.",
+        "description": "While wearing this armor, gain +{modifier} on athletics challenges.",
         "tier": 1
     },
     {
@@ -136,7 +136,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "Once per long rest, when you take damage from a spell attack, you can use your reaction to reflect the spell back at the caster. The caster is targeted by the spell instead of you.",
+        "description": "Once per long rest, when you take damage from a spell attack, you can use your reaction to reflect the spell back at the caster. The caster is targeted by the spell instead of you.",
         "tier": 3
     },
     {
@@ -146,7 +146,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "The weapon's critical hit range is increased by {modifier}.",
+        "description": "The weapon's critical hit range is increased by {modifier}.",
         "tier": 2
     },
     {
@@ -156,7 +156,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "special": "While wielding a shield and wearing this armor, you gain +{modifier} to AC.",
+        "description": "While wielding a shield and wearing this armor, you gain +{modifier} to AC.",
         "tier": 1
     },
     {
@@ -166,7 +166,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "+{modifier} to spell attack rolls and spell save DC.",
+        "description": "+{modifier} to spell attack rolls and spell save DC.",
         "tier": 1
     },
     {
@@ -176,7 +176,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "Once per long rest, you can cast a spell as if you had expended a spell slot one level higher than the one you actually expended.",
+        "description": "Once per long rest, you can cast a spell as if you had expended a spell slot one level higher than the one you actually expended.",
         "tier": 2
     },
     {
@@ -186,7 +186,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "As a reaction when you take spell damage, you can reduce the damage taken by {modifier}d6.",
+        "description": "As a reaction when you take spell damage, you can reduce the damage taken by {modifier}d6.",
         "tier": 2
     },
     {
@@ -196,7 +196,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "Once per rest, you can recover {modifier} x2 expended spell slots. The spell slots can have a combined level that is equal to or less than half your level (rounded up).",
+        "description": "Once per rest, you can recover {modifier} x2 expended spell slots. The spell slots can have a combined level that is equal to or less than half your level (rounded up).",
         "tier": 2
     },
     {
@@ -206,7 +206,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "You have +{modifier} on saving throws against being charmed or frightened.",
+        "description": "You have +{modifier} on saving throws against being charmed or frightened.",
         "tier": 1
     },
     {
@@ -216,7 +216,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "Your spells ignore {modifier} of a creature's resistance to a damage type of your choice.",
+        "description": "Your spells ignore {modifier} of a creature's resistance to a damage type of your choice.",
         "tier": 2
     },
     {
@@ -226,7 +226,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "Once per long rest, you can cast a spell that has a casting time of 1 action as a bonus action.",
+        "description": "Once per long rest, you can cast a spell that has a casting time of 1 action as a bonus action.",
         "tier": 3
     },
     {
@@ -236,7 +236,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "Anything you summon has its hit point maximum increases by {modifier} x your level.",
+        "description": "Anything you summon has its hit point maximum increases by {modifier} x your level.",
         "tier": 2
     },
     {
@@ -246,7 +246,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "+{modifier} to spell attack rolls, spell save DC, and damage rolls for spells.",
+        "description": "+{modifier} to spell attack rolls, spell save DC, and damage rolls for spells.",
         "tier": 3
     },
     {
@@ -256,7 +256,7 @@
             "Mage",
             "Hybrid"
         ],
-        "special": "+{modifier} to AC and saving throws against spell effects",
+        "description": "+{modifier} to AC and saving throws against spell effects",
         "tier": 3
     }
 ]
