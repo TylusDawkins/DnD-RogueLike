@@ -28,22 +28,30 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
   }
 
   const getRandomChoices = () => {
-    let i = 0;
-    let randoFeature;
-    let availableFeatures;
-    let choices = [];
+    let randoFeature; // Randomly selected feature from available features
+    let availableFeatures; // Features available for selection based on player level
+    let choices = []; // Array to hold the selected features
+    let target = 4
 
-    const asi = classFeatures.find((e) => e.name === "Ability Score Improvement");
-    choices.push(asi);
+    if (playerLevel >= 12) {
+      availableFeatures = tier3Features;
+    } else if (playerLevel >= 6) {
+      availableFeatures = tier2Features;
+    } else {
+      availableFeatures = tier1Features;
+    }
 
-    while (i < 3) {
-      if (playerLevel >= 12) {
-        availableFeatures = tier3Features;
-      } else if (playerLevel >= 6) {
-        availableFeatures = tier2Features;
-      } else {
-        availableFeatures = tier1Features;
-      }
+
+    const asi = classFeatures.find((e) => e.name === "Ability Score Improvement"); // add this as a default incase all options are undesireable
+    if (asi) choices.push(asi);
+    let maxAttempts = 0; // Number of attempts to get valid features
+    while (choices.length < target && maxAttempts < 100) { // Limit attempts to avoid infinite loop
+      maxAttempts++;
+
+      if (!availableFeatures || availableFeatures.length === 0){
+        alert("[BUG] NO AVAILABLE FEATURES FOR SELECTION")
+        throw warning("No available features for selection.");
+      } 
 
       randoFeature = availableFeatures[Math.floor(Math.random() * availableFeatures.length)];
 
@@ -51,23 +59,18 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
       const hasChoiceAlready = choices.some((feat) => feat.name === randoFeature.name)
       const hasFeatureAlready = character.features.some((feat) => feat.name === randoFeature.name);
       const hasDependencyAlready = !randoFeature.dependency || character.features.some((feat) => feat?.name === randoFeature.dependency);
+      const isASI = randoFeature.name === "Ability Score Improvement";
 
-      if (hasChoiceAlready) {
-        return
+      if((hasChoiceAlready || hasFeatureAlready) && !randoFeature.stackable) {
+        continue
       }
 
-      if ((hasFeatureAlready || !hasDependencyAlready) && !randoFeature.stackable) {
+      if (!hasDependencyAlready || isASI) {
         continue; // Skip to next iteration
       }
 
       // Feature can be added (not stacked or new feature)
       choices.push(randoFeature);
-      i++;
-
-      // Early return if enough features are chosen
-      if (i === 3) {
-        break;
-      }
     }
 
     setFeatureChoices(choices);

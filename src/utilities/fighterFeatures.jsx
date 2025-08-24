@@ -2,7 +2,7 @@ export default [
     {
         "name": "Rage",
         "dependency": null,
-        "description": "On your turn, you can enter a rage as a bonus action. While Raging: You have advantage on Strength checks and Strength saving throws, when you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table, and you have resistance to bludgeoning, piercing, and slashing damage. If you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.",
+        "description": "On your turn, you can enter a rage as a bonus action. While Raging: You have advantage on Physcial checks and Physcial saving throws, when you make a melee weapon attack using Physcial, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table, and you have resistance to bludgeoning, piercing, and slashing damage. If you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -10,7 +10,7 @@ export default [
     {
         "name": "Unarmored Defense",
         "dependency": null,
-        "description": "While you are not wearing any armor, your armor class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.",
+        "description": "While you are not wearing any armor, your armor class equals 10 + your Physcial modifier + your Fortitude modifier. You can use a shield and still gain this benefit.",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -18,7 +18,7 @@ export default [
     {
         "name": "Reckless Attack",
         "dependency": null,
-        "description": "You can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.",
+        "description": "You can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Physcial during this turn, but attack rolls against you have advantage until your next turn.",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -26,7 +26,7 @@ export default [
     {
         "name": "Danger Sense",
         "dependency": null,
-        "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.",
+        "description": "You gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger. You have advantage on Physcial saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.",
         "conflifts": [null],
         "tier": 1,
         "stackable": false
@@ -66,7 +66,7 @@ export default [
     {
         "name": "Relentless Rage",
         "dependency": "Rage",
-        "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.",
+        "description": "Your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Fortitude saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -82,7 +82,7 @@ export default [
     {
         "name": "Indomitable Might",
         "dependency": null,
-        "description": "If your total for a Strength check is less than your Strength score, you can use that score in place of the total.",
+        "description": "If your total for a Physcial check is less than your Physcial score, you can use that score in place of the total.",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -90,7 +90,7 @@ export default [
     {
         "name": "Primal Champion",
         "dependency": null,
-        "description": "You embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.",
+        "description": "You embody the power of the wilds. Your Physcial and Fortitude scores increase by 4. Your maximum for those scores is now 24.",
         "conflifts": [null],
         "tier": 3,
         "stackable": false
@@ -146,7 +146,7 @@ export default [
     {
         "name": "Deflect Missiles",
         "dependency": "Ki",
-        "description": "You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d 10 + your Dexterity modifier + your level.",
+        "description": "You can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d 10 + your Physcial modifier + your level.",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -154,7 +154,7 @@ export default [
     {
         "name": "Stunning Strike",
         "dependency": "Ki",
-        "description": "You can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn.",
+        "description": "You can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Fortitude saving throw or be stunned until the end of your next turn.",
         "conflifts": [null],
         "tier": 2,
         "stackable": false
@@ -170,7 +170,7 @@ export default [
     {
         "name": "Evasion",
         "dependency": null,
-        "description": "Your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
+        "description": "Your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a fireball spell. When you are subjected to an effect that allows you to make a Physcial saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.",
         "conflifts": [null],
         "tier": 2,
         "stackable": false

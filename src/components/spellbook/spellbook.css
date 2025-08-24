@@ -34,4 +34,7 @@
 
 .spell{
     /* background-color: rgb(250, 220, 183); */
+    width:90%;
+    margin: 0 auto;
+    font-size: 0.9em;
 }

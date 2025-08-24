@@ -21,22 +21,12 @@ body{
   background-image: url("https://static.vecteezy.com/system/resources/previews/015/369/796/large_2x/mountain-landscape-with-castle-and-dragon-free-vector.jpg"); 
   /* background-image: url("public/assets/background.png");  */
   background-repeat: no-repeat;
-  background-position: top; 
+  background-position: top;
 }
 
 #root{
   height:100vh;
   width:100vw;
-}
-
-#background {
-  position: absolute;
-  top: 0px;
-  backdrop-filter: blur(10px);
-  margin: 0;
-  padding: 0;
-  left: 0;
-  z-index: -1;
 }
 
 .text {

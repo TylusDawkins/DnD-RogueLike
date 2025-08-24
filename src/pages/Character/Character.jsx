@@ -364,7 +364,6 @@ export default function Character({ character, setCharacter, characters, getChar
                         </div>
                         <button className="addStatButton" onClick={addStatPoint}> Add Stat </button>
                         <button className="addStatButton" onClick={removeStatPoint}> Remove Stat </button>
-
                     </div>
                 </div>
                 <button className="levelButton" onClick={levelUp}>Level up!</button>

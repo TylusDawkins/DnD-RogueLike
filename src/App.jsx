@@ -75,6 +75,7 @@ function App() {
   return (
     <div id="main">
       <RouterProvider router={router} />
+      <div id="background"></div>
     </div>
   )
 }

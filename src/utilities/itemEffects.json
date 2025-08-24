@@ -86,7 +86,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "description": "+{modifier}d6 cold damage on a hit. On a critical hit, the target must succeed on a DC 10 Constitution saving throw or be restrained until the end of its next turn.",
+        "description": "+{modifier}d6 cold damage on a hit. On a critical hit, the target must succeed on a DC 10 Fortitude saving throw or be restrained until the end of its next turn.",
         "tier": 2
     },
     {
@@ -96,7 +96,7 @@
             "Fighter",
             "Hybrid"
         ],
-        "description": "When you hit a creature with this weapon, thunder booms. Each creature within 5 feet of the target must succeed on a DC 12 Constitution saving throw or be pushed 5 feet away.",
+        "description": "When you hit a creature with this weapon, thunder booms. Each creature within 5 feet of the target must succeed on a DC 12 Fortitude saving throw or be pushed 5 feet away.",
         "tier": 2
     },
     {

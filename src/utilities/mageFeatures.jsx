@@ -2,7 +2,7 @@ export default [
     {
         "name": "Arcane Ward",
         "dependancy": "",
-        "description":"You can weave magic around yourself for protection. When you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage. While the ward has 0 hit points, it can't absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell. Once you create the ward, you can't create it again until you finish a long rest.",
+        "description":"You can weave magic around yourself for protection. When you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Mental modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage. While the ward has 0 hit points, it can't absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell. Once you create the ward, you can't create it again until you finish a long rest.",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -26,7 +26,7 @@ export default [
     {
         "name": "Bladesong",
         "dependancy": "",
-        "description":"You gain proficiency with Light Armor and one-handed weapons. You can invoke a secret elven magic called the Bladesong, provided that you aren't wearing medium or heavy armor or using a shield. It graces you with supernatural speed, agility, and focus. You can use a bonus action to start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time you choose (no action required). While your Bladesong is active, you gain the following benefits: You gain a bonus to your AC equal to your Intelligence modifier (minimum of +1). Your walking speed increases by 10 feet. You have advantage on Dexterity (Acrobatics) checks. You gain a bonus to any Constitution saving throw you make to maintain your concentration on a spell. The bonus equals your Intelligence modifier (minimum of +1).",
+        "description":"You gain proficiency with Light Armor and one-handed weapons. You can invoke a secret elven magic called the Bladesong, provided that you aren't wearing medium or heavy armor or using a shield. It graces you with supernatural speed, agility, and focus. You can use a bonus action to start the Bladesong, which lasts for 1 minute. It ends early if you are incapacitated, if you don medium or heavy armor or a shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time you choose (no action required). While your Bladesong is active, you gain the following benefits: You gain a bonus to your AC equal to your Mental modifier (minimum of +1). Your walking speed increases by 10 feet. You have advantage on Physcial (Acrobatics) checks. You gain a bonus to any Fortitude saving throw you make to maintain your concentration on a spell. The bonus equals your Mental modifier (minimum of +1).",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -50,7 +50,7 @@ export default [
     {
         "name": "Song of Victory",
         "dependancy": "Bladesong",
-        "description":"When you reduce a creature to 0 hit points, you gain temporary hit points equal to your Intelligence modifier + your wizard level (minimum of 1).",
+        "description":"When you reduce a creature to 0 hit points, you gain temporary hit points equal to your Mental modifier + your wizard level (minimum of 1).",
         "conflifts": [],
         "tier": 3,
         "stackable": false
@@ -138,7 +138,7 @@ export default [
     {
         "name": "Empowered Evocation",
         "dependancy": "",
-        "description":"You can add your Intelligence modifier to one damage roll of any evocation spell you cast.",
+        "description":"You can add your Mental modifier to one damage roll of any evocation spell you cast.",
         "conflifts": [],
         "tier": 3,
         "stackable": false
@@ -154,7 +154,7 @@ export default [
     {
         "name": "Gravity Well",
         "dependancy": "",
-        "description":"When you cast a spell with an area of effect, you can select a number of creatures equal to your Intelligence modifier (minimum of one creature). The selected creatures automatically fail their saving throws against the spell, and they take the full brunt of the spell's effects.",
+        "description":"When you cast a spell with an area of effect, you can select a number of creatures equal to your Mental modifier (minimum of one creature). The selected creatures automatically fail their saving throws against the spell, and they take the full brunt of the spell's effects.",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -162,7 +162,7 @@ export default [
     {
         "name": "Violent Attraction",
         "dependancy": "Gravity Well",
-        "description":"When you cast a spell with an area of effect, you can select a number of creatures equal to your Intelligence modifier (minimum of one creature). The selected creatures automatically fail their saving throws against the spell, and they take the full brunt of the spell's effects.",
+        "description":"When you cast a spell with an area of effect, you can select a number of creatures equal to your Mental modifier (minimum of one creature). The selected creatures automatically fail their saving throws against the spell, and they take the full brunt of the spell's effects.",
         "conflifts": [],
         "tier": 2,
         "stackable": false
@@ -170,7 +170,7 @@ export default [
     {
         "name": "Event Horizon",
         "dependancy": "Gravity Well",
-        "description":"When you cast a spell with an area of effect, you can select a number of creatures equal to your Intelligence modifier (minimum of one creature). The selected creatures automatically fail their saving throws against the spell, and they take the full brunt of the spell's effects.",
+        "description":"When you cast a spell with an area of effect, you can select a number of creatures equal to your Mental modifier (minimum of one creature). The selected creatures automatically fail their saving throws against the spell, and they take the full brunt of the spell's effects.",
         "conflifts": [],
         "tier": 3,
         "stackable": false
@@ -194,7 +194,7 @@ export default [
     {
         "name": "Undead Thralls",
         "dependancy": "",
-        "description":"You can cast Animate Dead without expending a spell slot. When you do so, you can target only one corpse or pile of bones within 10 feet of you (instead of the normal limit of two corpses that Animate Dead normally allows). When you cast Animate Dead in this way, the target gains the following additional benefits: <ul> The creature doesn't require verbal or somatic components to cast its spells. The creature's spellcasting ability for its wizard spells is Intelligence. The creature adds your proficiency bonus to its weapon damage rolls. The creature's hit point maximum equals its normal maximum or four times your wizard level, whichever is higher. </ul>",
+        "description":"You can cast Animate Dead without expending a spell slot. When you do so, you can target only one corpse or pile of bones within 10 feet of you (instead of the normal limit of two corpses that Animate Dead normally allows). When you cast Animate Dead in this way, the target gains the following additional benefits: <ul> The creature doesn't require verbal or somatic components to cast its spells. The creature's spellcasting ability for its wizard spells is Mental. The creature adds your proficiency bonus to its weapon damage rolls. The creature's hit point maximum equals its normal maximum or four times your wizard level, whichever is higher. </ul>",
         "conflifts": [],
         "tier": 2,
         "stackable": false
@@ -210,7 +210,7 @@ export default [
     {
         "name": "Tactical Wit",
         "dependancy": "",
-        "description":"your keen ability to assess tactical situations allows you to act quickly in battle. You can give yourself a bonus to your initiative rolls equal to your Intelligence modifier.",
+        "description":"your keen ability to assess tactical situations allows you to act quickly in battle. You can give yourself a bonus to your initiative rolls equal to your Mental modifier.",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -218,7 +218,7 @@ export default [
     {
         "name": "Power Surge",
         "dependancy": "",
-        "description":"You can store a maximum number of power surges equal to your Intelligence modifier (minimum of one). Whenever you finish a long rest, your number of power surges resets to one. Whenever you successfully end a spell with Dispel Magic or Counterspell, you gain one power surge, as you steal magic from the spell you foiled. If you end a short rest with no power surges, you gain one power surge. Once per turn when you deal damage to a creature or object with a wizard spell, you can spend one power surge to deal extra force damage to that target. The extra damage equals half your wizard level.</p<",
+        "description":"You can store a maximum number of power surges equal to your Mental modifier (minimum of one). Whenever you finish a long rest, your number of power surges resets to one. Whenever you successfully end a spell with Dispel Magic or Counterspell, you gain one power surge, as you steal magic from the spell you foiled. If you end a short rest with no power surges, you gain one power surge. Once per turn when you deal damage to a creature or object with a wizard spell, you can spend one power surge to deal extra force damage to that target. The extra damage equals half your wizard level.</p<",
         "conflifts": [],
         "tier": 2,
         "stackable": false
@@ -249,7 +249,7 @@ export default [
     },
     {
         "name": "Sorcerous Restoration",
-        "dependancy": "",
+        "dependancy": "Metamagic",
         "description":"When you roll for initiative and have no sorcery points remaining, you regain 4 sorcery points.",
         "conflifts": [],
         "tier": 1,
@@ -282,7 +282,7 @@ export default [
     {
         "name": "Draconic Resilience",
         "dependancy": "",
-        "description":"Your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class. Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier.",
+        "description":"Your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class. Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Physcial modifier.",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -290,7 +290,7 @@ export default [
     {
         "name": "Elemental Affinity",
         "dependancy": "",
-        "description":"when you cast a spell that deals damage of the type associated with your draconic ancestry, add your Charisma modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.",
+        "description":"when you cast a spell that deals damage of the type associated with your draconic ancestry, add your Mental modifier to one damage roll of that spell. At the same time, you can spend 1 sorcery point to gain resistance to that damage type for 1 hour.",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -336,9 +336,9 @@ export default [
         "stackable": false
     },
     {
-        "name": "Strength of the Grave",
+        "name": "Physcial of the Grave",
         "dependancy": "",
-        "description":"Your existence in a twilight state between life and death makes you difficult to defeat. When damage reduces you to 0 hit points, you can make a Charisma saving throw (DC 5 + the damage taken). On a success, you instead drop to 1 hit point. You can't use this feature if you are reduced to 0 hit points by radiant damage or by a critical hit.",
+        "description":"Your existence in a twilight state between life and death makes you difficult to defeat. When damage reduces you to 0 hit points, you can make a Mental saving throw (DC 5 + the damage taken). On a success, you instead drop to 1 hit point. You can't use this feature if you are reduced to 0 hit points by radiant damage or by a critical hit.",
         "conflifts": [],
         "tier": 1,
         "stackable": false
@@ -353,7 +353,7 @@ export default [
     },
     {
         "name": "Umbral Form",
-        "dependancy": "Strength of the Grave",
+        "dependancy": "Physcial of the Grave",
         "description":"You can spend 6 sorcery points as a bonus action to magically transform yourself into a shadowy form. In this form, you have resistance to all damage except force and radiant damage, and you can move through other creatures and objects as if they were difficult terrain. You take 5 force damage if you end your turn inside an object. You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action.",
         "conflifts": [],
         "tier": 2,
@@ -370,7 +370,7 @@ export default [
     {
         "name": "Storm's Fury",
         "dependancy": "Tempestuous Magic",
-        "description":"When you are hit by a melee attack, you can use your reaction to deal lightning damage to the attacker. The damage equals your sorcerer level. The attacker must also make a Strength saving throw against your sorcerer spell save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you.",
+        "description":"When you are hit by a melee attack, you can use your reaction to deal lightning damage to the attacker. The damage equals your sorcerer level. The attacker must also make a Physcial saving throw against your sorcerer spell save DC. On a failed save, the attacker is pushed in a straight line up to 20 feet away from you.",
         "conflifts": [],
         "tier": 2,
         "stackable": false
@@ -378,7 +378,7 @@ export default [
     {
         "name": "Wind Soul",
         "dependancy": "Tempestuous Magic",
-        "description":"You gain immunity to lightning and thunder damage. You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 + your Charisma modifier. The chosen creatures gain a magical flying speed of 30 feet for 1 hour. Once you reduce your flying speed in this way, you can't do so again until you finish a short or long rest.",
+        "description":"You gain immunity to lightning and thunder damage. You also gain a magical flying speed of 60 feet. As an action, you can reduce your flying speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 + your Mental modifier. The chosen creatures gain a magical flying speed of 30 feet for 1 hour. Once you reduce your flying speed in this way, you can't do so again until you finish a short or long rest.",
         "conflifts": [],
         "tier": 3,
         "stackable": false

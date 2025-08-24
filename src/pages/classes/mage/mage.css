@@ -3,12 +3,6 @@
     background-color: rgb(193,154,107,);
 }
 
-.main{
-    display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    /* justify-content: center; */
-}
 
 #levelButton {
     width: 100%;

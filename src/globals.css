@@ -12,12 +12,31 @@
   border-radius: 15%;
   }
 
+html{
+  width:100%;
+  height:100vh;
+}
+
+root {
+  width:100%;
+  height:100%;
+}
+
+body{
+  width:100%;
+  height:100%;
+}
+
+#main{
+  
+}
+
 .main {
   display: flex;
   flex-direction: row;
   background-color: rgb(193,154,107,.75);
-  width:100vw;
-  height:100vh;
+  width:100%;
+  height:100%;
 }
 
 .characterCard{
@@ -81,6 +100,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  /* margin:0 5% 0 5%; */
+
 }
 
 .statButton{
@@ -124,4 +146,16 @@ button{
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
+}
+
+#background {
+  position: absolute;
+  top: 0px;
+  backdrop-filter: blur(10px);
+  margin: 0;
+  padding: 0;
+  left: 0;
+  z-index: -1;
+  height:100vh;
+  width:100vw;
 }
