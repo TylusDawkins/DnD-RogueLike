@@ -4,17 +4,17 @@ import './App.css'
 import './globals.css'
 import { useState, useEffect } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import type { Character as CharacterType, CharactersMap, Reward } from './types'
 
 function App() {
 
-  const charObj = {
+  const charObj: CharacterType = {
     id: crypto.randomUUID(),
     name: "",
     description: "",
     type: "",
     level: 0,
-    inventory: [],
+    inventory: [] as Reward[],
     stats: {
       maxHp: 0,
       currentHp: 0,
@@ -26,16 +26,7 @@ function App() {
     features: [],
     spells: [],
     spellSlotsUsed: {
-      0: 0,
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-      5: 0,
-      6: 0,
-      7: 0,
-      8: 0,
-      9: 0,
+      0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0,
     },
     pointsLeft: 0,
     totalPoints: 0,
@@ -43,17 +34,17 @@ function App() {
     currentSpellPoints: 0
   }
 
-  const [characters, setCharacters] = useState([])
+  const [characters, setCharacters] = useState<CharactersMap>({})
 
-  const [character, setCharacter] = useState(charObj)
+  const [character, setCharacter] = useState<CharacterType>(charObj)
 
   const getCharacters = () => {
-    const characters = JSON.parse(localStorage.getItem("characters"))
-    if (!characters) {
-      localStorage.setItem("characters", JSON.stringify(({})))
+    const stored = JSON.parse(localStorage.getItem("characters") || "{}") as CharactersMap
+    if (!stored || Object.keys(stored).length === 0) {
+      localStorage.setItem("characters", JSON.stringify({}))
     }
-    if (Object.keys(character).length != 0) {
-      setCharacters(characters)
+    if (Object.keys(character).length !== 0) {
+      setCharacters(stored)
     }
   }
 

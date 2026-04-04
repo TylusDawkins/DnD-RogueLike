@@ -1,18 +1,28 @@
 import './spellbook.css'
 import spellLimits from '@utils/spellLimits'
 import spellCosts from '@utils/spellCosts'
+import type { Spell, Character } from '../../types'
 
-function SpellBook({ spells, isOpen, setIsOpen, character, setCharacter, saveCharacter }) {
+interface SpellBookProps {
+    spells: Spell[];
+    isOpen: boolean;
+    setIsOpen: (open: boolean) => void;
+    character: Character;
+    setCharacter: (char: Character) => void;
+    saveCharacter: () => void;
+}
+
+function SpellBook({ spells, isOpen, setIsOpen, character, setCharacter, saveCharacter }: SpellBookProps) {
 
     const closeModal = () => {
         setIsOpen(!isOpen)
     }
 
-    const castSpell = (spell) => {
+    const castSpell = (spell: Spell) => {
         const characterCopy = { ...character }
         if ((character.currentSpellPoints - spellCosts[spell.level] >= 0)) {
             if (spellLimits[spell.level]) {
-                if (character.spellSlotsUsed[spell.level] >= spellLimits[spell.level]) {
+                if (character.spellSlotsUsed[spell.level] >= spellLimits[spell.level]!) {
                     alert(`You can only use ${spellLimits[spell.level]} spells at that level before resting, please rest.`)
                     return
                 }

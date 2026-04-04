@@ -12,29 +12,28 @@ import SpellBook from "@components/spellbook/SpellBook"
 import classes from "@utils/classes"
 import { useParams } from 'react-router-dom'
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
-
-//function imports
 import getRandomReward from '../../utilities/RewardsUtil'
+import type { Character as CharacterType, Feature, Spell, CharactersMap } from '../../types'
 
-export default function Character({ character, setCharacter, characters, getCharacters }) {
+interface CharacterPageProps {
+    character: CharacterType;
+    setCharacter: (char: CharacterType) => void;
+    characters: CharactersMap;
+    getCharacters: () => void;
+}
+
+export default function Character({ character, setCharacter, characters, getCharacters }: CharacterPageProps) {
 
     const [isFeatureModalOpen, setIsFeatureModalOpen] = useState(false)
-
     const [isSpellModalOpen, setIsSpellModalOpen] = useState(false)
-
     const [isSpellBookOpen, setIsSpellBookOpen] = useState(false)
-
     const [shouldOpenSpellModal, setShouldOpenSpellModal] = useState(true)
-
     const [isInventoryOpen, setIsInventoryOpen] = useState(false)
-
     const [pointsLeft, setPointsLeft] = useState(0)
 
-    const { type, id } = useParams()
+    const { type, id } = useParams<{ type: string; id: string }>()
 
-    const charClass = classes.find((c) => {
-        return c.name == type
-    })
+    const charClass = classes.find((c) => c.name === type)!
 
     const openFeatureModal = () => {
         setIsFeatureModalOpen(!isFeatureModalOpen)
@@ -48,26 +47,28 @@ export default function Character({ character, setCharacter, characters, getChar
         setIsSpellBookOpen(!isSpellBookOpen)
     }
 
-    const addSpell = (spell) => {
+    const addSpell = (spell: Spell) => {
         const characterCopy = { ...character }
-        characterCopy.spells.push(spell)
+        characterCopy.spells = [...characterCopy.spells, spell]
         setCharacter({ ...characterCopy })
         saveCharacter()
     }
 
-    const addFeature = (feature) => {
+    const addFeature = (feature: Feature) => {
         const characterCopy = { ...character }
-        characterCopy.features.push(feature)
+        characterCopy.features = [...characterCopy.features, feature]
         setCharacter({ ...characterCopy })
         saveCharacter()
     }
 
     const rest = () => {
         const characterCopy = { ...character }
+        characterCopy.stats = { ...characterCopy.stats }
         characterCopy.stats.currentHp = character.stats.maxHp
-        characterCopy.currentSpellPoints = character.maxSpellPoints
-        for (const spellslot in character.spellSlotsUsed) {
-            character.spellSlotsUsed[spellslot] = 0
+        characterCopy.currentSpellPoints = character.maxSpellPoints ?? 0
+        characterCopy.spellSlotsUsed = { ...characterCopy.spellSlotsUsed }
+        for (const spellslot in characterCopy.spellSlotsUsed) {
+            characterCopy.spellSlotsUsed[Number(spellslot)] = 0
         }
         setCharacter({ ...characterCopy })
     }
@@ -76,19 +77,20 @@ export default function Character({ character, setCharacter, characters, getChar
         const resetConfirmation = confirm("Are you sure that you want to reset your character's progress?")
         if (resetConfirmation) {
             const characterCopy = { ...character }
+            characterCopy.stats = { ...characterCopy.stats }
             characterCopy.stats.physical = 10
             characterCopy.stats.fortitude = 10
             characterCopy.stats.mental = 10
-            characterCopy.stats.maxHp = characterCopy.stats.hpMod * characterCopy.stats.fortitude
+            characterCopy.stats.maxHp = (characterCopy.stats.hpMod ?? 1) * characterCopy.stats.fortitude
             characterCopy.stats.currentHp = characterCopy.stats.maxHp
             characterCopy.features = []
             characterCopy.spells = []
             characterCopy.level = 0
             characterCopy.pointsLeft = 0
             characterCopy.totalPoints = 0
-            if (character.canCast) {
+            if (charClass.canCast && charClass.spellPoints) {
                 characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
-                characterCopy.currentSpellPoints = characterCopy.maxSpellPoints
+                characterCopy.currentSpellPoints = characterCopy.maxSpellPoints ?? 0
             }
             setCharacter(characterCopy)
         }
@@ -101,8 +103,9 @@ export default function Character({ character, setCharacter, characters, getChar
     const getReward = () => {
         const randomReward = getRandomReward(character)
         const characterCopy = { ...character }
+        characterCopy.inventory = [...characterCopy.inventory]
+        randomReward.id = crypto.randomUUID()
         characterCopy.inventory.push(randomReward)
-        randomReward['id'] = crypto.randomUUID()
         alert(`You have received ${randomReward.name}, please check your inventory for more info!`)
         setCharacter(characterCopy)
         saveCharacter()
@@ -110,62 +113,61 @@ export default function Character({ character, setCharacter, characters, getChar
 
     const initCharacter = () => {
         getCharacters()
-        // if (character.level === 0) {
-        let characterCopy = { ...character }
+        const characterCopy = { ...character }
+        characterCopy.stats = { ...characterCopy.stats }
         characterCopy.stats.hpMod = charClass.baseStats.hpMod
         characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
         characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
-        characterCopy.type = type
-        if (charClass.canCast) {
+        characterCopy.type = type!
+        if (charClass.canCast && charClass.spellPoints) {
             characterCopy.maxSpellPoints = charClass.spellPoints[character.level]
             characterCopy.currentSpellPoints = character.currentSpellPoints || charClass.spellPoints[character.level]
         }
-        characterCopy.type = character.type || type
+        characterCopy.type = character.type || type!
         characterCopy.inventory = characterCopy.inventory || []
         setCharacter({ ...characterCopy })
-        // }
     }
 
     const saveCharacter = () => {
         if (!character.name) {
-            alert("Please give your character a name, otherwise it failes to save")
+            alert("Please give your character a name, otherwise it fails to save")
             return
         }
-        const characters = JSON.parse(localStorage.getItem("characters"))
+        const stored = JSON.parse(localStorage.getItem("characters") || "{}") as CharactersMap
         if (character.name) {
-            characters[character.id] = character
-            localStorage.setItem("characters", JSON.stringify(characters))
-            window.character = character
+            stored[character.id] = character
+            localStorage.setItem("characters", JSON.stringify(stored))
         }
     }
 
-    const changeCurrentSpellPoints = (e) => {
-        let characterCopy = { ...character }
-        characterCopy.stats.currentSpellPoints = e.target.value
+    const changeCurrentSpellPoints = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const characterCopy = { ...character }
+        characterCopy.currentSpellPoints = Number(e.target.value)
         setCharacter(characterCopy)
         saveCharacter()
     }
 
-    const changeHp = (e) => {
-        let characterCopy = { ...character }
-        characterCopy.stats.currentHp = e.target.value
+    const changeHp = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const characterCopy = { ...character }
+        characterCopy.stats = { ...characterCopy.stats }
+        characterCopy.stats.currentHp = Number(e.target.value)
         setCharacter(characterCopy)
         saveCharacter()
     }
 
-    const changeName = (e) => {
-        let characterCopy = { ...character }
+    const changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const characterCopy = { ...character }
         characterCopy.name = e.target.value
         setCharacter(characterCopy)
     }
 
-    const changeDescription = (e) => {
-        let characterCopy = { ...character }
+    const changeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const characterCopy = { ...character }
         characterCopy.description = e.target.value
         setCharacter(characterCopy)
     }
 
-    const changeStats = (stat, change) => {
+    const changeStats = (stat: "physical" | "fortitude" | "mental", change: number) => {
         if (character.stats[stat] + change < 10) {
             alert("Stats cannot go below 10")
             return
@@ -174,7 +176,8 @@ export default function Character({ character, setCharacter, characters, getChar
             alert("No points available");
             return
         }
-        let characterCopy = { ...character }
+        const characterCopy = { ...character }
+        characterCopy.stats = { ...characterCopy.stats }
         characterCopy.stats[stat] += change
         characterCopy.pointsLeft -= change
         setCharacter({ ...characterCopy })
@@ -183,7 +186,7 @@ export default function Character({ character, setCharacter, characters, getChar
     }
 
     const addStatPoint = () => {
-        let characterCopy = { ...character }
+        const characterCopy = { ...character }
         characterCopy.pointsLeft += 1
         setPointsLeft(character.pointsLeft)
         setCharacter({ ...characterCopy })
@@ -191,7 +194,7 @@ export default function Character({ character, setCharacter, characters, getChar
     }
 
     const removeStatPoint = () => {
-        let characterCopy = { ...character }
+        const characterCopy = { ...character }
         characterCopy.pointsLeft -= 1
         setPointsLeft(character.pointsLeft)
         setCharacter({ ...characterCopy })
@@ -203,22 +206,19 @@ export default function Character({ character, setCharacter, characters, getChar
             alert("Please spend all points before leveling")
             return
         }
-        // if (character.level >= 20) {
-        //     alert("You are at your maximum level")
-        //     return
-        // }
-        let characterCopy = { ...character }
+        const characterCopy = { ...character }
+        characterCopy.stats = { ...characterCopy.stats }
         characterCopy.level += 1
         if (character.level > 0) {
             characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
             characterCopy.stats.currentHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
         }
         getReward()
-        if (charClass.canCast) {
+        if (charClass.canCast && charClass.spellPoints) {
             characterCopy.maxSpellPoints = charClass.spellPoints[characterCopy.level]
             characterCopy.currentSpellPoints += (charClass.spellPoints[characterCopy.level] - charClass.spellPoints[characterCopy.level - 1])
         }
-        if (type == "Fighter") {
+        if (type === "Fighter") {
             characterCopy.pointsLeft += 2
             characterCopy.totalPoints += 2
             setCharacter(characterCopy)
@@ -227,7 +227,7 @@ export default function Character({ character, setCharacter, characters, getChar
             characterCopy.totalPoints += 1
             setCharacter(characterCopy)
         }
-        if (type == "Mage") {
+        if (type === "Mage") {
             if (character.level % 2 === 0) {
                 openFeatureModal()
                 return
@@ -240,15 +240,13 @@ export default function Character({ character, setCharacter, characters, getChar
 
     useEffect(() => {
         initCharacter()
-        window.character = character
     }, [])
 
     useEffect(() => {
-        let someCharacter
-        for (const char in characters) {
-            if (characters[char].id === id) {
-                someCharacter = characters[char]
-                setCharacter(someCharacter)
+        if (!characters) return
+        for (const charId in characters) {
+            if (characters[charId].id === id) {
+                setCharacter(characters[charId])
             }
         }
     }, [characters])
@@ -289,7 +287,6 @@ export default function Character({ character, setCharacter, characters, getChar
                 setIsOpen={setIsSpellModalOpen}
                 playerSpells={character.spells}
                 addSpell={addSpell}
-                currentSpellPoints={character.currentSpellPoints}
                 saveCharacter={saveCharacter}
             />
 
@@ -297,12 +294,11 @@ export default function Character({ character, setCharacter, characters, getChar
                 classFeatures={charClass.features}
                 isOpen={isFeatureModalOpen}
                 setIsOpen={setIsFeatureModalOpen}
-                features={character.features}
                 addFeature={addFeature}
                 spellModalOpen={isSpellModalOpen}
                 setSpellModalOpen={setIsSpellModalOpen}
                 shouldOpenSpellModal={charClass.canCast ? shouldOpenSpellModal : false}
-                setShouldOpenSpellModal={charClass.canCast ? setShouldOpenSpellModal : (() => { })}
+                setShouldOpenSpellModal={charClass.canCast ? setShouldOpenSpellModal : () => { }}
                 playerLevel={character.level}
                 character={character}
                 setCharacter={setCharacter}
@@ -338,29 +334,29 @@ export default function Character({ character, setCharacter, characters, getChar
                     </div>
                     {charClass.canCast ? <div className='spellPointsInfo'>
                         <h1>Max Spell Points: {character.maxSpellPoints}</h1>
-                        <h1>Current Spell Points: <input type="number" className='hpInput' max={character.stats.maxSpellPoints} value={character.currentSpellPoints} onChange={(e) => changeCurrentSpellPoints(e)} ></input></h1>
+                        <h1>Current Spell Points: <input type="number" className='hpInput' max={character.spellPointsMax} value={character.currentSpellPoints} onChange={(e) => changeCurrentSpellPoints(e)} ></input></h1>
                     </div> : null}
                 </div>
                 <div className="stats">
                     <div id="stat">
                         <h2 id="physical">Physical: {character.stats.physical}</h2>
                         <div className="statButtons">
-                            <button className="statButton" onClick={() => { changeStats("physical", 1) }}>↑</button>
-                            <button className="statButton" onClick={() => { changeStats("physical", -1) }}>↓</button>
+                            <button className="statButton" onClick={() => { changeStats("physical", 1) }}>&#8593;</button>
+                            <button className="statButton" onClick={() => { changeStats("physical", -1) }}>&#8595;</button>
                         </div>
                     </div>
                     <div id="stat">
                         <h2>Fortitude: {character.stats.fortitude}</h2>
                         <div className="statButtons">
-                            <button className="statButton" onClick={() => { changeStats("fortitude", 1) }}>↑</button>
-                            <button className="statButton" onClick={() => { changeStats("fortitude", -1) }}>↓</button>
+                            <button className="statButton" onClick={() => { changeStats("fortitude", 1) }}>&#8593;</button>
+                            <button className="statButton" onClick={() => { changeStats("fortitude", -1) }}>&#8595;</button>
                         </div>
                     </div>
                     <div id="stat">
                         <h2>Mental: {character.stats.mental}</h2>
                         <div className="statButtons">
-                            <button className="statButton" onClick={() => { changeStats("mental", 1) }}>↑</button>
-                            <button className="statButton" onClick={() => { changeStats("mental", -1) }}>↓</button>
+                            <button className="statButton" onClick={() => { changeStats("mental", 1) }}>&#8593;</button>
+                            <button className="statButton" onClick={() => { changeStats("mental", -1) }}>&#8595;</button>
                         </div>
                         <button className="addStatButton" onClick={addStatPoint}> Add Stat </button>
                         <button className="addStatButton" onClick={removeStatPoint}> Remove Stat </button>

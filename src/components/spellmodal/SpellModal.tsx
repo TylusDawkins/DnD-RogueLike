@@ -2,29 +2,40 @@ import { useState, useEffect } from "react"
 import "./spellmodal.css"
 import '../../../src/globals.css'
 import spells from "@utils/spells_updated.json"
+import type { Spell } from "../../types"
 
+const typedSpells = spells as Spell[];
 
+interface SpellModalProps {
+    isOpen: boolean;
+    setIsOpen: (open: boolean) => void;
+    playerSpells: Spell[];
+    addSpell: (spell: Spell) => void;
+    playerLevel: number;
+    type: string;
+    saveCharacter: () => void;
+}
 
-function SpellModal({ isOpen, setIsOpen, playerSpells, addSpell, playerLevel, type, saveCharacter }) {
+function SpellModal({ isOpen, setIsOpen, playerSpells, addSpell, playerLevel, type, saveCharacter }: SpellModalProps) {
 
-    const [spellChoices, setSpellChoices] = useState([])
+    const [spellChoices, setSpellChoices] = useState<Spell[]>([])
 
-    let availableSpells
+    let availableSpells: Spell[]
 
     const getAvailableSpells = () => {
         if (type === "halfcaster") {
             if (playerLevel < 5) {
-                availableSpells = spells.filter(x => x.level === 1)
+                availableSpells = typedSpells.filter(x => x.level === 1)
             } else if (playerLevel < 9) {
-                availableSpells = spells.filter(x => x.level <= 2)
+                availableSpells = typedSpells.filter(x => x.level <= 2)
             } else if (playerLevel < 13) {
-                availableSpells = spells.filter(x => x.level <= 3)
+                availableSpells = typedSpells.filter(x => x.level <= 3)
             } else if (playerLevel < 17) {
-                availableSpells = spells.filter(x => x.level <= 4)
+                availableSpells = typedSpells.filter(x => x.level <= 4)
             }
         }
         else if (type === "mage") {
-            availableSpells = spells.filter(x => x.level <= (Math.round(playerLevel / 2)))
+            availableSpells = typedSpells.filter(x => x.level <= (Math.round(playerLevel / 2)))
         }
     }
 
@@ -38,8 +49,8 @@ function SpellModal({ isOpen, setIsOpen, playerSpells, addSpell, playerLevel, ty
 
     const getRandomChoices = () => {
         let i = 0
-        let randoSpell
-        let choices = []
+        let randoSpell: Spell
+        const choices: Spell[] = []
         getAvailableSpells()
         while (i < 6) {
             randoSpell = availableSpells[Math.floor(Math.random() * availableSpells.length)]
@@ -53,7 +64,7 @@ function SpellModal({ isOpen, setIsOpen, playerSpells, addSpell, playerLevel, ty
         setSpellChoices(choices)
     }
 
-    const handleClick = (spell) => {
+    const handleClick = (spell: Spell) => {
         addSpell(spell)
         saveCharacter()
         closeModal()
@@ -71,7 +82,7 @@ function SpellModal({ isOpen, setIsOpen, playerSpells, addSpell, playerLevel, ty
                             dangerouslySetInnerHTML={{
                                 __html: [...spell.description, ...spell.higherLevel].join("<br><br>")
                             }}
-                        ></div>                        {/* <div className="spell-choice-higher-level" style={{fontSize:".75em", overflow:"auto"}}> </div> */}
+                        ></div>
                         <div className="spell-choice-tier">Tier: {spell.level}</div>
                         <button className="spell-choice-btn" onClick={() => { handleClick(spell) }}>Choose</button>
                     </div>
