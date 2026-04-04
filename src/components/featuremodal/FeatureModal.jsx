@@ -28,10 +28,9 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
   }
 
   const getRandomChoices = () => {
-    let randoFeature; // Randomly selected feature from available features
-    let availableFeatures; // Features available for selection based on player level
-    let choices = []; // Array to hold the selected features
-    let target = 4
+    let availableFeatures;
+    let choices = [];
+    let target = 4;
 
     if (playerLevel >= 12) {
       availableFeatures = tier3Features;
@@ -41,35 +40,69 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
       availableFeatures = tier1Features;
     }
 
-
     const asi = classFeatures.find((e) => e.name === "Ability Score Improvement"); // add this as a default incase all options are undesireable
     if (asi) choices.push(asi);
+
+    // Reads either spelling of the dependency field (fighterFeatures uses "dependency", others use "dependancy")
+    const getParentName = (feature) => {
+      const dep = feature.dependency || feature.dependancy;
+      return dep && dep.trim() !== "" ? dep : null;
+    };
+
+    // Walks up the chain to the root ancestor (cycle-safe via visited set)
+    const getRoot = (feature) => {
+      const visited = new Set();
+      let current = feature;
+      while (true) {
+        if (visited.has(current.name)) return current;
+        visited.add(current.name);
+        const parentName = getParentName(current);
+        if (!parentName) return current;
+        const parent = classFeatures.find((f) => f.name === parentName);
+        if (!parent) return current;
+        current = parent;
+      }
+    };
+
     let maxAttempts = 0; // Number of attempts to get valid features
     while (choices.length < target && maxAttempts < 100) { // Limit attempts to avoid infinite loop
       maxAttempts++;
 
-      if (!availableFeatures || availableFeatures.length === 0){
-        alert("[BUG] NO AVAILABLE FEATURES FOR SELECTION")
-        throw warning("No available features for selection.");
-      } 
-
-      randoFeature = availableFeatures[Math.floor(Math.random() * availableFeatures.length)];
-
-      // Check if feature already exists or dependency isn't met
-      const hasChoiceAlready = choices.some((feat) => feat.name === randoFeature.name)
-      const hasFeatureAlready = character.features.some((feat) => feat.name === randoFeature.name);
-      const hasDependencyAlready = !randoFeature.dependency || character.features.some((feat) => feat?.name === randoFeature.dependency);
-      const isASI = randoFeature.name === "Ability Score Improvement";
-
-      if((hasChoiceAlready || hasFeatureAlready) && !randoFeature.stackable) {
-        continue
+      if (!availableFeatures || availableFeatures.length === 0) {
+        alert("[BUG] NO AVAILABLE FEATURES FOR SELECTION");
+        throw new Error("No available features for selection.");
       }
 
-      if (!hasDependencyAlready || isASI) {
-        continue; // Skip to next iteration
+      // Filter to only valid candidates for this iteration
+      const validCandidates = availableFeatures.filter((feat) => {
+        if (feat.name === "Ability Score Improvement") return false;
+        const hasChoiceAlready = choices.some((c) => c.name === feat.name);
+        const hasFeatureAlready = character.features.some((f) => f.name === feat.name);
+        if ((hasChoiceAlready || hasFeatureAlready) && !feat.stackable) return false;
+        const parentName = getParentName(feat);
+        const hasDependencyMet = !parentName || character.features.some((f) => f.name === parentName);
+        if (!hasDependencyMet) return false;
+        return true;
+      });
+
+      if (validCandidates.length === 0) break;
+
+      // Group valid candidates by root ancestor — each tree gets equal weight regardless of size
+      const groups = {};
+      for (const feat of validCandidates) {
+        const rootName = getRoot(feat).name;
+        if (!groups[rootName]) groups[rootName] = [];
+        groups[rootName].push(feat);
       }
 
-      // Feature can be added (not stacked or new feature)
+      // Stage 1: pick a random group (equal weight per group regardless of tree size)
+      const groupKeys = Object.keys(groups);
+      const pickedGroupKey = groupKeys[Math.floor(Math.random() * groupKeys.length)];
+
+      // Stage 2: pick a random feature within that group
+      const pickedGroup = groups[pickedGroupKey];
+      const randoFeature = pickedGroup[Math.floor(Math.random() * pickedGroup.length)];
+
       choices.push(randoFeature);
     }
 
