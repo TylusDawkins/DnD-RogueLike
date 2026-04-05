@@ -81,7 +81,7 @@ export default function Character({ character, setCharacter, characters, getChar
             characterCopy.stats.physical = 10
             characterCopy.stats.fortitude = 10
             characterCopy.stats.mental = 10
-            characterCopy.stats.maxHp = (characterCopy.stats.hpMod ?? 1) * characterCopy.stats.fortitude
+            characterCopy.stats.maxHp = charClass.baseStats.baseHp + Math.floor((characterCopy.stats.fortitude - 10) / 2)
             characterCopy.stats.currentHp = characterCopy.stats.maxHp
             characterCopy.features = []
             characterCopy.spells = []
@@ -115,8 +115,8 @@ export default function Character({ character, setCharacter, characters, getChar
         getCharacters()
         const characterCopy = { ...character }
         characterCopy.stats = { ...characterCopy.stats }
-        characterCopy.stats.hpMod = charClass.baseStats.hpMod
-        characterCopy.stats.maxHp = character.stats.maxHp || characterCopy.stats.hpMod * characterCopy.stats.fortitude
+        const fortMod = Math.floor((characterCopy.stats.fortitude - 10) / 2)
+        characterCopy.stats.maxHp = character.stats.maxHp || (charClass.baseStats.baseHp + fortMod)
         characterCopy.stats.currentHp = character.stats.currentHp || characterCopy.stats.maxHp
         characterCopy.type = type!
         if (charClass.canCast && charClass.spellPoints) {
@@ -210,8 +210,9 @@ export default function Character({ character, setCharacter, characters, getChar
         characterCopy.stats = { ...characterCopy.stats }
         characterCopy.level += 1
         if (character.level > 0) {
-            characterCopy.stats.maxHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
-            characterCopy.stats.currentHp += Math.ceil(charClass.baseStats.hpMod * (characterCopy.stats.fortitude / 2))
+            const hpGain = Math.floor(charClass.baseStats.baseHp / 2) + Math.floor((characterCopy.stats.fortitude - 10) / 2)
+            characterCopy.stats.maxHp += hpGain
+            characterCopy.stats.currentHp += hpGain
         }
         getReward()
         if (charClass.canCast && charClass.spellPoints) {

@@ -16,7 +16,6 @@ const classes: ClassDef[] = [
         description: "A melee fighter focused on overwhelming enemies with stats",
         baseStats: {
             baseHp: 20,
-            hpMod: 2,
             physical: 10,
             fortitude: 10,
             mental: 10,
@@ -30,7 +29,6 @@ const classes: ClassDef[] = [
         description: "A half-caster specializing in both magic and melee combat.",
         baseStats: {
             baseHp: 15,
-            hpMod: 1.5,
             physical: 10,
             fortitude: 10,
             mental: 10,
@@ -48,7 +46,6 @@ const classes: ClassDef[] = [
         description: "A magic focused class that excels in ranged combat.",
         baseStats: {
             baseHp: 10,
-            hpMod: 1,
             physical: 10,
             fortitude: 10,
             mental: 10,

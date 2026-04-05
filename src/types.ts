@@ -5,7 +5,6 @@ export interface CharacterStats {
   fortitude: number;
   mental: number;
   speed: number;
-  hpMod?: number;
   currentSpellPoints?: number;
 }
 
@@ -57,7 +56,6 @@ export interface SpellPointsMap {
 
 export interface BaseStats {
   baseHp: number;
-  hpMod: number;
   physical: number;
   fortitude: number;
   mental: number;
