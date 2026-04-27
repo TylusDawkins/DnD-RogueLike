@@ -94,3 +94,38 @@
 .addStatButton{
     margin-left:5%;
 }
+
+.feature-row {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.feature-row .feature-popup {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: max-content;
+    max-width: 28em;
+    padding: 0.75em 1em;
+    margin-top: 0.25em;
+    font-size: 0.9em;
+    text-align: left;
+    color: #1a1a1a;
+    background-color: rgba(193, 154, 107, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.1s ease-in;
+}
+
+.feature-row:hover .feature-popup {
+    visibility: visible;
+    opacity: 1;
+}

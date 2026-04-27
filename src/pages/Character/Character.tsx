@@ -13,6 +13,7 @@ import classes from "@utils/classes"
 import { useParams } from 'react-router-dom'
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
 import getRandomReward from '../../utilities/RewardsUtil'
+import { formatDescription } from '@utils/formatDescription'
 import type { Character as CharacterType, Feature, Spell, CharactersMap } from '../../types'
 
 interface CharacterPageProps {
@@ -366,7 +367,15 @@ export default function Character({ character, setCharacter, characters, getChar
                 <button className="levelButton" onClick={levelUp}>Level up!</button>
                 <div className="features">
                     {character.features.map((feature, i) => {
-                        return <h3 key={i}>Level {i + 1}: {feature.name}</h3>
+                        const featureLevel = character.features.filter((f) => f.name === feature.name).length;
+                        return (
+                            <div className="feature-row" key={i}>
+                                <h3>Level {i + 1}: {feature.name}</h3>
+                                <div className="feature-popup">
+                                    {formatDescription(feature.description, featureLevel)}
+                                </div>
+                            </div>
+                        )
                     })}
                 </div>
             </div>

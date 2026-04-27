@@ -34,11 +34,13 @@ export interface Character {
 
 export interface Feature {
   name: string;
+  classes: string[];
   dependency: string | null;
   description?: string;
   conflicts: (string | null)[];
   tier: number;
   stackable: boolean;
+  maxStacks?: number;
   link?: string;
   cb?: (char: Character, setChar: (c: Character) => void) => void;
 }

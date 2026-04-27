@@ -1,13 +1,13 @@
 import mageImage from "/public/assets/mage.png";
-import mageFeatures from "@utils/mageFeatures";
-
 import fighterImage from "@assets/fighter.png";
-import fighterFeatures from "@utils/fighterFeatures";
-
 import halfCasterImage from "@assets/half-caster.png";
-import halfCasterFeatures from "@utils/halfCasterFeatures";
+
+import features from "@utils/features";
 
 import type { ClassDef } from "../types";
+
+const featuresFor = (className: string) =>
+    features.filter((f) => f.classes.includes(className));
 
 const classes: ClassDef[] = [
     {
@@ -20,7 +20,7 @@ const classes: ClassDef[] = [
             fortitude: 10,
             mental: 10,
         },
-        features: fighterFeatures,
+        features: featuresFor("Fighter"),
         canCast: false
     },
     {
@@ -37,7 +37,7 @@ const classes: ClassDef[] = [
             0: 0, 1: 4, 2: 4, 3: 6, 4: 6, 5: 14, 6: 14, 7: 17, 8: 17, 9: 27,
             10: 27, 11: 32, 12: 32, 13: 38, 14: 38, 15: 44, 16: 44, 17: 57, 18: 57, 19: 64, 20: 64
         },
-        features: halfCasterFeatures,
+        features: featuresFor("Hybrid"),
         canCast: true
     },
     {
@@ -54,7 +54,7 @@ const classes: ClassDef[] = [
             0: 0, 1: 4, 2: 6, 3: 14, 4: 17, 5: 27, 6: 32, 7: 38, 8: 44, 9: 57,
             10: 64, 11: 73, 12: 73, 13: 83, 14: 83, 15: 94, 16: 95, 17: 107, 18: 114, 19: 123, 20: 133
         },
-        features: mageFeatures,
+        features: featuresFor("Mage"),
         canCast: true
     }
 ];

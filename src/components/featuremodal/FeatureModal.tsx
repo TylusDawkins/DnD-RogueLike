@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import "./featuremodal.css"
 import type { Feature, Character } from "../../types"
+import { formatDescription } from "@utils/formatDescription"
 
 interface FeatureModalProps {
     isOpen: boolean;
@@ -56,7 +57,11 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
         }
 
         const asi = classFeatures.find((e) => e.name === "Ability Score Improvement");
-        if (asi) choices.push(asi);
+        if (asi) {
+            const asiOwned = character.features.filter((f) => f.name === asi.name).length;
+            const underCap = typeof asi.maxStacks !== "number" || asiOwned < asi.maxStacks;
+            if (underCap) choices.push(asi);
+        }
 
         const getParentName = (feature: Feature): string | null => {
             const dep = feature.dependency;
@@ -88,9 +93,11 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
 
             const validCandidates = availableFeatures.filter((feat) => {
                 if (feat.name === "Ability Score Improvement") return false;
-                const hasChoiceAlready = choices.some((c) => c.name === feat.name);
-                const hasFeatureAlready = character.features.some((f) => f.name === feat.name);
-                if ((hasChoiceAlready || hasFeatureAlready) && !feat.stackable) return false;
+                const ownedCount = character.features.filter((f) => f.name === feat.name).length;
+                const chosenCount = choices.filter((c) => c.name === feat.name).length;
+                const totalCount = ownedCount + chosenCount;
+                if (!feat.stackable && totalCount > 0) return false;
+                if (feat.stackable && typeof feat.maxStacks === "number" && totalCount >= feat.maxStacks) return false;
                 const parentName = getParentName(feat);
                 const hasDependencyMet = !parentName || character.features.some((f) => f.name === parentName);
                 if (!hasDependencyMet) return false;
@@ -130,10 +137,11 @@ function ClassModal({ isOpen, setIsOpen, shouldOpenSpellModal, setShouldOpenSpel
     return isOpen ? (
         <div id="choice-modal">
             {featureChoices.map((feature, i) => {
+                const previewLevel = character.features.filter((f) => f.name === feature.name).length + 1;
                 return (
                     <div className="choice-modal-content" key={i}>
                         <div className="choice-name" style={{ fontWeight: '700' }}>{feature.name}</div>
-                        <div className="choice-desc" style={{ fontSize: ".75em", overflow: "auto" }}>{feature.description}</div>
+                        <div className="choice-desc" style={{ fontSize: ".75em", overflow: "auto" }}>{formatDescription(feature.description, previewLevel)}</div>
                         <div className="choice-tier" style={{ marginTop: '5px' }}> Tier: {feature.tier}</div>
                         <button className="choice-btn" onClick={() => { handleClick(feature) }}>Choose</button>
                     </div>

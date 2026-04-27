@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(git mv:*)",
+      "Bash(node consolidate-features.mjs)"
+    ]
+  }
+}
