@@ -3,7 +3,12 @@
     "allow": [
       "Bash(wc:*)",
       "Bash(git mv:*)",
-      "Bash(node consolidate-features.mjs)"
+      "Bash(node consolidate-features.mjs)",
+      "Bash(git ls-tree *)",
+      "Bash(git submodule *)",
+      "Bash(git config *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
